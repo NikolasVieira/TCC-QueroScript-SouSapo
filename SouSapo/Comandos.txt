@@ -1,0 +1,7 @@
+COMANDOS PARA LEMBRAR
+
+$ php artisan make:model (nome do model)
+Ação: Criar um Model
+
+$ php artisan make:migration create_(nome da migration)_table
+Ação: Criar uma Migration
