@@ -2,6 +2,10 @@ COMANDOS PARA LEMBRAR
 
 $ php artisan make:model (nome do model)
 Ação: Criar um Model
+Pra que serve:
 
 $ php artisan make:migration create_(nome da migration)_table
 Ação: Criar uma Migration
+
+$ php artisan make:controller (nome_do_controller)Controller --resource
+Ação: Criar um Controller
