@@ -2,6 +2,6 @@
 
 @section('content')
 
-//html aqui
+html do sobre aqui
 
 @endsection

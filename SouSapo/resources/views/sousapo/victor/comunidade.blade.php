@@ -2,6 +2,6 @@
 
 @section('content')
 
-//html aqui
+html da comunidade aqui
 
 @endsection
