@@ -9,3 +9,9 @@ Ação: Criar uma Migration
 
 $ php artisan make:controller (nome_do_controller)Controller --resource
 Ação: Criar um Controller
+
+$ composer require laravel/ui
+
+$ php artisan ui bootstrap
+
+$ php artisan ui bootstrap --auth
