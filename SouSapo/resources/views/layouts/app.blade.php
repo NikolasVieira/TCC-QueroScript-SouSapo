@@ -28,7 +28,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-success">
             <!-- Logo e Titulo da NavBar -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 SouSapo
