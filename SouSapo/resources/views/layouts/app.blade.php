@@ -26,9 +26,10 @@
     <div id="app">
 
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--sapo);">
             <!-- Logo e Titulo da NavBar -->
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--sapinho);">
                 <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 SouSapo
@@ -38,19 +39,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Botôes da navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li id="navbotao" class="nav-item active" style="background-color: var(--purple);">
                         <a class="nav-link" href="{{ url('/hq') }}">Quadrinhos <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li id="navbotao" class="nav-item active" style="background-color: var(--purple);">
                         <a class="nav-link" href="{{ url('/apoio') }}">Apoiar <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li id="navbotao" class="nav-item active" style="background-color: var(--purple);">
                         <a class="nav-link" href="{{ url('/sobre') }}">Sobre <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li id="navbotao" class="nav-item active" style="background-color: var(--purple);">
                         <a class="nav-link" href="{{ url('/forum') }}">Fórum <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li id="navbotao" class="nav-item active" style="background-color: var(--purple);">
                         <a class="nav-link" href="{{ url('/comunidade') }}">Comunidade <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
@@ -96,9 +97,15 @@
 
         </nav>
 
+        <!-- CONTEUDO -->
         <main class="py-4">
             @yield('content')
         </main>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>Footer</p>
+        </div>
 
     </div>
 </body>

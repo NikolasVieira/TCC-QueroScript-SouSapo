@@ -1,5 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+
+
+#logo {
+    padding: 10px;
+}
+
+#navbotao {
+    margin: 3px;
+
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--sapo);
+    text-align: center;
+ }
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -7,6 +27,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --sapo: #0A420F;
+  --sapinho: #AEFFA0;
   --blue: #3490dc;
   --indigo: #6574cd;
   --purple: #9561e2;
@@ -62,7 +84,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #AEFFA0;
+  background-color: var(--sapinho);
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
