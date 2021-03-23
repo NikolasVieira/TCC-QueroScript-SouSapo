@@ -51,7 +51,7 @@
     </div>
     <ul id="ulSobre1">
         <div id="divSobre2">
-            <p id="">HQ</p>
+            <p>ARARARARARARA NIKOLAS KUN</p>
         </div>
     </ul>
 </p>
