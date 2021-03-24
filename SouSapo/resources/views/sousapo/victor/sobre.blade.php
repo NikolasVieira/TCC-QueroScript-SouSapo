@@ -2,7 +2,6 @@
 @section('content')
 
 <style>
-
 #ulSobre1 {
     position: relative;
     margin-left: 5px;
@@ -26,7 +25,6 @@
 #divSobre11{
     margin-left: 110px;
 }
-
 </style>
 
 <p>
