@@ -35,7 +35,7 @@
     </div>
     <ul id="ulSobre1">
         <div id="divSobre2">
-            <p id="nos">Maria Fernando - WebDesign e Diretora Criativa</p>
+            <p id="nos">Maria Fernanda - WebDesign e Diretora Criativa</p>
             <p id="nos">Victor Guzella - WebDesign e Programador</p>
             <p id="nos">Nikolas Raposo - Programador e Roteirista</p>
             <p id="nos">Micaeli Almeida - Escritora e Avaliadora</p>
