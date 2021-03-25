@@ -1,31 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<style>
-#ulSobre1 {
-    position: relative;
-    margin-left: 5px;
-    margin-right: 500px;
-    background-color: #CC99F4;
-}
-
-#divSobre1{
-    margin-left: 150px;
-}
-
-#divSobre2{
-    padding-top: 20px;
-    padding-bottom: 1px;
-}
-
-#nos {
-    font-size: 17px;
-}
-
-#divSobre11{
-    margin-left: 110px;
-}
-</style>
+<link href="{{ asset('css/sobre.css') }}" rel="stylesheet">
 
 <p>
     <div id="divSobre1">
