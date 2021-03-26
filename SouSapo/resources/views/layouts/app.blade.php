@@ -25,7 +25,6 @@
 <body>
     <div id="app">
 
-
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--sapo);">
             <!-- Logo e Titulo da NavBar -->
@@ -96,15 +95,16 @@
             </div>
 
         </nav>
-
         <!-- CONTEUDO -->
-        <main class="py-4">
+        <main class="pb-5">
             @yield('content')
         </main>
 
         <!-- FOOTER -->
         <div class="footer">
+
             <p>Footer</p>
+
         </div>
 
     </div>
