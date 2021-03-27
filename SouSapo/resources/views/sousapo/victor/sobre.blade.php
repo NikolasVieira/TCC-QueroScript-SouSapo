@@ -3,30 +3,32 @@
 
 <link href="{{ asset('css/sobre.css') }}" rel="stylesheet">
 
-<p id="teste">
-    <div id="divSobre1">
-        <h1>Sobre Nós</h1><br/>
+<div class="container">
+<div class="row">
+    <div class="col-sm-6 col-md-5 mb-2">
+                <h1 id="Sobrenos">Sobre Nós</h1>
+                <div class="card">
+                    <div class="card-body text-justify card-color">
+                        Maria Fernanda - Ilustradora e WebDesign<br/>
+                        Nikolas Raposo - Roteirista e Programador<br/>
+                        Victor Guzella - Ilustrador e Programador<br/>
+                        Kayky Martins - DBA e Programador<br/>
+                        Kaelaine - Escritora e Avaliadora<br/>
+                        Micaeli - Escritora e Avaliadora<br/>
+                    </div>
+                </div>
     </div>
-    <ul id="ulSobre1">
-        <div id="divSobre2">
-            <p id="nos">Maria Fernanda - WebDesign e Diretora Criativa</p>
-            <p id="nos">Victor Guzella - WebDesign e Programador</p>
-            <p id="nos">Nikolas Raposo - Programador e Roteirista</p>
-            <p id="nos">Micaeli Almeida - Escritora e Avaliadora</p>
-            <p id="nos">Kaelaine Pereira- Escritora e Avaliadora</p>
-            <p id="nos">Kayky Martins - DBA e Programador</p>
+    <div id="linha-vertical" class="col-sm-2 col-md-1 mb-2"></div>
+    <!--<hr width="1" size="100">-->
+    <div class="col-sm-12 col-md-5 mb-4">
+        <h1 id="SobreoProjeto"> Sobre o Projeto </h1>
+        <div class="card">
+            <div class="card-body text-justify card-color">
+                texto texto texto bem grande e comprido
+            </div>
         </div>
-    </ul>
-</p>
-<p  id="teste2">
-    <div id="divSobre11">
-        <h1>Sobre o Projeto</h1><br/>
     </div>
-    <ul id="ulSobre1">
-        <div id="divSobre2">
-            <p>ARARARARARARA NIKOLAS KUN</p>
-        </div>
-    </ul>
-</p>
+</div>
+</div>
 
 @endsection

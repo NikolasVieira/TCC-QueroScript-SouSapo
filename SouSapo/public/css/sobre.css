@@ -1,4 +1,6 @@
-#ulSobre1 {
+/*  */
+
+/* #ulSobre1 {
     margin-left: 5px;
     margin-right: 500px;
     background-color: #CC99F4;
@@ -27,4 +29,29 @@
 
 #teste2 {
     right: 50%;
+}*/
+
+
+/* Alinhamentos do Sobres */
+#Sobrenos {
+    text-align: center;
 }
+
+#SobreoProjeto {
+    text-align: center;
+}
+
+
+/* Cor dos Cards */
+.card-color {
+    background-color: #CC99F4;
+}
+
+/* Linha Vertical */
+#linha-vertical {
+    height: auto;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+
