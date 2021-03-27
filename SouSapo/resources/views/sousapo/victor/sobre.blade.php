@@ -3,7 +3,7 @@
 
 <link href="{{ asset('css/sobre.css') }}" rel="stylesheet">
 
-<p>
+<p id="teste">
     <div id="divSobre1">
         <h1>Sobre Nós</h1><br/>
     </div>
@@ -18,8 +18,7 @@
         </div>
     </ul>
 </p>
-<hr>
-<p>
+<p  id="teste2">
     <div id="divSobre11">
         <h1>Sobre o Projeto</h1><br/>
     </div>

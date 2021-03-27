@@ -1,5 +1,4 @@
 #ulSobre1 {
-    position: relative;
     margin-left: 5px;
     margin-right: 500px;
     background-color: #CC99F4;
@@ -20,4 +19,12 @@
 
 #divSobre11{
     margin-left: 110px;
+}
+
+#teste {
+    left: 50%;
+}
+
+#teste2 {
+    right: 50%;
 }
