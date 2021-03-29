@@ -25,13 +25,11 @@
 <body>
     <div id="app">
 
-
-
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--sapo);">
             <div class="container-fluid">
                 <!-- Logo e Titulo da NavBar -->
-                <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--ra);">
+                <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--sapao);">
                     <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg"
                         width="30" height="30" class="d-inline-block align-top" alt="">
                     SouSapo
@@ -70,19 +68,19 @@
 
                         @if (Route::has('login'))
                         <li id="navbotao" class="nav-item">
-                            <a class="btn btn-ra" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li id="navbotao" class="nav-item">
-                            <a class="btn btn-ra" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                            <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                         </li>
                         @endif
 
                         @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="btn btn-ra dropdown-toggle" href="#" role="button"
+                            <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>

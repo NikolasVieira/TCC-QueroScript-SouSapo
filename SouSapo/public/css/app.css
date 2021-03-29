@@ -89,7 +89,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: var(--sapinho);
+  background-color: var(--razinha);
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2605,6 +2605,18 @@ fieldset:disabled a.btn {
     color: #212529;
     background-color: #37a769;
     border-color: #37a769;
+}
+
+/*COR SAPÃO*/
+.btn-sapao {
+    color: #212529;
+    background-color: var(--sapao);
+    border-color: var(--sapao);
+}
+.btn-sapao:hover {
+    color: #212529;
+    background-color: #1da099;
+    border-color: #1da099;
 }
 
 
