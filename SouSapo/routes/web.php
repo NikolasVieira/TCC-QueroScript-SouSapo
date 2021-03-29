@@ -36,6 +36,10 @@ Route::get('/cadastrar', function () {
     return view('/sousapo/victor/cadastrar');
 });
 
+Route::get('/conta', function () {
+    return view('/sousapo/kayky/conta');
+});
+
 Route::get('/laravel', function () {
     return view('welcome');
 });
