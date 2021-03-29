@@ -26,7 +26,7 @@
                         <input type="text" id="nome" name="nome"><br>
 
                         <label for="frase">Frase:</label><br>
-                        <textarea name="frase" id="frase" cols="43" rows="10"></textarea>
+                        <textarea name="frase" id="frase" cols="40" rows="10"></textarea>
 
                     </form>
                 </div>
