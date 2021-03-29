@@ -26,9 +26,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --sapo: #0A420F;
-  --sapinho: #AEFFA0;
-  --roxonclaron: #CC99F4;
+    /*CORES DO SITE*/
+  --sapo: #FFFACD;
+  --sapinho: #DDA0DD;
+  --sapao: #20B2AA;
+  --ra: #3CB371;
+  --razinha: #FFD700;
+
+  /*CORES DO BOOTSTRAP*/
   --blue: #3490dc;
   --indigo: #6574cd;
   --purple: #9561e2;
@@ -2578,6 +2583,33 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(97, 157, 206, 0.5);
 }
 
+/*COR SAPINHO*/
+.btn-sapinho {
+    color: #212529;
+    background-color: var(--sapinho);
+    border-color: var(--sapinho);
+}
+.btn-sapinho:hover {
+    color: #212529;
+    background-color: #c08cc0;
+    border-color: #c08cc0;
+}
+
+/*COR RÃ*/
+.btn-ra {
+    color: #212529;
+    background-color: var(--ra);
+    border-color: var(--ra);
+}
+.btn-ra:hover {
+    color: #212529;
+    background-color: #37a769;
+    border-color: #37a769;
+}
+
+
+
+
 .btn-warning {
   color: #212529;
   background-color: #ffed4a;
@@ -2796,6 +2828,16 @@ fieldset:disabled a.btn {
 }
 .btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-info.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(108, 178, 235, 0.5);
+}
+
+.btn-teste {
+    color: #DA70D6;
+    border-color: #DA70D6;
+}
+.btn-teste:hover {
+    color: #212529;
+    background-color: #DA70D6;
+    border-color: #DA70D6;
 }
 
 .btn-outline-warning {
