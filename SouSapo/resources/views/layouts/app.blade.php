@@ -16,6 +16,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,8 +27,14 @@
     <div id="app">
 
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--sapo);">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: var(--sapo);">
             <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="" data-target="#nav-sapo">
+                        <i class="material-icons">menu</i>
+                    </button>
+                </div>
+
                 <!-- Logo e Titulo da NavBar -->
                 <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--sapao);">
                     <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg"
@@ -36,9 +43,9 @@
                 </a>
 
                 <!-- Navbar -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <nav id="nav-sapo" class="collapse navbar-collapse">
                     <!-- Botôes da navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="nav navbar-nav mr-auto">
 
                         <li id="navbotao" class="nav-item active">
                             <a class="btn btn-sapinho" href="{{ url('/hq') }}" role="button">Quadrinhos</a>
@@ -62,7 +69,7 @@
                     </ul>
 
                     <!-- Lado direito na NavBar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ml-auto">
                         <!-- Links de autenticação -->
                         @guest
 
@@ -98,7 +105,7 @@
                         </li>
                         @endguest
                     </ul>
-                </div>
+                </nav>
             </div>
         </nav>
 
