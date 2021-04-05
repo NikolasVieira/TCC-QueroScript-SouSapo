@@ -2,6 +2,6 @@
 
 @section('content')
 
-html do cadastrar aqui
+texto eeeeeee
 
 @endsection
