@@ -59,10 +59,6 @@
                         </li>
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ url('/apoio') }}" role="button">Apoiar</a>
-                        </li>
-
-                        <li id="navbotao" class="nav-item active">
                             <a class="btn btn-sapinho" href="{{ url('/comunidade') }}" role="button">Comunidade</a>
                         </li>
                     </ul>
