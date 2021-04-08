@@ -37,6 +37,7 @@
                 SouSapo
             </a>
 
+            <!-- Botão Responsivo -->
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navsapo"
                 aria-controls="navsapo" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,7 +61,7 @@
                     </li>
 
                     <li id="navbotao" class="nav-item active">
-                        <a class="btn btn-sapinho" href="{{ url('/apoio') }}" role="button">Apoiar</a>
+                        <a class="btn btn-sapinho" href="{{ url('/forum') }}" role="button">Fórum</a>
                     </li>
 
                     <li id="navbotao" class="nav-item active">
