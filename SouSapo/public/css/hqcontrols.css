@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import url(app.css);
+
+.hqcontrols {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: var(--sapo);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

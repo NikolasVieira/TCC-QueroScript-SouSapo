@@ -21,11 +21,13 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
+    <!-- FOOTER -->
+
     <div id="footer">
         <footer>
             <div class="container">
@@ -81,6 +83,7 @@
             <p>Copyright © 2021 QueroScripts. All Rights Reserved.</p>
         </div>
     </div>
+
 </body>
 
 </html>

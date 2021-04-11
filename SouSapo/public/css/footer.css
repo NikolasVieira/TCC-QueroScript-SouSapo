@@ -11,24 +11,29 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
  }
+
  footer .container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
  }
+
  footer .container .sec {
      margin-right: 30px;
  }
+
  footer .container .sec.sobrenos {
      width: 40%;
  }
+
  footer .container h2 {
     position: relative;
     color: var(--sapinho-escuro);
     font-weight: 500;
     margin-bottom: 15px;
 }
+
 footer .container h2:before {
     content: '';
     position: absolute;
@@ -38,9 +43,11 @@ footer .container h2:before {
     height: 2px;
     background: var(--razinha);
 }
+
 footer p {
     color: var(--ra);
 }
+
 .sci {
     margin-top: 20px;
     display: flex;
@@ -74,7 +81,7 @@ footer p {
 }
 
 .sci li a:hover {
-    background: var(--razinha);
+    background: var(--razinha-escura);
 }
 .sci li a .fa {
     color: var(--sapo);
