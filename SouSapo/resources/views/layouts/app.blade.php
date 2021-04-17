@@ -26,6 +26,7 @@
     <div id="app">
 
         <!-- NAVBAR -->
+<<<<<<< Updated upstream
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--sapo);">
             <!-- Logo e Titulo da NavBar -->
             <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--sapinho);">
@@ -83,6 +84,72 @@
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Sair') }}
+=======
+        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: var(--sapo);" >
+            <div class="container-fluid">
+
+                <!-- Logo e Titulo da NavBar -->
+                <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--sapao);">
+                    <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg"
+                        width="30" height="30" class="d-inline-block align-top" alt="">
+                    SouSapo
+                </a>
+
+                <!-- Botão Responsivo -->
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navsapo"
+                    aria-controls="navsapo" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar -->
+                <div id="navsapo" class="collapse navbar-collapse">
+                    <!-- Botôes da navbar -->
+                    <ul class="nav navbar-nav mr-auto">
+
+                        <li id="navbotao" class="nav-item active">
+                            <a class="btn btn-sapinho" href="{{ url('/hq') }}" role="button">Quadrinhos</a>
+                        </li>
+
+                        <li id="navbotao" class="nav-item active">
+                            <a class="btn btn-sapinho" href="{{ url('/sobre') }}" role="button">Sobre</a>
+                        </li>
+
+                        <li id="navbotao" class="nav-item active">
+                            <a class="btn btn-sapinho" href="{{ url('/apoio') }}" role="button">Apoiar</a>
+                        </li>
+
+                        <li id="navbotao" class="nav-item active">
+                            <a class="btn btn-sapinho" href="{{ url('/forum') }}" role="button">Fórum</a>
+                        </li>
+
+                        <li id="navbotao" class="nav-item active">
+                            <a class="btn btn-sapinho" href="{{ url('/comunidade') }}" role="button">Comunidade</a>
+                        </li>
+                    </ul>
+
+                    <!-- Lado direito na NavBar -->
+                    <ul class="nav navbar-nav ml-auto">
+                        <!-- Links de autenticação -->
+                        @guest
+
+                        @if (Route::has('login'))
+                        <li id="navbotao" class="nav-item">
+                            <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                        <li id="navbotao" class="nav-item">
+                            <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                        </li>
+                        @endif
+
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+>>>>>>> Stashed changes
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
