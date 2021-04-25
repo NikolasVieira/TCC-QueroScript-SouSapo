@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddeabc1ce42c24615f2fd0343a6ea0f2",
+    "content-hash": "b747bc85fdeac7d5f2dcbaef085aa221",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2414,6 +2414,47 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "rudrarajiv/flipbooklaravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rudrarajiv/flipbook-laravel.git",
+                "reference": "84e7f92d545e5432966e805acf04fb24357d8e7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rudrarajiv/flipbook-laravel/zipball/84e7f92d545e5432966e805acf04fb24357d8e7e",
+                "reference": "84e7f92d545e5432966e805acf04fb24357d8e7e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "rudrarajiv\\flipbooklaravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rajiv Patel",
+                    "email": "rudra.rajivp@gmail.com"
+                }
+            ],
+            "description": "Use your images to view in magazine style flipping book for laravel 5.x , used Turn.js for viewing flip book.",
+            "support": {
+                "issues": "https://github.com/rudrarajiv/flipbook-laravel/issues",
+                "source": "https://github.com/rudrarajiv/flipbook-laravel/tree/master"
+            },
+            "time": "2016-01-18T07:38:28+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7413,7 +7454,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "rudrarajiv/flipbooklaravel": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
