@@ -17,7 +17,7 @@
             <a href="#">notificação</a>
             <a href="#">privacidade</a>
         </div>
-        <div class="container">
+        <div class="container-cont">
             <div class="infos">
 
                 <div class="form">

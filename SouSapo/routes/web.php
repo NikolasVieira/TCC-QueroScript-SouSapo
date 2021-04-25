@@ -22,7 +22,7 @@ Route::get('/forum', function () {
 
 Route::get('/conta', function () {
     return view('/sousapo/kayky/conta');
-});
+})->middleware('auth');
 
 Route::get('/sobre', function () {
     return view('/sousapo/victor/sobre');

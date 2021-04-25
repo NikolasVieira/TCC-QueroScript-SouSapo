@@ -1,0 +1,120 @@
+*{
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    font-size: 93,75%;
+}
+
+.container-forum {
+    
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+}
+.infos {
+    display: flex;
+}
+
+.titulo-forum {
+
+    width: 100%;
+    margin: 0;
+    height: 8rem;
+    padding: 3rem;
+    background-color: whitesmoke;
+}
+.titulo-forum h1 {
+
+    font-weight: 600;
+    font-size: 2.8rem;
+}
+.infos {
+    width: 100%;
+    height: auto;
+}
+.topicos {
+    width: 25%;
+    height: 30rem;
+    background-color: rgba(204, 153, 244, 1);
+}
+
+.topicos #selecionar {
+
+    display: flex;
+    padding: 1rem 1rem 0.6rem 1rem;
+    background-color: rgba(10, 66, 15, 1);
+}
+
+.topicos #selecionar div {
+
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: thistle;
+    margin-top: 10px;
+}
+
+.topicos #selecionar p {
+
+    color: whitesmoke;
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+.topicos h1 {
+    color: rgba(0, 0, 0, 0.5);
+    margin: 4rem;
+}
+
+.coments {
+    width: 70%;
+    margin-left: 3rem;
+    background-color: rgba(204, 153, 244, 1)
+    ;
+}
+
+.coments .opcoes {
+
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(10, 66, 15, 1); 
+    padding: 1rem 1rem 0.6rem 1rem;
+    color: black;
+    
+}
+.coments .opcoes .selects {
+
+    background-color:  rgba(204, 153, 244, 1); 
+    padding: 0.4rem;
+    margin: 0.5rem;
+}
+.coments .opcoes .button {
+
+    background-color:  rgba(204, 153, 244, 1); 
+    padding: 0.4rem;
+    margin: 0.5rem;
+}
+.coments .opcoes .filtros {
+
+    display: flex;
+
+}
+
+.coments .textos {
+
+    margin: 1rem;
+    width: 95%;
+    height: 3.6rem;
+    background-color: whitesmoke;
+}
+
+.coments .opcoes .filtros i {
+    margin-left: 0.4rem;
+   
+    font-size: 1.3rem;
+}
