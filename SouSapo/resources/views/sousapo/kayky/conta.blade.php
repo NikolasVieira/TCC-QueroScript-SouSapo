@@ -1,4 +1,6 @@
+@extends('layouts.footer')
 @extends('layouts.app')
+
 
 @section('content')
 
@@ -32,7 +34,7 @@
                 </div>
                 <div class="config">
                     <div class="avatar">
-                        
+
                     </div>
                     <div class="tema">
 

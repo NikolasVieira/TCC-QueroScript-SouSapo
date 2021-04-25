@@ -7,17 +7,7 @@
 
 #navbotao {
     margin: 3px;
-
 }
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--sapo);
-    text-align: center;
- }
 
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -30,8 +20,10 @@
   --sapo: #FFFACD;
   --sapao: #20B2AA;
   --sapinho: #DDA0DD;
+  --sapinho-escuro:#b380b3;
   --ra: #3CB371;
   --razinha: #FFD700;
+  --razinha-escura: #e0ac01;
 
   /*CORES DO BOOTSTRAP*/
   --blue: #3490dc;

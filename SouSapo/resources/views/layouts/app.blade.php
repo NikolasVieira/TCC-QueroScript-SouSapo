@@ -13,10 +13,12 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
+    <!-- Fontes -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -32,20 +34,22 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: var(--sapo);">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-sapo" aria-controls="nav-sapo" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                </div>
 
                 <!-- Logo e Titulo da NavBar -->
                 <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--sapao);">
-                    <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg"
+                        width="30" height="30" class="d-inline-block align-top" alt="">
                     SouSapo
                 </a>
 
+                <!-- Botão Responsivo -->
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navsapo"
+                    aria-controls="navsapo" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
                 <!-- Navbar -->
-                <nav id="nav-sapo" class="collapse navbar-collapse">
+                <div id="navsapo" class="collapse navbar-collapse">
                     <!-- Botôes da navbar -->
                     <ul class="nav navbar-nav mr-auto">
 
@@ -62,7 +66,7 @@
                         </li>
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ url('/apoio') }}" role="button">Apoiar</a>
+                            <a class="btn btn-sapinho" href="{{ url('/forum') }}" role="button">Fórum</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active">
@@ -107,19 +111,13 @@
                         </li>
                         @endguest
                     </ul>
-                </nav>
-            </div>
+                </div>
         </nav>
 
         <!-- CONTEUDO -->
-        <main class="pb-5">
+        <main class="pb-0">
             @yield('content')
         </main>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            <p>Footer</p>
-        </div>
 
     </div>
 </body>

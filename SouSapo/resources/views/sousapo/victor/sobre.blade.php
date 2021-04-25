@@ -1,4 +1,6 @@
+@extends('layouts.footer')
 @extends('layouts.app')
+
 @section('content')
 
 <link href="{{ asset('css/sobre.css') }}" rel="stylesheet">
