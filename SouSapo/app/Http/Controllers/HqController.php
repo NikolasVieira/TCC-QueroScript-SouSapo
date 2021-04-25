@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\HqRequest;
 use App\Models\Hq;
 
-
 class HqController extends Controller
 {
     public function index()
@@ -26,8 +25,8 @@ class HqController extends Controller
         $hq->hq_name        = $request->input('hq_name');
         $hq->chapter_number = $request->input('chapter_number');
         $hq->page_number    = $request->input('page_number');
-
         $hq->save();
+
         return redirect()->route('hq.index', compact('hq'));
     }
 
@@ -39,10 +38,10 @@ class HqController extends Controller
     public function edit($id)
     {
         $hq = Hq::find($id);
-        if(isset($hq)){
+        if (isset($hq)) {
             return view('sousapo.nikolas.hq.edit', compact('hq'));
         }
-            return view('sousapo.nikolas.hq.index');
+        return view('sousapo.nikolas.hq.index');
     }
 
     public function update(HqRequest $request, $id)
@@ -54,7 +53,7 @@ class HqController extends Controller
             $hq->page_number    = $request->input('page_number');
             $hq->save();
         }
-            return redirect()->route('hq.index', compact('hq'));
+        return redirect()->route('hq.index', compact('hq'));
     }
 
     public function destroy($id)

@@ -8,14 +8,11 @@ use App\Http\Controllers\HomeController;
 
 //PARTE DINÂMICA DAS ROTAS
 Auth::routes();
-Route::get('/home',                              [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //PARTE DO NIKOLAS
-Route::get('/capitulos',                         [HqController::class, 'index' ])->name('hq.index');
-Route::get('/hq/criar',                         [HqController::class, 'create'])->name('hq.create');
-Route::post('/hq/guardando',                     [HqController::class, 'store' ])->name('hq.store');
-Route::post('/hq/editar/{id}',                   [HqController::class, 'edit'  ])->name('hq.edit');
-Route::get('/ler/{chapter_number}/{page_number}',[HqController::class, 'show'  ])->name('hq.show');
+Route::resource('hq', HqController::class );
+Route::get('/capitulos', [HqController::class, 'index' ])->name('hq.index');
 
 Route::get('/', function () {
     return view('sousapo/nikolas/index');
@@ -24,7 +21,6 @@ Route::get('/', function () {
 Route::get('/apoio', function () {
     return view('/sousapo/nikolas/apoio');
 });
-
 
 //PARTE DO KAYKY
 Route::get('/forum', function () {

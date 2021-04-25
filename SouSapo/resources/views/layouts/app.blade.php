@@ -51,7 +51,7 @@
                     <ul class="nav navbar-nav mr-auto">
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ url('/hq') }}" role="button">Quadrinhos</a>
+                            <a class="btn btn-sapinho" href="{{ route('hq.index') }}" role="button">Quadrinhos</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active">
