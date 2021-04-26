@@ -1,8 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HqController;
+use App\Http\Controllers\HomeController;
 
 //ROTAS PARA TODAS AS PAGINAS CRIADAS ATÉ ENTÃO
+
+//PARTE DINÂMICA DAS ROTAS
+Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//PARTE DO NIKOLAS
+Route::resource('hq', HqController::class );
+Route::get('/capitulos', [HqController::class, 'index' ])->name('hq.index');
 
 Route::get('/', function () {
     return view('sousapo/nikolas/index');
@@ -12,10 +22,7 @@ Route::get('/apoio', function () {
     return view('/sousapo/nikolas/apoio');
 });
 
-Route::get('/hq', function () {
-    return view('/sousapo/nikolas/hq');
-});
-
+//PARTE DO KAYKY
 Route::get('/forum', function () {
     return view('/sousapo/kayky/forum');
 });
@@ -24,6 +31,11 @@ Route::get('/conta', function () {
     return view('/sousapo/kayky/conta');
 })->middleware('auth');
 
+Route::get('/conta', function () {
+    return view('/sousapo/kayky/conta');
+});
+
+//PARTE DO VICTOR
 Route::get('/sobre', function () {
     return view('/sousapo/victor/sobre');
 });
@@ -36,16 +48,7 @@ Route::get('/cadastrar', function () {
     return view('/sousapo/victor/cadastrar');
 });
 
-Route::get('/conta', function () {
-    return view('/sousapo/kayky/conta');
-});
-
+//PARTE GERAL
 Route::get('/laravel', function () {
     return view('welcome');
 });
-
-//PARTE DINÂMICA DAS ROTAS
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
