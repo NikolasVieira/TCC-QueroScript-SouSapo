@@ -1,4 +1,3 @@
-@extends('layouts.hqcontrols')
 @extends('layouts.app')
 
 @section('content')

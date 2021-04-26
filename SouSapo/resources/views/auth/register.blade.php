@@ -1,18 +1,20 @@
 @extends('layouts.footer')
 @extends('layouts.app')
 
+<link href="{{ asset('css/cadastrar.css') }}" rel="stylesheet">
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registrar-se') }}</div>
+                <div class="card-registro">{{ __('Registrar-se') }}</div>
 
-                <div class="card-body">
+                <div class="card-body card-color">
+                    <div class="card-preencher">{{ __('Preencha os campos abaixo para registrar sua conta') }}</div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        <hr>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
@@ -65,8 +67,8 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar-se') }}
+                                <button type="submit" class="btn-sapou btn-sapo">
+                                    {{ __('Criar Conta') }}
                                 </button>
                             </div>
                         </div>
