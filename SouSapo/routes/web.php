@@ -52,9 +52,3 @@ Route::get('/cadastrar', function () {
 Route::get('/laravel', function () {
     return view('welcome');
 });
-
-//TESTES
-Route::resource('/flipbook','rudrarajiv\flipbooklaravel\FlipBookController');
-Route::get('/flipbook/create', function () {
-    return view('rudrarajiv\flipbooklaravel\bookcreater');
-});

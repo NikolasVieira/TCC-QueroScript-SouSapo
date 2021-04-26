@@ -165,7 +165,6 @@ return [
         /*
          * Package Service Providers...
          */
-        'rudrarajiv\flipbooklaravel\FlipBookServiceProvider',
 
         /*
          * Application Service Providers...

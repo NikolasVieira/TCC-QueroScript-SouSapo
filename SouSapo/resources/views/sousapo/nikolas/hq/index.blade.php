@@ -8,8 +8,8 @@
     <br><br>
     <div class="row row-cols-1 row-cols-md-3">
         @foreach($hq as $hqs)
-        <div class="col-3">
-            <div class="card text-white bg-dark text-center h-99">
+        <div class="col-3 p-2">
+            <div class="card text-white bg-dark text-center h-100 p-3">
                 <img src="{{ asset('img/hq_marvel_capa.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $hqs->hq_name }}</h5>
