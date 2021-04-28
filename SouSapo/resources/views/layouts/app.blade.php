@@ -37,7 +37,7 @@
             <div class="container-fluid">
 
                 <!-- Logo e Titulo da NavBar -->
-                <a id="logo" class="navbar-brand" href="{{ url('/') }}" style="background-color: var(--sapao);">
+                <a id="logo" class="navbar-brand" href="{{ route('sousapo.index') }}" style="background-color: var(--sapao);">
                     <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg"
                         width="30" height="30" class="d-inline-block align-top" alt="">
                     SouSapo
@@ -59,19 +59,19 @@
                         </li>
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ url('/sobre') }}" role="button">Sobre</a>
+                            <a class="btn btn-sapinho" href="{{ route('sousapo.sobre') }}" role="button">Sobre</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ url('/apoio') }}" role="button">Apoiar</a>
+                            <a class="btn btn-sapinho" href="{{ route('sousapo.apoio') }}" role="button">Apoiar</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ url('/forum') }}" role="button">Fórum</a>
+                            <a class="btn btn-sapinho" href="{{ route('sousapo.forum') }}" role="button">Fórum</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ url('/comunidade') }}" role="button">Comunidade</a>
+                            <a class="btn btn-sapinho" href="{{ route('sousapo.comunidade') }}" role="button">Comunidade</a>
                         </li>
                     </ul>
 
@@ -100,6 +100,9 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('sousapo.conta') }}">
+                                    {{ __('minha conta') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                     {{ __('Sair') }}
@@ -145,12 +148,12 @@
                     <div class="sec quickLinks">
                         <h2>Links Rápidos</h2>
                         <ul>
-                            <li><a href="{{ url('/') }}">Inicio</a></li>
+                            <li><a href="{{ route('sousapo.index') }}">Inicio</a></li>
                             <li><a href="{{ route('hq.index') }}">Quadrinhos</a></li>
-                            <li><a href="{{ url('/sobre') }}">Sobre</a></li>
-                            <li><a href="{{ url('/apoio') }}">Apoiar</a></li>
-                            <li><a href="{{ url('/forum') }}">Fórum</a></li>
-                            <li><a href="{{ url('/comunidade') }}">Comunidade</a></li>
+                            <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
+                            <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
+                            <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>
+                            <li><a href="{{ route('sousapo.comunidade') }}">Comunidade</a></li>
                         </ul>
                     </div>
                     <div class="sec contato">
