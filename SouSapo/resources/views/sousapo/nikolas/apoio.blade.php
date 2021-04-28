@@ -6,7 +6,7 @@
     <div class="intro-content mt-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 align-self-center">
+          <div class="col-md-7 align-self-center">
             <h1 class="display-6 mb-2">Apoie o SouSapo.</h1>
             <p class="lead mb-4">
                 ALGUNS DOS BENEFICIOS DE SER UM APOIADOR:<br>
@@ -15,7 +15,7 @@
                 - Ter visibilidade aumentada na comunidade e no fórum.
             </p>
           </div><!-- /.col-md-6 -->
-          <div class="col-md-5 ml-auto">
+          <div class="col-md-4 ml-auto">
             <div class="card" style="background-color: var(--razinha);">
               <div class="card-body text-dark">
                 <form>
@@ -39,7 +39,7 @@
                 </form>
               </div>
             </div>
-          </div><!-- /.col-md-6 -->
+          </div><!-- /.col-md-4 -->
         </div>
       </div>
     </div>

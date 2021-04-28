@@ -146,7 +146,7 @@
                         <h2>Links Rápidos</h2>
                         <ul>
                             <li><a href="{{ url('/') }}">Inicio</a></li>
-                            <li><a href="{{ url('/hq') }}">Quadrinhos</a></li>
+                            <li><a href="{{ route('hq.index') }}">Quadrinhos</a></li>
                             <li><a href="{{ url('/sobre') }}">Sobre</a></li>
                             <li><a href="{{ url('/apoio') }}">Apoiar</a></li>
                             <li><a href="{{ url('/forum') }}">Fórum</a></li>

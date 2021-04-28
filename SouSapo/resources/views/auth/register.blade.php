@@ -1,4 +1,3 @@
-@extends('layouts.footer')
 @extends('layouts.app')
 
 <link href="{{ asset('css/cadastrar.css') }}" rel="stylesheet">
