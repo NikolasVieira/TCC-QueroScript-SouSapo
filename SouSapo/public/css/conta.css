@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(app.css);
+@import url(sousapo.css);
 
 *{
     font-family: Arial, Helvetica, sans-serif;
@@ -13,20 +13,20 @@ html {
 }
 
 .container-cont {
-    
+
     width: 100%;
     height: auto;
     padding: 3rem;
-    
+
 
 }
 .perfil {
     padding:1rem 0 1rem 8%;
-    
+
     background-color: white;
 }
 .config {
-    
+
     width: 80rem;
 }
 #foto {
@@ -93,28 +93,28 @@ form {
 }
 
 .form form #nome {
-  
+
     padding: .3rem;
 }
 
 .avatar {
     width: 80%;
-    
+
     height: 13rem;
     background-color: blueviolet;
     margin-left: 5rem;
-    
+
 }
 .tema {
     width: 80%;
-    
+
     height: 13rem;
     background-color: blueviolet;
     margin-left: 5rem;
     margin-top: 1.5rem;
 }
 @media(min-width: 1600px){
-    
+
     .form {
         height: 38rem ;
     }
@@ -127,19 +127,19 @@ form {
 
 }
 @media(max-width: 1270px){
-   
+
     .form form #frase{
 
        height: 65%;
     }
 
-    
+
 
 }
 @media(max-width: 1150px){
 
     .tema{
-        
+
         margin-left: 3.5rem;
 
     }
@@ -151,7 +151,7 @@ form {
     .form {
 
         padding:1rem 2.7rem 1rem 2.7rem;
-    
+
        }
 
 
@@ -159,7 +159,7 @@ form {
 
 
 @media(max-width: 1000px){
-  
+
     .minha-conta {
         font-size: 87,5%;
     }
@@ -178,7 +178,7 @@ form {
      .avatar {
         width: 100%;
         margin: 0;
-        
+
      }
      .config {
          width: 90%;
@@ -191,11 +191,11 @@ form {
         margin: 0 auto 1.8rem;
         padding: 1.2rem 2.7rem 1.2rem 3rem;
         max-width: 37rem;
-        
+
     }
 
     .form form input {
-         
+
         max-width: 500px;
     }
     .form form #frase {
@@ -205,8 +205,8 @@ form {
 }
 
 @media(max-width: 520px){
- 
-    .form form #frase{ 
+
+    .form form #frase{
         height: 60%;
     }
    .form {
@@ -222,23 +222,23 @@ form {
 
 @media(max-width: 475px){
 
-    .form form #frase{ 
+    .form form #frase{
         height: 55%;
     }
     .form {
 
         padding:1.1rem 2.5rem 0 2.5rem;
-    
+
        }
 
 }
 @media(max-width: 390px){
-   
+
     .form {
         height: 23rem;
         padding: 0 1rem 0 1rem;
     }
-    
+
 }
 
 

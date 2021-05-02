@@ -18,8 +18,9 @@
                         Numero do Capitulo: {{ $hqs->chapter_number }}<br>
                         Numero de Paginas: {{ $hqs->page_number }}</p>
                     <div class="card-footer">
-                        <a href="{{ route('hq.edit',$hqs->id)}}" class="btn btn-primary">Editar</a>
-                        <a href="{{ route('hq.show',$hqs->id)}}" class="btn btn-success">ler</a>
+                        <a href="{{ route('hq.edit',$hqs->id)}}" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="{{ route('hq.show',$hqs->id)}}" class="btn btn-success btn-sm">ler</a>
+                        <a href="{{ route('hq.destroy',['id'=>$hqs->id])}}" class="btn btn-danger btn-sm">Remover</a>
                     </div>
                 </div>
             </div>
