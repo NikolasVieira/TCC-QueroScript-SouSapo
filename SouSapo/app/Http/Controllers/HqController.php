@@ -32,7 +32,8 @@ class HqController extends Controller
 
     public function show($id)
     {
-        $hq = Hq::all();
+
+        $hq = Hq::where('id', $id)->first();
         return view('sousapo.hq.show', compact('hq'));
     }
 

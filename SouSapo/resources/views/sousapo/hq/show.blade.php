@@ -3,12 +3,12 @@
 @section('content')
 <h1>AQUI VAI SER A PAGINA PARA LER O CAPITULO ESCOLHIDO DA HQ</h1>
 
-@foreach($hq as $hqs)
+@if ($hq)
 <p>
-Id do Capitulo: {{ $hqs->id }}<br>
-Numero do Capitulo: {{ $hqs->chapter_number }}<br>
-Numero de Paginas: {{ $hqs->page_number }}</p>
+Id do Capitulo: {{ $hq->id }}<br>
+Numero do Capitulo: {{ $hq->chapter_number }}<br>
+Numero de Paginas: {{ $hq->page_number }}</p>
 </p>
-@endforeach
+@endif
 
 @endsection
