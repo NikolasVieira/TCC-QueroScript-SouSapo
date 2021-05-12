@@ -16,7 +16,7 @@
                         Numero do Capitulo: {{ $hqs->chapter_number }}<br>
                         Numero de Paginas: {{ $hqs->page_number }}</p>
                     <div class="card-footer">
-                        <a href="{{ route('hq.show',$hqs->id)}}" class="btn btn-sapinho">Ler</a>
+                        <a href="{{ route('sousapo.ler')}}" class="btn btn-sapinho">Ler</a>
                     </div>
                 </div>
             </div>

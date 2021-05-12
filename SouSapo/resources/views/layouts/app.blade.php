@@ -54,24 +54,25 @@
                     <!-- Botôes da navbar -->
                     <ul class="nav navbar-nav mr-auto">
 
-                        <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ route('hq.capitulos') }}" role="button">Quadrinhos</a>
+                        <li id="navbotao" class="nav-item active ml-2">
+                            <a class="btn btn-sapinho" href="{{ route('sousapo.capitulos') }}" role="button">Quadrinhos</a>
                         </li>
 
-                        <li id="navbotao" class="nav-item active">
+                        <li id="navbotao" class="nav-item active ml-2">
                             <a class="btn btn-sapinho" href="{{ route('sousapo.sobre') }}" role="button">Sobre</a>
                         </li>
 
-                        <li id="navbotao" class="nav-item active">
+                        <li id="navbotao" class="nav-item active ml-2">
                             <a class="btn btn-sapinho" href="{{ route('sousapo.apoio') }}" role="button">Apoiar</a>
                         </li>
 
-                        <li id="navbotao" class="nav-item active">
+                        <li id="navbotao" class="nav-item active ml-2">
                             <a class="btn btn-sapinho" href="{{ route('sousapo.forum') }}" role="button">Fórum</a>
                         </li>
 
-                        <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ route('sousapo.comunidade') }}" role="button">Comunidade</a>
+                        <li id="navbotao" class="nav-item active ml-2">
+                            <a class="btn btn-sapinho" href="{{ route('sousapo.comunidade') }}"
+                                role="button">Comunidade</a>
                         </li>
                     </ul>
 
@@ -81,13 +82,13 @@
                         @guest
 
                         @if (Route::has('login'))
-                        <li id="navbotao" class="nav-item">
+                        <li id="navbotao" class="nav-item mr-2">
                             <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
-                        <li id="navbotao" class="nav-item">
+                        <li id="navbotao" class="nav-item mr-2">
                             <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                         </li>
                         @endif

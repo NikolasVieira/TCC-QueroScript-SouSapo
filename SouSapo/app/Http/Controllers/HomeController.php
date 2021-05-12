@@ -13,6 +13,6 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('sousapo.index');
+        return view('sousapo.telas.index');
     }
 }

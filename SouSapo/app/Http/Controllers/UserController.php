@@ -12,11 +12,8 @@ class UserController extends Controller
     public function show()
     {
         $user = User::all();
-        
+
         return view('', compact('user'));
     }
-   
-  
-   
-    
+
 }

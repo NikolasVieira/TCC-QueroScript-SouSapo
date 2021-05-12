@@ -29,7 +29,7 @@ footer {
 
  footer .container h2 {
     position: relative;
-    color: var(--sapinho-escuro);
+    color: var(--sapinho);
     font-weight: 500;
     margin-bottom: 15px;
 }
@@ -81,7 +81,7 @@ footer p {
 }
 
 .sci li a:hover {
-    background: var(--razinha-escura);
+    background: var(--ra);
 }
 .sci li a .fa {
     color: var(--sapo);

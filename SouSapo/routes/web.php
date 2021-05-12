@@ -19,16 +19,15 @@ Route::view('/conta', 'sousapo.telas.conta')->name('sousapo.conta');
 Route::view('/sobre', 'sousapo.telas.sobre')->name('sousapo.sobre');
 Route::view('/comunidade', 'sousapo.telas.comunidade')->name('sousapo.comunidade');
 Route::view('/cadastrar', 'sousapo.telas.cadastrar')->name('sousapo.cadastrar');
-
-//ROTAS HQ
-Route::resource('dashboard/hq', HqController::class );
-Route::get('/capitulos', [HqController::class, 'capitulos' ])->name('hq.capitulos');
-Route::get('hq/delete/{id}', [HqController::class, 'destroy' ])->name('hq.destroy');
+Route::get('/capitulos', [HqController::class, 'capitulos' ])->name('sousapo.capitulos');
+Route::view('/lendo', 'sousapo.telas.ler')->name('sousapo.ler');
 
 //DASHBOARD
-Route::resource('/dashboard', DashboardController::class);
-Route::get('/dashboard', [DashboardController::class, 'index' ])->name('sousapo.dashboard');
+Route::resource('/dashboard',    DashboardController::class);
+Route::resource('/dashboard/hq', HqController::class );
+Route::get('/dashboard/home', [DashboardController::class, 'index' ])->name('sousapo.dashboard');
+Route::get('/dashboard/hq/delete/{id}', [HqController::class, 'destroy' ])->name('hq.destroy');
 
 //TESTES
-Route::view('form','sousapo.upload.form');
-Route::post('upload', [UploadController::class, 'upload' ])->name('upload');
+Route::view('/form','sousapo.upload.form');
+Route::post('/upload', [UploadController::class, 'upload' ])->name('upload');
