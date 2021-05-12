@@ -7,6 +7,12 @@ use App\Models\Hq;
 
 class HqController extends Controller
 {
+    public function capitulos()
+    {
+        $hq = Hq::all();
+        return view('sousapo.hq.capitulos', compact('hq'));
+    }
+
     public function index()
     {
         $hq = Hq::all();
@@ -32,7 +38,6 @@ class HqController extends Controller
 
     public function show($id)
     {
-
         $hq = Hq::where('id', $id)->first();
         return view('sousapo.hq.show', compact('hq'));
     }
@@ -64,6 +69,6 @@ class HqController extends Controller
         if (isset($hq)) {
             $hq->delete();
         }
-            return redirect()->route('hq.index');
+        return redirect()->route('hq.index');
     }
 }

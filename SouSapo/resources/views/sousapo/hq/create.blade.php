@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
 AQUI VAI SER A PAGINA PARA ADICIONAR AS HQS

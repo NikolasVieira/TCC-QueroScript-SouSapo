@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
 <h1>AQUI VAI SER A PAGINA PARA LER O CAPITULO ESCOLHIDO DA HQ</h1>

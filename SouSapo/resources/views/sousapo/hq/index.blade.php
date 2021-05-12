@@ -1,31 +1,38 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
-    <h2>AQUI VAI SER A PAGINA PARA VER E SELECIONAR OS CAPITULOS DA HQ</h2>
+    <br>
+    <h2>CRUD DA HQ</h2>
     <hr />
     <a href="{{ route('hq.create') }}" class="btn btn-success">Novo Capitulo</a>
     <br><br>
-    <div class="row row-cols-1 row-cols-md-3">
-        @foreach($hq as $hqs)
-        <div class="col-3 p-2">
-            <div class="card text-white bg-dark text-center h-100 p-3">
-                <img src="{{ asset('img/hq_marvel_capa.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $hqs->hq_name }}</h5>
-                    <p class="card-text">
-                        Id do Capitulo: {{ $hqs->id }}<br>
-                        Numero do Capitulo: {{ $hqs->chapter_number }}<br>
-                        Numero de Paginas: {{ $hqs->page_number }}</p>
-                    <div class="card-footer">
-                        <a href="{{ route('hq.edit',$hqs->id)}}" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="{{ route('hq.show',$hqs->id)}}" class="btn btn-success btn-sm">ler</a>
-                        <a href="{{ route('hq.destroy',['id'=>$hqs->id])}}" class="btn btn-danger btn-sm">Remover</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Nome do Capitulo</th>
+                <th scope="col">Número do Capitulo</th>
+                <th scope="col">Número de Paginas</th>
+                <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($hq as $hqs)
+            <tr>
+                <th scope="row">{{ $hqs->id }}</th>
+                <td>{{ $hqs->hq_name }}</td>
+                <td>{{ $hqs->chapter_number }}</td>
+                <td>{{ $hqs->page_number }}</td>
+                <td>
+                    <a href="{{ route('hq.edit',$hqs->id)}}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{{ route('hq.show',$hqs->id)}}" class="btn btn-success btn-sm">ler</a>
+                    <a href="{{ route('hq.destroy',['id'=>$hqs->id])}}" class="btn btn-danger btn-sm">Remover</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
+
 @endsection

@@ -55,7 +55,7 @@
                     <ul class="nav navbar-nav mr-auto">
 
                         <li id="navbotao" class="nav-item active">
-                            <a class="btn btn-sapinho" href="{{ route('hq.index') }}" role="button">Quadrinhos</a>
+                            <a class="btn btn-sapinho" href="{{ route('hq.capitulos') }}" role="button">Quadrinhos</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active">
@@ -102,6 +102,9 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('sousapo.conta') }}">
                                     {{ __('minha conta') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('sousapo.dashboard') }}">
+                                    {{ __('dashboard') }}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

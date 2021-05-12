@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\Admin\DashboardController;
+use PhpParser\Node\Stmt\Return_;
 
 //PARTE DINÂMICA DAS ROTAS
 Auth::routes();
@@ -19,10 +21,16 @@ Route::view('/comunidade', 'sousapo.comunidade')->name('sousapo.comunidade');
 Route::view('/cadastrar', 'sousapo.cadastrar')->name('sousapo.cadastrar');
 
 //ROTAS HQ
-Route::resource('/hq', HqController::class );
-Route::get('/capitulos', [HqController::class, 'index' ])->name('hq.index');
+Route::resource('dashboard/hq', HqController::class );
+Route::get('/capitulos', [HqController::class, 'capitulos' ])->name('hq.capitulos');
 Route::get('hq/delete/{id}', [HqController::class, 'destroy' ])->name('hq.destroy');
+
+//DASHBOARD
+Route::resource('/dashboard', DashboardController::class);
+Route::get('/dashboard', [DashboardController::class, 'index' ])->name('sousapo.dashboard');
 
 //TESTES
 Route::view('form','sousapo.upload.form');
 Route::post('upload', [UploadController::class, 'upload' ])->name('upload');
+
+
