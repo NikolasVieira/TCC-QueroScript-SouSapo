@@ -12,13 +12,13 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //VIEWS SOUSAPO
-Route::view('/', 'sousapo.index')->name('sousapo.index');
-Route::view('/apoio', 'sousapo.apoio')->name('sousapo.apoio');
-Route::view('/forum', 'sousapo.forum')->name('sousapo.forum');
-Route::view('/conta', 'sousapo.conta')->name('sousapo.conta');
-Route::view('/sobre', 'sousapo.sobre')->name('sousapo.sobre');
-Route::view('/comunidade', 'sousapo.comunidade')->name('sousapo.comunidade');
-Route::view('/cadastrar', 'sousapo.cadastrar')->name('sousapo.cadastrar');
+Route::view('/', 'sousapo.telas.index')->name('sousapo.index');
+Route::view('/apoio', 'sousapo.telas.apoio')->name('sousapo.apoio');
+Route::view('/forum', 'sousapo.telas.forum')->name('sousapo.forum');
+Route::view('/conta', 'sousapo.telas.conta')->name('sousapo.conta');
+Route::view('/sobre', 'sousapo.telas.sobre')->name('sousapo.sobre');
+Route::view('/comunidade', 'sousapo.telas.comunidade')->name('sousapo.comunidade');
+Route::view('/cadastrar', 'sousapo.telas.cadastrar')->name('sousapo.cadastrar');
 
 //ROTAS HQ
 Route::resource('dashboard/hq', HqController::class );
@@ -32,5 +32,3 @@ Route::get('/dashboard', [DashboardController::class, 'index' ])->name('sousapo.
 //TESTES
 Route::view('form','sousapo.upload.form');
 Route::post('upload', [UploadController::class, 'upload' ])->name('upload');
-
-
