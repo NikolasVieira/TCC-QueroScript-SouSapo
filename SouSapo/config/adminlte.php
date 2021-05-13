@@ -251,7 +251,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'HQ',
-                    'url'  => 'dashboard/hq',
+                    'url'  => '/hq',
                 ],
                 [
                     'text'    => 'COMUNIDADE',

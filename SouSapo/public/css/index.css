@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import url(app.css);
+
+figure {
+    min-width: 320px;
+    margin: auto;
+}
+
+video {
+    width: 100%
+}
+
+#novidades {
+    margin-top: 2rem;
+    padding: 10px
+}
+#header {
+    margin-left: 100px;
+    margin-right: 100px;
+    border-top: 1px solid var(--razinha);
+    font-weight: bold;
+    font-size: .875rem;
+    text-transform: uppercase;
+}
+
+#head {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: var(--razinha);
+}

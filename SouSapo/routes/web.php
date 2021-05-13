@@ -5,6 +5,7 @@ use App\Http\Controllers\HqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\LoginController;
 use PhpParser\Node\Stmt\Return_;
 
 //PARTE DINÂMICA DAS ROTAS
@@ -23,10 +24,10 @@ Route::get('/capitulos', [HqController::class, 'capitulos' ])->name('sousapo.cap
 Route::view('/lendo', 'sousapo.telas.ler')->name('sousapo.ler');
 
 //DASHBOARD
-Route::resource('/dashboard',    DashboardController::class);
-Route::resource('/dashboard/hq', HqController::class );
-Route::get('/dashboard/home', [DashboardController::class, 'index' ])->name('sousapo.dashboard');
-Route::get('/dashboard/hq/delete/{id}', [HqController::class, 'destroy' ])->name('hq.destroy');
+Route::resource('/dashboard', DashboardController::class)->middleware('auth');
+Route::resource('/hq', HqController::class )->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index' ])->name('sousapo.dashboard')->middleware('auth');
+Route::get('/dashboard/hq/delete/{id}', [HqController::class, 'destroy' ])->name('hq.destroy')->middleware('auth');
 
 //TESTES
 Route::view('/form','sousapo.upload.form');

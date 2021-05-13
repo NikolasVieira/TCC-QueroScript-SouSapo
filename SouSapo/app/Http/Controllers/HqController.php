@@ -16,13 +16,13 @@ class HqController extends Controller
     public function index()
     {
         $hq = Hq::all();
-        return view('sousapo.dashboard.hq.index', compact('hq'));
+        return view('sousapo.admin.hq.index', compact('hq'));
     }
 
     public function create()
     {
         $hq = Hq::all();
-        return view('sousapo.dashboard.hq.create', compact('hq'));
+        return view('sousapo.admin.hq.create', compact('hq'));
     }
 
     public function store(HqRequest $request)
@@ -39,16 +39,16 @@ class HqController extends Controller
     public function show($id)
     {
         $hq = Hq::where('id', $id)->first();
-        return view('sousapo.dashboard.hq.show', compact('hq'));
+        return view('sousapo.admin.hq.show', compact('hq'));
     }
 
     public function edit($id)
     {
         $hq = Hq::find($id);
         if (isset($hq)) {
-            return view('sousapo.dashboard.hq.edit', compact('hq'));
+            return view('sousapo.admin.hq.edit', compact('hq'));
         }
-        return view('sousapo.dashboard.hq.index');
+        return view('sousapo.admin.hq.index');
     }
 
     public function update(HqRequest $request, $id)
