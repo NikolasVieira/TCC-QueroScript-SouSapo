@@ -5,9 +5,9 @@
 
 @if ($hq)
 <p>
-Id do Capitulo: {{ $hq->id }}<br>
-Numero do Capitulo: {{ $hq->chapter_number }}<br>
-Numero de Paginas: {{ $hq->page_number }}</p>
+    Id do Capitulo: {{ $hq->id }}<br>
+    Numero do Capitulo: {{ $hq->chapter_number }}<br>
+    Numero de Paginas: {{ $hq->page_number }}</p>
 </p>
 @endif
 

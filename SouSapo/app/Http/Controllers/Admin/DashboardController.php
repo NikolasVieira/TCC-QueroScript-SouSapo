@@ -11,6 +11,6 @@ class DashboardController extends Controller
     public function index()
     {
         $user = User::all();
-        return view('sousapo.admin.dashboard', compact('user'));
+        return view('admin.dashboard', compact('user'));
     }
 }

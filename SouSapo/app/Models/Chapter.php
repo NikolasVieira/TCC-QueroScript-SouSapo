@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HqPages extends Model
+class Chapter extends Model
 {
     protected $fillable = [
+        'chapter_name',
         'chapter_number',
-        'path',
+        'pages',
     ];
+
 }

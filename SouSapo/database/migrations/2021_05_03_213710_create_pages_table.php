@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHqsPagesTable extends Migration
+class CreatePagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateHqsPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('hqs_pages', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->id();
+            $table->string('chapter_number');
+            $table->string('page_number');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateHqsPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hqs_pages');
+        Schema::dropIfExists('pages');
     }
 }

@@ -2,6 +2,6 @@
 
 @section('content')
 
-
+ola mundo
 
 @endsection

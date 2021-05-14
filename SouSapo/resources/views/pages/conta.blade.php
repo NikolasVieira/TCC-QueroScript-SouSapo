@@ -9,10 +9,7 @@
         <div id="foto"></div>
         <p>nome do usuario</p>
         <p>frase do usuario</p>
-
         <h1>configuração</h1>
-
-
         <a href="">sobre mim</a>
         <a href="#">notificação</a>
         <a href="#">privacidade</a>
