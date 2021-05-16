@@ -12,6 +12,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Fontes -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -82,42 +89,42 @@
                         <!-- Links de autenticação -->
                         @guest
 
-                        @if (Route::has('login'))
-                        <li id="navbotao" class="nav-item mr-2">
-                            <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif
+                            @if (Route::has('login'))
+                                <li id="navbotao" class="nav-item mr-2">
+                                    <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
 
-                        @if (Route::has('register'))
-                        <li id="navbotao" class="nav-item mr-2">
-                            <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
-                        </li>
-                        @endif
+                            @if (Route::has('register'))
+                                <li id="navbotao" class="nav-item mr-2">
+                                    <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                                </li>
+                            @endif
 
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('sousapo.conta') }}">
-                                    {{ __('minha conta') }}
-                                </a>
-                                <a class="dropdown-item" href="{{ route('sousapo.dashboard') }}">
-                                    {{ __('dashboard') }}
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Sair') }}
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('sousapo.conta') }}">
+                                        {{ __('minha conta') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('sousapo.dashboard') }}">
+                                        {{ __('dashboard') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Sair') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -130,61 +137,62 @@
 
         <!-- FOOTER -->
         @section('footer_padrao')
-        <div id="footer">
-            <footer>
-                <div class="container">
-                    <div class="sec sobrenos">
-                        <h2>Sobre Nós</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus nam odio magni incidunt
-                            iste
-                            dolore molestias, hic ipsa porro obcaecati reprehenderit, repudiandae nulla eaque deleniti
-                            recusandae dignissimos id omnis corrupti?</p>
-                        <ul class="sci">
-                            <li><a class="facebook" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i>
-                                </a></li>
-                            <li><a class="instagram" href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
-                                </a></li>
-                            <li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
-                                </a></li>
-                            <li><a class="youtube" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i>
-                                </a></li>
-                        </ul>
+            <div id="footer">
+                <footer>
+                    <div class="container">
+                        <div class="sec sobrenos">
+                            <h2>Sobre Nós</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus nam odio magni incidunt
+                                iste
+                                dolore molestias, hic ipsa porro obcaecati reprehenderit, repudiandae nulla eaque deleniti
+                                recusandae dignissimos id omnis corrupti?</p>
+                            <ul class="sci">
+                                <li><a class="facebook" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                    </a></li>
+                                <li><a class="instagram" href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a></li>
+                                <li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a></li>
+                                <li><a class="youtube" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="sec quickLinks">
+                            <h2>Links Rápidos</h2>
+                            <ul>
+                                <li><a href="{{ route('sousapo.index') }}">Inicio</a></li>
+                                <li><a href="{{ route('hq.index') }}">Quadrinhos</a></li>
+                                <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
+                                <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
+                                <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>
+                                <li><a href="{{ route('sousapo.comunidade') }}">Comunidade</a></li>
+                            </ul>
+                        </div>
+                        <div class="sec contato">
+                            <h2>Informações e Contato</h2>
+                            <ul class="info">
+                                <li>
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                    <span>R. Lúcio Sarti, 809 <br>Parque Eldorado, Bebedouro <br>SP, 14706-120</span>
+                                </li>
+                                <li>
+                                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                    <p><a href="tel:551733439695">+55 (17)3343-9695</a><br>
+                                        <a href="tel:12345678900">+1 (23)4567-8900</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                    <p><a href="mailto:quemleuperdeu@hotmail.com">quemleuperdeu@hotmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="sec quickLinks">
-                        <h2>Links Rápidos</h2>
-                        <ul>
-                            <li><a href="{{ route('sousapo.index') }}">Inicio</a></li>
-                            <li><a href="{{ route('hq.index') }}">Quadrinhos</a></li>
-                            <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
-                            <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
-                            <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>
-                            <li><a href="{{ route('sousapo.comunidade') }}">Comunidade</a></li>
-                        </ul>
-                    </div>
-                    <div class="sec contato">
-                        <h2>Informações e Contato</h2>
-                        <ul class="info">
-                            <li>
-                                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                <span>R. Lúcio Sarti, 809 <br>Parque Eldorado, Bebedouro <br>SP, 14706-120</span>
-                            </li>
-                            <li>
-                                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                <p><a href="tel:551733439695">+55 (17)3343-9695</a><br>
-                                    <a href="tel:12345678900">+1 (23)4567-8900</a></p>
-                            </li>
-                            <li>
-                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                <p><a href="mailto:quemleuperdeu@hotmail.com">quemleuperdeu@hotmail.com</a></p>
-                            </li>
-                        </ul>
-                    </div>
+                </footer>
+                <div class="copyrightText">
+                    <p>Copyright © 2021 QueroScripts. All Rights Reserved.</p>
                 </div>
-            </footer>
-            <div class="copyrightText">
-                <p>Copyright © 2021 QueroScripts. All Rights Reserved.</p>
             </div>
-        </div>
         @show
     </div>
 </body>
