@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Hq;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\HqRequest;
-use Illuminate\Http\Request;
 use App\Models\Chapter;
 use App\Models\Page;
 

@@ -24,8 +24,9 @@ Route::view('/lendo', 'pages.ler')->name('sousapo.ler');
 
 //DASHBOARD
 Route::resource('/dashboard', DashboardController::class)->middleware('auth');
-Route::resource('/hq', HqController::class)->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('sousapo.dashboard')->middleware('auth');
+
+Route::resource('/hq', HqController::class)->middleware('auth');
 Route::get('/dashboard/hq/delete/{id}', [HqController::class, 'destroy'])->name('hq.destroy')->middleware('auth');
 
 //TESTES

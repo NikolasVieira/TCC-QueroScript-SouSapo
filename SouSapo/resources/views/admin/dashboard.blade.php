@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('adminlte::page')
 
 @section('content')
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
 <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data">

@@ -1,20 +1,21 @@
-@extends('layouts.dashboard')
+@extends('adminlte::page')
 
 @section('content')
-AQUI VAI SER A PAGINA PARA ADICIONAR AS HQS
+<a href="{{ route('hq.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+<h3>AQUI VAI SER A PAGINA PARA ADICIONAR OS CAPITULOS</h3>
 <br>
-OBS: Só vai ser visivel aos adms
+<hr>
 <div class="container">
-    <form id="frmhq" name="frmhq" action="{{ route('hq.store') }}" method="POST">
+    <form id="frmchapter" name="frmchapter" action="{{ route('hq.store') }}" method="POST">
         @csrf
         <div class="row">
             <div class="form-group col">
-                <label for="hq_name">Titulo do Capitulo</label>
-                <input type="text" class="form-control {{ $errors->has('hq_name') ? 'is-invalid' : ''}}" id="hq_name"
-                    name="hq_name" placeholder="Informe o titulo desse capitulo">
-                @if ($errors->has('hq_name'))
+                <label for="chapter_name">Titulo do Capitulo</label>
+                <input type="text" class="form-control {{ $errors->has('chapter_name') ? 'is-invalid' : ''}}"
+                    id="chapter_name" name="chapter_name" placeholder="Informe o titulo desse capitulo">
+                @if ($errors->has('chapter_name'))
                 <div class="invalid-feedback">
-                    {{$errors->first('hq_name','Atenção o campo é obrigatório!')}}
+                    {{$errors->first('chapter_name','Atenção o campo é obrigatório!')}}
                 </div>
                 @endif
             </div>
@@ -33,13 +34,12 @@ OBS: Só vai ser visivel aos adms
 
         <div class="row">
             <div class="form-group col">
-                <label for="page_number">Numero de Paginas</label>
-                <input type="number" class="form-control {{ $errors->has('page_number') ? 'is-invalid' : ''}}"
-                    id="page_number" name="page_number"
-                    placeholder="Informe o Número de paginas que terão nesse Capitulo">
-                @if ($errors->has('page_number'))
+                <label for="pages">Numero de Paginas</label>
+                <input type="number" class="form-control {{ $errors->has('pages') ? 'is-invalid' : ''}}" id="pages"
+                    name="pages" placeholder="Informe o Número de paginas que terão nesse Capitulo">
+                @if ($errors->has('pages'))
                 <div class="invalid-feedback">
-                    {{$errors->first('page_number','Atenção o campo é obrigatório!')}}
+                    {{$errors->first('pages','Atenção o campo é obrigatório!')}}
                 </div>
                 @endif
             </div>
