@@ -14,9 +14,9 @@ class HqRequest extends FormRequest
     public function rules()
     {
         return [
-            'hq_name' => 'required',
+            'chapter_name' => 'required',
             'chapter_number' => 'required',
-            'page_number' => 'required'
+            'pages' => 'required'
         ];
     }
 }
