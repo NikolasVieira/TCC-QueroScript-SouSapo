@@ -1,8 +1,9 @@
 @extends('adminlte::page')
 
 @section('content')
-<h1>AQUI VAI SER A PAGINA PARA LER O CAPITULO ESCOLHIDO DA HQ</h1>
-
+<h2>PREVIEW DO CAPITULO</h2>
+<hr />
+<a href="{{ route('chapter.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 @if ($chapter)
 <p>
     Id do Capitulo: {{ $chapter->id }}<br>

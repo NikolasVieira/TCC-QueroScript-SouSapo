@@ -62,7 +62,7 @@
                     <ul class="nav navbar-nav mr-auto">
 
                         <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{ route('sousapo.capitulos') }}"
+                            <a class="btn btn-sapinho" href="{{ route('sousapo.quadrinhos') }}"
                                 role="button">Quadrinhos</a>
                         </li>
 
@@ -161,7 +161,7 @@
                             <h2>Links Rápidos</h2>
                             <ul>
                                 <li><a href="{{ route('sousapo.index') }}">Inicio</a></li>
-                                <li><a href="{{ route('hq.index') }}">Quadrinhos</a></li>
+                                <li><a href="{{ route('sousapo.quadrinhos') }}">Quadrinhos</a></li>
                                 <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
                                 <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
                                 <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>

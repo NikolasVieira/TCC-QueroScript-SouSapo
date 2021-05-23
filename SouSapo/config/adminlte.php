@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Dashboard SouSapo',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Sou</b>Sapo',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -225,14 +225,9 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
+            'text' => 'Procurar',
             'search' => true,
             'topnav' => true,
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
         ],
         ['header' => 'account_settings'],
         [
@@ -245,21 +240,44 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Configurações do Site'],
         [
             'text'    => 'CRUDS',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
                     'text' => 'HQ',
-                    'url'  => '/hq',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'submenu' => [
+                        [
+                            'text' => 'Capitulos',
+                            'url'  => '/chapters',
+                        ],
+                        [
+                            'text'    => 'Paginas',
+                            'url'     => '/pages',
+                        ],
+                    ],
                 ],
                 [
                     'text'    => 'COMUNIDADE',
-                    'url'     => '#',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'submenu' => [
+                        [
+                            'text' => 'Comunidade',
+                            'url'  => '#',
+                        ],
+                    ],
                 ],
                 [
                     'text' => 'FÓRUM',
-                    'url'  => '#',
+                    'icon'    => 'fas fa-fw fa-share',
+                    'submenu' => [
+                        [
+                            'text' => 'Fórum',
+                            'url'  => '#',
+                        ],
+                    ],
                 ],
             ],
         ],

@@ -1,21 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Hq;
+namespace App\Http\Controllers\Admin\Hq;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\HqRequest;
+use Illuminate\Http\Request;
 use App\Models\Chapter;
-use App\Models\Page;
 
-class HqController extends Controller
+class ChapterController extends Controller
 {
-    public function capitulos()
-    {
-        $page = Page::all();
-        $chapter = Chapter::all();
-        return view('pages.capitulos', compact('chapter', 'page'));
-    }
-
     public function index()
     {
         $chapter = Chapter::all();
@@ -28,7 +20,7 @@ class HqController extends Controller
         return view('admin.hq.chapter.create', compact('chapter'));
     }
 
-    public function store(HqRequest $request)
+    public function store(Request $request)
     {
         $chapter = new Chapter();
         $chapter->chapter_name = $request->input('chapter_name');
@@ -36,7 +28,7 @@ class HqController extends Controller
         $chapter->pages = $request->input('pages');
         $chapter->save();
 
-        return redirect()->route('hq.index', compact('chapter'));
+        return redirect()->route('chapter.index', compact('chapter'));
     }
 
     public function show($id)
@@ -54,7 +46,7 @@ class HqController extends Controller
         return view('admin.hq.chapter.index');
     }
 
-    public function update(HqRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $chapter = Chapter::find($id);
         if (isset($chapter)) {
@@ -63,7 +55,7 @@ class HqController extends Controller
             $chapter->pages = $request->input('pages');
             $chapter->save();
         }
-        return redirect()->route('hq.index', compact('chapter'));
+        return redirect()->route('chapter.index', compact('chapter'));
     }
 
     public function destroy($id)
@@ -72,6 +64,6 @@ class HqController extends Controller
         if (isset($chapter)) {
             $chapter->delete();
         }
-        return redirect()->route('hq.index');
+        return redirect()->route('chapter.index');
     }
 }
