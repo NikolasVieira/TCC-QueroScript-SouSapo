@@ -11,7 +11,7 @@
                     <p class="lead mb-4">
                         ALGUNS DOS BENEFICIOS DE SER UM APOIADOR:<br>
                         - PDFs para ler e compartilhar com quem quiser<br>
-                        - Ter seu nome no mural dos apoiadores<br>
+                        - Acesso as Concept Arts da HQ<br>
                         - Ter visibilidade aumentada na comunidade e no fórum.
                     </p>
                 </div><!-- /.col-md-6 -->

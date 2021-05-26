@@ -1,6 +1,11 @@
 @extends('adminlte::page')
 
 @section('content')
+<style>
+    #pag {
+        height: 10rem;
+    }
+</style>
     <h2>CRUD DAS PAGINAS</h2>
     <hr />
     <a href="{{ route('page.create') }}" class="btn btn-success">Nova Pagina</a>
@@ -9,6 +14,7 @@
         <thead>
             <tr>
                 <th scope="col">#Id</th>
+                <th scope="col">Página</th>
                 <th scope="col">Número do Capitulo</th>
                 <th scope="col">Número da Pagina</th>
                 <th scope="col">Caminho</th>
@@ -19,6 +25,7 @@
             @foreach($page as $pages)
             <tr>
                 <th scope="row">{{ $pages->id }}</th>
+                <td><img src="{{ asset('storage') }}/{{ $pages->path }}" alt="img" id="pag"></td>
                 <td>{{ $pages->chapter_number }}</td>
                 <td>{{ $pages->page_number }}</td>
                 <td>{{ $pages->path }}</td>

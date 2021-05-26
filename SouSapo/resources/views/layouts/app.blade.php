@@ -110,10 +110,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('sousapo.conta') }}">
-                                        {{ __('minha conta') }}
+                                        {{ __('Minha Conta') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('sousapo.dashboard') }}">
-                                        {{ __('dashboard') }}
+                                        {{ __('Dashboard') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -142,10 +142,7 @@
                     <div class="container">
                         <div class="sec sobrenos">
                             <h2>Sobre Nós</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus nam odio magni incidunt
-                                iste
-                                dolore molestias, hic ipsa porro obcaecati reprehenderit, repudiandae nulla eaque deleniti
-                                recusandae dignissimos id omnis corrupti?</p>
+                            <p>Os Fundadores de SouSapo são Maria Fernanda, Nikolas Raposo, Victor Guzella, Kayky Martins, Kaelaine Pereira e Micaeli Almeida. Para fazer o TCC nós nos juntamos para criar o SouSapo, cada um com seu trabalho a desempenhar, nenhum menos importante do que o outro, todos necessários.</p>
                             <ul class="sci">
                                 <li><a class="facebook" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i>
                                     </a></li>

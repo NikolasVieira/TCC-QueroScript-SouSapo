@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class UploadController extends Controller
 {
-    public function form()
-    {
-        return view('admin.hq.upload.form');
-    }
-
     public function upload(Request $request)
     {
         $request->file('arquivo')->store('teste');

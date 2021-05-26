@@ -9,20 +9,41 @@
         <div class="col-sm-6 col-md-5 mb-2">
             <h1 id="Sobrenos">Sobre Nós</h1>
             <div class="card">
-                <div class="card-body text-justify card-color">
-                    Maria Fernanda - Ilustradora e WebDesign<br />
-                    Nikolas Raposo - Roteirista e Programador<br />
-                    Victor Guzella - Ilustrador e Programador<br />
-                    Kayky Martins - DBA e Programador<br />
-                    Kaelaine - Escritora e Avaliadora<br />
-                    Micaeli - Escritora e Avaliadora<br />
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, quisquam at! Ut distinctio nesciunt
-                    odit doloribus deserunt officia odio, ipsam totam illum iure, quibusdam repellat expedita, quasi
-                    culpa consequatur obcaecati. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem amet
-                    veniam eius minus sit a dolores eaque ipsam optio incidunt eligendi voluptas itaque facilis, sint
-                    tenetur unde adipisci quo asperiores. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Distinctio illo repellendus aut, tempora quasi, corporis excepturi culpa libero qui, esse quisquam
-                    tempore alias! Nam fugiat veritatis magnam cupiditate earum enim?
+                <div class="card-body card-color">
+                    <p>
+                        Os Fundadores de SouSapo são e Kaelaine Pereira, Kayky Martins, Maria Fernanda Guizelin, Micaeli
+                        Almeida, Nikolas Raposo e Victor Guzella. Para fazer o TCC nós nos juntamos para criar o
+                        SouSapo, cada um com seu trabalho a desempenhar, nenhum menos importante do que o outro, todos
+                        necessários.
+                    </p>
+                    <p>
+                        Kaelaine estava encarregada da parte escrita do TCC, assim o resto da equipe podia se concentrar
+                        na criação do site e dos quadrinhos, enquanto toda burocracia era administrada.
+                    </p>
+                    <p>
+                        Kayky estava encarregado de manter o site estável, fazendo manutenções e criando algumas
+                        páginas, também prestava auxílio a Nikolas quando era necessário.
+                    </p>
+                    <p>
+                        Maria Fernanda estava encarregada da parte visual e artística do site, além de criar os
+                        quadrinhos que seriam publicados. Fazendo Artes dos personagens e dos cenários, a história
+                        Principal e a mitologia por trás da HQ.
+                    </p>
+                    <p>
+                        Micaeli também estava encarregada da parte escrita do TCC, ela auxiliava Kaelaine na formatação
+                        e idealização da parte escrita, Micaeli também ajudou em algumas partes da criação da história
+                        da HQ.
+                    </p>
+                    <p>
+                        Nikolas estava encarregado da programação do site, buscando a maior produtividade possível
+                        enquanto gerenciava o que os outros programadores tinham que fazer durante os meses de trabalho,
+                        ele também auxiliava na criação da HQ roteirizando algumas histórias e ajudando na criação da
+                        ideia da HQ.
+                    </p>
+                    <p>
+                        Victor estava encarregado de deixar o site mais atraente, operando como UX designer, ele também
+                        atuou na criação de algumas páginas.
+                    </p>
                 </div>
             </div>
         </div>
@@ -31,17 +52,26 @@
         <div class="col-sm-12 col-md-5 mb-4">
             <h1 id="SobreoProjeto"> Sobre o Projeto </h1>
             <div class="card">
-                <div class="card-body text-justify card-color">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quasi perspiciatis, reiciendis sint
-                    magnam nostrum, hic qui enim doloribus alias recusandae eveniet corporis veniam possimus cupiditate
-                    nihil porro molestias voluptatum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-                    eveniet provident rerum, omnis nesciunt possimus aliquid alias distinctio, mollitia, incidunt itaque
-                    quisquam quia magnam ea voluptas fugiat expedita inventore soluta. Lorem ipsum, dolor sit amet
-                    consectetur adipisicing elit. Harum molestias placeat cum eligendi aut fugit odio repudiandae
-                    praesentium officiis consequuntur! Maxime beatae vitae cupiditate esse. Quas, laudantium! Sequi,
-                    quaerat itaque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo architecto laborum,
-                    neque sed quis itaque? Aperiam, nemo a. Adipisci ex totam possimus voluptatum officiis facilis
-                    excepturi ducimus praesentium. Aperiam, labore?
+                <div class="card-body card-color">
+                    <p>
+                        O site SouSapo surgiu da ideia de um dos fundadores, Maria Fernanda, ela estava aprendendo
+                        animação e teve a ideia de um projeto, uma animação em que o protagonista é um sapo que possui
+                        uma flor falante e juntos teriam várias aventuras, a animação tinha fortes inspirações no
+                        desenho Gravity Falls e Hora de Aventura, teriam loucuras e mistérios, além de ser voltado a
+                        comédia.
+                    </p>
+                    <p>
+                        Por conta do TCC chegando decidimos implementar essa ideia a ele, então nós iamos fazer um site
+                        voltado para essa ideia, porém uma animação requeria muito tempo e esforço, e a história nem
+                        estava escrita, vimos que uma animação era inviável naquele momento, por isso adaptamos a ideia
+                        para a mídia dos quadrinhos, assim manteria a proposta inicial de ser louco e misterioso e com
+                        possibilidades de aprimoramentos.
+                    </p>
+                    <p>
+                        Quando já sabíamos o que deveria ser feito, botamos a mão na massa, começaram a sair conceitos e
+                        desenhos de como seria a HQ e a ideia principal do quadrinho foi surgindo até que chegou no
+                        estado que SouSapo é hoje.
+                    </p>
                 </div>
             </div>
         </div>

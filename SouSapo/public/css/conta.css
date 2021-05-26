@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url(app.css);
 
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@
 }
 
 html {
-    font-size: 93,75%;
+    font-size: 93, 75%;
 }
 
 .container-cont {
@@ -18,17 +18,19 @@ html {
     height: auto;
     padding: 3rem;
 
-
 }
+
 .perfil {
-    padding:1rem 0 1rem 8%;
+    padding: 1rem 0 1rem 8%;
 
     background-color: white;
 }
+
 .config {
 
     width: 80rem;
 }
+
 #foto {
     width: 6.3rem;
     height: 6.3rem;
@@ -36,7 +38,7 @@ html {
     margin-bottom: 1.5rem;
 }
 
-p{
+p {
     color: black;
     font-weight: 500;
 }
@@ -52,6 +54,7 @@ a {
     text-decoration: none;
     margin: 1rem 1rem 1rem 0;
 }
+
 a:hover {
     text-decoration: none;
 }
@@ -61,32 +64,36 @@ a:hover {
     display: flex;
     width: 100%;
 }
+
 .form {
     width: 38rem;
     height: 28rem;
     background-color: violet;
-    padding:2rem 4rem 3rem 4rem;
+    padding: 2rem 4rem 3rem 4rem;
     margin-bottom: 4rem;
 }
+
 form {
     width: 100%;
     height: 100%;
 }
 
-.form form input{
-    min-width:235px ;
+.form form input {
+    min-width: 235px;
     max-width: 450px;
-     width: 100%;
-     border: none;
+    width: 100%;
+    border: none;
 
 }
-.form form #frase{
-    min-width:235px ;
+
+.form form #frase {
+    min-width: 235px;
     max-width: 450px;
     width: 100%;
     height: 70%;
 }
-.form form label{
+
+.form form label {
     color: black;
     font-weight: 600;
     margin-top: 1rem;
@@ -105,6 +112,7 @@ form {
     margin-left: 5rem;
 
 }
+
 .tema {
     width: 80%;
 
@@ -113,36 +121,42 @@ form {
     margin-left: 5rem;
     margin-top: 1.5rem;
 }
-@media(min-width: 1600px){
+
+@media(min-width: 1600px) {
 
     .form {
-        height: 38rem ;
+        height: 38rem;
     }
+
     .avatar {
         height: 18rem;
     }
+
     .tema {
         height: 18rem;
     }
 
 }
-@media(max-width: 1270px){
 
-    .form form #frase{
+@media(max-width: 1270px) {
 
-       height: 65%;
+    .form form #frase {
+
+        height: 65%;
     }
 
 
 
 }
-@media(max-width: 1150px){
 
-    .tema{
+@media(max-width: 1150px) {
+
+    .tema {
 
         margin-left: 3.5rem;
 
     }
+
     .avatar {
 
         margin-left: 3.5rem;
@@ -150,42 +164,48 @@ form {
 
     .form {
 
-        padding:1rem 2.7rem 1rem 2.7rem;
+        padding: 1rem 2.7rem 1rem 2.7rem;
 
-       }
+    }
 
 
 }
 
 
-@media(max-width: 1000px){
+@media(max-width: 1000px) {
 
     .minha-conta {
-        font-size: 87,5%;
+        font-size: 87, 5%;
     }
+
     .container-cont {
         padding: 2.7rem 2.7rem 2.7rem 2rem;
     }
-     .infos {
-         display: inline-block;
-         margin: 1.2rem 1.2rem 1.2rem 0.9rem ;
-     }
-     .tema {
-         width: 100%;
-         margin: 0;
-         margin-top: 1.2rem;
-     }
-     .avatar {
+
+    .infos {
+        display: inline-block;
+        margin: 1.2rem 1.2rem 1.2rem 0.9rem;
+    }
+
+    .tema {
+        width: 100%;
+        margin: 0;
+        margin-top: 1.2rem;
+    }
+
+    .avatar {
         width: 100%;
         margin: 0;
 
-     }
-     .config {
-         width: 90%;
-         max-width: 40rem;
-         margin: auto;
-     }
-     .form {
+    }
+
+    .config {
+        width: 90%;
+        max-width: 40rem;
+        margin: auto;
+    }
+
+    .form {
         width: 85%;
         height: 25rem;
         margin: 0 auto 1.8rem;
@@ -198,41 +218,46 @@ form {
 
         max-width: 500px;
     }
+
     .form form #frase {
         max-width: 500px;
         height: 50%;
     }
 }
 
-@media(max-width: 520px){
+@media(max-width: 520px) {
 
-    .form form #frase{
+    .form form #frase {
         height: 60%;
     }
-   .form {
 
-    padding:1.4rem 3.4rem 2.4rem 3.4rem;
-
-   }
-   .container-cont {
-
-     padding: 1.4rem 2rem 2rem 0;
-   }
-}
-
-@media(max-width: 475px){
-
-    .form form #frase{
-        height: 55%;
-    }
     .form {
 
-        padding:1.1rem 2.5rem 0 2.5rem;
+        padding: 1.4rem 3.4rem 2.4rem 3.4rem;
 
-       }
+    }
+
+    .container-cont {
+
+        padding: 1.4rem 2rem 2rem 0;
+    }
+}
+
+@media(max-width: 475px) {
+
+    .form form #frase {
+        height: 55%;
+    }
+
+    .form {
+
+        padding: 1.1rem 2.5rem 0 2.5rem;
+
+    }
 
 }
-@media(max-width: 390px){
+
+@media(max-width: 390px) {
 
     .form {
         height: 23rem;
@@ -240,5 +265,3 @@ form {
     }
 
 }
-
-

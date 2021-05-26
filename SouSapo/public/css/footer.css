@@ -10,24 +10,24 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
- }
+}
 
- footer .container {
+footer .container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
- }
+}
 
- footer .container .sec {
-     margin-right: 30px;
- }
+footer .container .sec {
+    margin-right: 30px;
+}
 
- footer .container .sec.sobrenos {
-     width: 40%;
- }
+footer .container .sec.sobrenos {
+    width: 40%;
+}
 
- footer .container h2 {
+footer .container h2 {
     position: relative;
     color: var(--sapinho);
     font-weight: 500;
@@ -52,10 +52,12 @@ footer p {
     margin-top: 20px;
     display: flex;
 }
+
 .sci li {
     list-style: none;
 }
-.sci li a{
+
+.sci li a {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -66,16 +68,20 @@ footer p {
     text-decoration: none;
     border-radius: 4px;
 }
+
 /*ICONES DAS REDES SOCIAIS*/
-.facebook{
+.facebook {
     background: var(--blue);
 }
+
 .instagram {
     background: var(--pink);
 }
+
 .twitter {
     background: var(--cyan);
 }
+
 .youtube {
     background: var(--red);
 }
@@ -83,49 +89,61 @@ footer p {
 .sci li a:hover {
     background: var(--ra);
 }
+
 .sci li a .fa {
     color: var(--sapo);
     font-size: 20px;
 }
+
 .quickLinks {
     position: relative;
     width: 25%;
 }
+
 .quickLinks ul li {
     list-style: none;
 }
-.quickLinks ul li a{
+
+.quickLinks ul li a {
     color: var(--ra);
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
 }
+
 .quickLinks ul li a:hover {
     color: var(--sapinho);
 }
+
 .contato {
     width: calc(35% - 60px);
     margin-right: 0 !important;
 }
+
 .contato .info li {
     display: flex;
     margin-bottom: 16px;
 }
+
 .contato .info li span:nth-child(1) {
     color: var(--sapinho);
     font-size: 20px;
     margin-right: 10px;
 }
+
 .contato .info li span {
     color: var(--ra);
 }
+
 .contato .info li a {
     color: var(--ra);
     text-decoration: none;
 }
+
 .contato .info li a:hover {
     color: var(--sapinho);
 }
+
 .copyrightText {
     width: 100%;
     background: var(--sapo);
@@ -133,21 +151,28 @@ footer p {
     text-align: center;
     color: var(--ra);
 }
+
 @media (max-width: 991px) {
     footer {
         position: fixed;
         padding: 40px;
     }
+
     footer .container {
         flex-direction: column;
     }
+
     footer .container .sec {
         margin-right: 0;
         margin-bottom: 40px;
     }
-    footer .container .sec.sobrenos, .quickLinks, .contato {
+
+    footer .container .sec.sobrenos,
+    .quickLinks,
+    .contato {
         width: 100%;
     }
+
     .copyrightText {
         padding: 8px 40px;
     }

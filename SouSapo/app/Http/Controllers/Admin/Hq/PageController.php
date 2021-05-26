@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Hq;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chapter;
 use Illuminate\Http\Request;
 use App\Models\Page;
 
@@ -22,10 +23,10 @@ class PageController extends Controller
 
     public function store(Request $request)
     {
-        $page = new page();
+        $page = new Page();
         $page->chapter_number = $request->input('chapter_number');
         $page->page_number = $request->input('page_number');
-        $page->path = $request->input('path');
+        $page->path = $request->file('pagina')->store('quadrinhos');
         $page->save();
 
         return redirect()->route('page.index', compact('page'));

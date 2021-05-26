@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(app.css);
-*{
+
+* {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,37 +9,37 @@
 }
 
 html {
-
-    font-size: 93,75%;
+    font-size: 93, 75%;
 }
 
 .container-forum {
-
     width: 100%;
     height: auto;
     padding: 2rem;
 }
+
 .infos {
     display: flex;
 }
 
 .titulo-forum {
-
     width: 100%;
     margin: 0;
     height: 8rem;
     padding: 3rem;
     background-color: whitesmoke;
 }
-.titulo-forum h1 {
 
+.titulo-forum h1 {
     font-weight: 600;
     font-size: 2.8rem;
 }
+
 .infos {
     width: 100%;
     height: auto;
 }
+
 .topicos {
     width: 25%;
     height: 30rem;
@@ -46,7 +47,6 @@ html {
 }
 
 .topicos .form-check {
-
     display: flex;
     padding: 1rem 1rem 0.6rem 1rem;
     background-color: rgba(10, 66, 15, 1);
@@ -76,8 +76,7 @@ html {
 .coments {
     width: 70%;
     margin-left: 3rem;
-    background-color: rgba(204, 153, 244, 1)
-    ;
+    background-color: rgba(204, 153, 244, 1);
 }
 
 .coments .opcoes {
@@ -89,16 +88,19 @@ html {
     color: black;
 
 }
+
 .coments .opcoes .nav-item {
-   
+
     margin: 10px;
 }
-.coments .opcoes .filtros form{
+
+.coments .opcoes .filtros form {
 
     display: flex;
-    
+
 
 }
+
 .coments .opcoes .filtros form select {
     margin: 0.4rem;
 }
@@ -110,6 +112,7 @@ html {
     height: 3.6rem;
     background-color: whitesmoke;
 }
+
 .coments .opcoes #open {
     height: 2.5rem;
     margin-top: 0.4rem;
@@ -118,7 +121,7 @@ html {
 
 
 
-.nav-item  {
-    
+.nav-item {
+
     list-style: none;
 }
