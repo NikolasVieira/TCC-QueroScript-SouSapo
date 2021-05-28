@@ -15,7 +15,7 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100" style="background-color: var(--sapo);">
         <img src="https://cdn.discordapp.com/attachments/741335125480177756/847716087217782804/unknown.png" class="card-img-top" alt="..." height="170px">
         <div class="card-body">
           <h5 class="card-title">Deus (Nanthjan)</h5>
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100" style="background-color: var(--sapo);">
         <img src="https://cdn.discordapp.com/attachments/741335125480177756/847716342660333568/unknown.png" class="card-img-top" alt="..." height="170px">
         <div class="card-body">
           <h5 class="card-title">Deus (Klaus)</h5>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100" style="background-color: var(--sapo);">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -45,7 +45,7 @@
  <div id="linha-vertical" class="col-sm-2 col-md-1 mb-5">
 </div><div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100" style="background-color: var(--sapo);">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100" style="background-color: var(--sapo);">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card h-100">
+      <div class="card h-100" style="background-color: var(--sapo);">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -72,5 +72,7 @@
       </div>
     </div>
 </div>
+
+<hr>
 
 @endsection
