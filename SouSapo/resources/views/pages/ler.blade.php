@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <script src="{{ asset("js/jquery.min.js") }}"></script>
-<script src="{{ asset('turnjs4/lib/turn.min.js')}}"></script>
+<script src="{{ asset('vendor/turnjs4/lib/turn.min.js') }}"></script>
+
 <style>
     body {
         overflow: hidden;
