@@ -15,7 +15,7 @@
             <select class="form-control" id="chapter_number" name="chapter_number">
                 <option>selecione</option>
                 @foreach ($chapter as $chapters)
-                <option value="{{ $chapters->id }}">{{ $chapters->chapter_name }}</option>
+                <option value="{{ $chapters->chapter_number}}">{{ $chapters->chapter_name }}</option>
                 @endforeach
             </select>
         </div>
