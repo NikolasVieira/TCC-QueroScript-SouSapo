@@ -75,7 +75,7 @@
                         </li>
 
                         <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{ route('sousapo.forum') }}" role="button">Fórum</a>
+                            <a class="btn btn-sapinho" href="{{url('/forum') }}" role="button">Fórum</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active ml-2">
@@ -161,7 +161,7 @@
                                 <li><a href="{{ route('sousapo.quadrinhos') }}">Quadrinhos</a></li>
                                 <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
                                 <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
-                                <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>
+                                <li><a href="{{url('/forum')}}">Fórum</a></li>
                                 <li><a href="{{ route('sousapo.comunidade') }}">Comunidade</a></li>
                             </ul>
                         </div>

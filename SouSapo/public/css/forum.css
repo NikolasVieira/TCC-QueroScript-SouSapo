@@ -125,3 +125,14 @@ html {
 
     list-style: none;
 }
+
+.textos {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textos h1 {
+
+    font-size: 1.8rem;
+}
