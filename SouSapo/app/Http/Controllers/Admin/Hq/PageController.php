@@ -11,14 +11,18 @@ class PageController extends Controller
 {
     public function index()
     {
-        $page = Page::all();
+        $page = Page::all()->sortBy([
+            ['chapter_number', 'asc'],
+            ['page_number', 'asc'],
+        ]);
         return view('admin.hq.page.index', compact('page'));
     }
 
     public function create()
     {
         $page = Page::all();
-        return view('admin.hq.page.create', compact('page'));
+        $chapter = Chapter::all()->sortBy('chapter_number');
+        return view('admin.hq.page.create', compact('page', 'chapter'));
     }
 
     public function store(Request $request)
@@ -35,7 +39,8 @@ class PageController extends Controller
     public function show($id)
     {
         $page = Page::where('id', $id)->first();
-        return view('admin.hq.page.show', compact('page'));
+        $chapter = $page->chapter_number()->first();
+        return view('admin.hq.page.show', compact('page', 'chapter'));
     }
 
     public function edit($id)

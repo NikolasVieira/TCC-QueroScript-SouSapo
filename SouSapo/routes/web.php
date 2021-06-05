@@ -34,7 +34,7 @@ Route::view('/conta',       'pages.conta')->name('sousapo.conta');
 Route::view('/sobre',       'pages.sobre')->name('sousapo.sobre');
 Route::view('/comunidade',  'pages.comunidade')->name('sousapo.comunidade');
 Route::view('/cadastrar',   'pages.cadastrar')->name('sousapo.cadastrar');
-Route::get('/lendo',       [HqController::class, 'read'])->name('sousapo.ler');
+Route::get('/lendo/{id}',  [HqController::class, 'show'])->name('sousapo.ler');
 Route::get('/quadrinhos',   [HqController::class, 'quadrinhos'])->name('sousapo.quadrinhos');
 
 //TESTES

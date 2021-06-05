@@ -12,4 +12,8 @@ class Chapter extends Model
         'pages',
     ];
 
+    public function page() {
+        return $this->hasOne(Page::class, 'chapter_number', 'chapter_number');
+    }
+
 }

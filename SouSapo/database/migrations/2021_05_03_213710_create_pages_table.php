@@ -10,9 +10,11 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('chapter_number');
+            $table->unsignedBigInteger('chapter_number');
             $table->string('page_number');
             $table->string('path');
+
+            $table->foreign('chapter_number')->references('chapter_number')->on('chapters')->onDelete('CASCADE');
         });
     }
 

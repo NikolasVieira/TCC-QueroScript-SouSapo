@@ -16,7 +16,7 @@
                         Numero do Capitulo: {{ $chapters->chapter_number }}<br>
                         Numero de Paginas: {{ $chapters->pages }}</p>
                     <div class="card-footer">
-                        <a href="{{ route('sousapo.ler')}}" class="btn btn-sapinho">Ler</a>
+                        <a href="{{ route('sousapo.ler',$chapters->id)}}" class="btn btn-success btn-sm">ler</a>
                     </div>
                 </div>
             </div>

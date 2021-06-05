@@ -10,7 +10,7 @@ class ChapterController extends Controller
 {
     public function index()
     {
-        $chapter = Chapter::all();
+        $chapter = Chapter::all()->sortBy('chapter_number');
         return view('admin.hq.chapter.index', compact('chapter'));
     }
 
@@ -34,7 +34,8 @@ class ChapterController extends Controller
     public function show($id)
     {
         $chapter = Chapter::where('id', $id)->first();
-        return view('admin.hq.chapter.show', compact('chapter'));
+        $page = $chapter->page()->orderBy('page_number', 'ASC')->get();
+        return view('admin.hq.chapter.show', compact('chapter', 'page'));
     }
 
     public function edit($id)

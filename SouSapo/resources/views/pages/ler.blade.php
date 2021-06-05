@@ -8,8 +8,8 @@
         overflow: hidden;
     }
 
-    #cont{
-        padding-top:5%;
+    #cont {
+        padding-top: 5%;
         padding-bottom: 5%;
     }
 
@@ -34,50 +34,19 @@
         width: 100%;
     }
 </style>
+
+@if($page)
 <div class="container" id="cont">
-
     <div id="flipbook">
+        @foreach ($page as $pages)
         <div id="pagina">
-            <img src="{{ asset('img/hq_marvel_capa.jpg') }}" alt="capa" id="img">
+            <img src="{{ asset('storage') }}/{{ $pages->path }}" alt="{{ $pages->page_number }}" id="img">
         </div>
-        <div id="pagina">
-            <h1>CONTRA-CAPA</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorem, tenetur libero sequi
-                blanditiis
-                porro quam velit. Numquam autem rem natus incidunt, harum, necessitatibus omnis nihil praesentium,
-                accusantium dolores nisi?</p>
-        </div>
-        <div id="pagina">
-            <h1>SUMARIO</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorem, tenetur libero sequi
-                blanditiis
-                porro quam velit. Numquam autem rem natus incidunt, harum, necessitatibus omnis nihil praesentium,
-                accusantium dolores nisi?</p>
-        </div>
-        <div id="pagina">
-            <h1>PAGINA 1</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorem, tenetur libero sequi
-                blanditiis
-                porro quam velit. Numquam autem rem natus incidunt, harum, necessitatibus omnis nihil praesentium,
-                accusantium dolores nisi?</p>
-        </div>
-        <div id="pagina">
-            <h1>PAGINA 2</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorem, tenetur libero sequi
-                blanditiis
-                porro quam velit. Numquam autem rem natus incidunt, harum, necessitatibus omnis nihil praesentium,
-                accusantium dolores nisi?</p>
-        </div>
-        <div id="pagina">
-            <h1>VERSO</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorem, tenetur libero sequi
-                blanditiis
-                porro quam velit. Numquam autem rem natus incidunt, harum, necessitatibus omnis nihil praesentium,
-                accusantium dolores nisi?</p>
-        </div>
+        @endforeach
     </div>
-
 </div>
+@endif
+
 <script type="text/javascript">
     $('#flipbook').turn({
         width:800,

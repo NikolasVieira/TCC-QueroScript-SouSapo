@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Chapter;
 use App\Models\Page;
 
@@ -11,14 +10,14 @@ class HqController extends Controller
 {
     public function quadrinhos()
     {
+        $chapter = Chapter::all()->sortBy('chapter_number');
         $page = Page::all();
-        $chapter = Chapter::all();
         return view('pages.quadrinhos', compact('chapter', 'page'));
     }
-    public function read()
+    public function show($id)
     {
-        $page = Page::all();
-        $chapter = Chapter::all();
+        $chapter = Chapter::where('id', $id)->first();
+        $page = $chapter->page()->orderBy('page_number', 'ASC')->get();
         return view('pages.ler', compact('chapter', 'page'));
     }
 }

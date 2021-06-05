@@ -9,10 +9,15 @@
 <form action="{{ route('page.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
+
         <div class="form-group col">
-            <label for="chapter_number">Numero de Capitulo</label>
-            <input type="number" class="form-control" id="chapter_number" name="chapter_number"
-                placeholder="Informe o Número desse Capitulo">
+            <label for="chapter_number">Capitulo pertencente</label>
+            <select class="form-control" id="chapter_number" name="chapter_number">
+                <option>selecione</option>
+                @foreach ($chapter as $chapters)
+                <option value="{{ $chapters->id }}">{{ $chapters->chapter_name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group col">
             <label for="page_number">Numero da Pagina</label>

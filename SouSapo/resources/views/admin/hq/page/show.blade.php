@@ -12,4 +12,13 @@
 <img src="{{ asset('storage') }}/{{ $page->path }}" alt="img">
 @endif
 
+<h1>CAPITULO PERTENCENTE</h1>
+@if ($chapter)
+<p>
+    Id do Capitulo: {{ $chapter->id }}<br>
+    Numero do Capitulo: {{ $chapter->chapter_number }}<br>
+    Numero de Paginas: {{ $chapter->pages }}</p>
+</p>
+@endif
+
 @endsection
