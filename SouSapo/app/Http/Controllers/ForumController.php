@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use  App\Models\Discucao;
 use App\Models\respostas;
 use App\http\Requests\DiscucaoRequest;
+use App\Http\Requests\RespostaRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -14,12 +15,13 @@ class ForumController extends Controller
     {
         $discucao = Discucao::all();
         return view('pages.forum', compact('discucao'));
-    }
+    } 
 
     
     public function create()
     {
         $discucao = Discucao::all();
+        
         return view('pages.forum', compact('discucao'));
     }
 
@@ -37,13 +39,33 @@ class ForumController extends Controller
     }
     public function show($id)
     {
-        $discucao = DB::table('discucaos')
+           $discucao = DB::table('discucaos')
                 ->where('id', '=', $id)
                 ->get();
-                
-        return view('pages.discussao', compact('discucao'));
+
+        
+            return view('pages.discussao', compact('discucao'));
+
     }
 
+     public function createResposta()
+     {
+        $resposta = respostas::all();
+        return view('pages.discussao', compact('resposta'));
+     }
+
+     public function storeResposta(RespostaRequest $request)
+     {
+         $id = '';
+        $resposta = new respostas();
+        $resposta->discucao_id = $request->input('id_discucao'); ;
+        $resposta->texto = $request->input('texto');
+        $resposta->save();
+        
+
+        
+        
+     }
     
     
 }

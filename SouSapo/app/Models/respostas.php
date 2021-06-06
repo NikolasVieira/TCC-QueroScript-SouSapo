@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class respostas extends Model
 {
     protected $fillable = [
-        'resposta',
+        'texto',
     ];
     public function discucao()
     {

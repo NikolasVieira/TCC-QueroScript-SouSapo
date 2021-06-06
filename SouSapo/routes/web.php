@@ -18,7 +18,11 @@ Route::resource('/page', PageController::class)->middleware('auth');
 Route::resource('/chapter', ChapterController::class)->middleware('auth');
 Route::resource('/dashboard', DashboardController::class)->middleware('auth');
 Route::resource('/forum' , ForumController::class)->middleware('auth');
+Route::post('/forum/add/respostas', [ForumController::class, 'storeResposta']);
 Route::get('forum/show/{id}', [ForumController::class, 'show']);
+
+
+
 
 
 

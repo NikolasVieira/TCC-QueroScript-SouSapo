@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-@foreach ($discucao as $discucaos)@endforeach
+@foreach ($discucao as $discucaos)
      <h1>{{$discucaos->titulo}}</h1>
 <p>   {{$discucaos->texto}}</p>
+@endforeach
 @if (Auth::check())
 <button type="button" class="btn btn-sapinho" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" id="open">
@@ -19,25 +20,25 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ url('forum') }}" method="post">
+                                            <form action="{{ url('forum/add/respostas') }}" method="post">
                                                 @csrf
+                                                
                                                 <div class="mb-3">
-                                                    <label for="titulo" class="form-label">Titulo</label>
-                                                    <input type="text" class="form-control" id="titulo" name="titulo"
-                                                        placeholder="digite o titulo:">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="texto" class="form-label">texto:</label>
+                                                    <label for="texto" class="form-label">Resposta:</label>
                                                     <input type="text" class="form-control" id="texto" name="texto"
-                                                        placeholder="digite o texto:">
+                                                        placeholder="digite a resposta:">
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label for="disabledSelect" class="form-label">id discussao</label>
+                                                    <select id="disabledSelect" class="form-select" name="id_discucao">
+                                                        @foreach ($discucao as $discucaos)
+                                                        <option>{{$discucaos->id}}</option>
+                                                        @endforeach
+                                                      
+                                                    </select>
+                                                  </div>
 
-                                                <select class="form-select" aria-label="Default select example" name="categoria">
-                                                    <option selected>Selecione a categoria:</option>
-                                                    <option value="mitologia">Mitologia</option>
-                                                    <option value="personagens">Personagens</option>
-                                                    <option value="teorias">Teorias</option>
-                                                  </select>
+                                               
                                                   <div class="modal-footer">
 
                                                     <button type="submit" class="btn btn-primary">Publicar</button>
