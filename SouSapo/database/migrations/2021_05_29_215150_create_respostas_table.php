@@ -6,27 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRespostasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('respostas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('discucao_id')->unsigned();
-            $table->foreign('discucao_id')->references('id')->on('discucao')->onDelete('cascade');
             $table->string('texto');
             $table->timestamps();
+
+            $table->foreign('discucao_id')->references('id')->on('discucao')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('respostas');

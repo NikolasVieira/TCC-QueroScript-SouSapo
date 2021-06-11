@@ -12,7 +12,6 @@ class respostas extends Model
     ];
     public function discucao()
     {
-
         return $this->hasMany('App\Models\Discucao');
     }
 }

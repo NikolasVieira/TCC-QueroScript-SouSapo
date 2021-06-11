@@ -12,5 +12,4 @@ class Discucao extends Model
         'texto',
         'categoria',
     ];
-    
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Chapter extends Model
 {
@@ -12,8 +13,8 @@ class Chapter extends Model
         'pages',
     ];
 
-    public function page() {
-        return $this->hasOne(Page::class, 'chapter_number', 'chapter_number');
+    public function page()
+    {
+        return $this->hasMany(Page::class, 'chapter_number', 'chapter_number');
     }
-
 }
