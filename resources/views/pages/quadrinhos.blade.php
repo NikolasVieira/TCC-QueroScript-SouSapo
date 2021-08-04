@@ -8,9 +8,6 @@
         @foreach($chapter as $chapters)
         <div class="col-3 p-2">
             <div class="card text-white bg-ra text-center h-100 p-3">
-                @if($page)
-                <img src="{{ asset('img/hq_marvel_capa.jpg') }}" class="card-img-top" alt="capa">
-                @endif
                 <img src="{{ asset('img/hq_marvel_capa.jpg') }}" class="card-img-top" alt="capa">
                 <div class="card-body">
                     <h5 class="card-title">{{ $chapters->chapter_name }}</h5>
