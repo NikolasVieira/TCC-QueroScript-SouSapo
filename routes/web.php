@@ -34,7 +34,6 @@ Route::get('/discucao/delete/{id}', [ForumController::class, 'destroy']);
 //VIEWS SOUSAPO
 Route::view('/',           'pages.index')->name('sousapo.index');
 Route::view('/apoio',      'pages.apoio')->name('sousapo.apoio');
-
 Route::view('/conta',      'pages.conta')->name('sousapo.conta');
 Route::view('/sobre',      'pages.sobre')->name('sousapo.sobre');
 Route::view('/comunidade', 'pages.comunidade')->name('sousapo.comunidade');
