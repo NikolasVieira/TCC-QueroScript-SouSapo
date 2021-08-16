@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Dashboard SouSapo',
+    'title' => 'AdminLTE 3',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Sou</b>Sapo',
+    'logo' => '<b>Admin</b>LTE',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -88,6 +88,7 @@ return [
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
+    'layout_dark_mode' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -144,7 +145,7 @@ return [
     |
     */
 
-    'sidebar_mini' => true,
+    'sidebar_mini' => 'lg',
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
@@ -224,10 +225,33 @@ return [
     */
 
     'menu' => [
+        // Navbar items:
         [
-            'text' => 'Procurar',
-            'search' => true,
-            'topnav' => true,
+            'type'         => 'navbar-search',
+            'text'         => 'search',
+            'topnav_right' => true,
+        ],
+        [
+            'type'         => 'fullscreen-widget',
+            'topnav_right' => true,
+        ],
+
+        // Sidebar items:
+        [
+            'type' => 'sidebar-menu-search',
+            'text' => 'search',
+        ],
+        [
+            'text' => 'blog',
+            'url'  => 'admin/blog',
+            'can'  => 'manage-blog',
+        ],
+        [
+            'text'        => 'pages',
+            'url'         => 'admin/pages',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 4,
+            'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
@@ -240,46 +264,59 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        ['header' => 'Configurações do Site'],
         [
-            'text'    => 'CRUDS',
+            'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'HQ',
-                    'icon'    => 'fas fa-fw fa-share',
+                    'text' => 'level_one',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'level_one',
+                    'url'     => '#',
                     'submenu' => [
                         [
-                            'text' => 'Capitulos',
-                            'url'  => '/chapters',
+                            'text' => 'level_two',
+                            'url'  => '#',
                         ],
                         [
-                            'text'    => 'Paginas',
-                            'url'     => '/pages',
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
                         ],
                     ],
                 ],
                 [
-                    'text'    => 'COMUNIDADE',
-                    'icon'    => 'fas fa-fw fa-share',
-                    'submenu' => [
-                        [
-                            'text' => 'Comunidade',
-                            'url'  => '#',
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'FÓRUM',
-                    'icon'    => 'fas fa-fw fa-share',
-                    'submenu' => [
-                        [
-                            'text' => 'Fórum',
-                            'url'  => '#',
-                        ],
-                    ],
+                    'text' => 'level_one',
+                    'url'  => '#',
                 ],
             ],
+        ],
+        ['header' => 'labels'],
+        [
+            'text'       => 'important',
+            'icon_color' => 'red',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'warning',
+            'icon_color' => 'yellow',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'information',
+            'icon_color' => 'cyan',
+            'url'        => '#',
         ],
     ],
 
@@ -313,7 +350,7 @@ return [
     | Here we can modify the plugins used inside the admin panel.
     |
     | For detailed instructions you can look the plugins section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
+    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Plugins-Configuration
     |
     */
 
