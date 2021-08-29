@@ -9,7 +9,6 @@
 <form action="{{ route('page.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
-
         <div class="form-group col">
             <label for="chapter_number">Capitulo pertencente</label>
             <select class="form-control" id="chapter_number" name="chapter_number">
