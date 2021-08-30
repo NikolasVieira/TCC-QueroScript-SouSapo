@@ -10,3 +10,6 @@ npm install
 
 //atualiza os processos
 npm run dev
+
+//linka as imagens na public (tem q colocar na .env em baixo de LOG_LEVEL=debug)
+FILESYSTEM_DRIVER=public
