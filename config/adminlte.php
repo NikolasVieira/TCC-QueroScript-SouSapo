@@ -4,28 +4,28 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Title
+    | Título
     |--------------------------------------------------------------------------
     |
-    | Here you can change the default title of your admin panel.
+    | Aqui você pode alterar o título padrão do painel de administração.
     |
-    | For detailed instructions you can look the title section here:
+    | Para obter instruções detalhadas, você pode consultar a seção do título aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
 
-    'title' => 'SouSapo Dashboard',
-    'title_prefix' => '',
-    'title_postfix' => '',
+    'title' => '|',
+    'title_prefix' => 'SouSapo',
+    'title_postfix' => 'Dashboard',
 
     /*
     |--------------------------------------------------------------------------
     | Favicon
     |--------------------------------------------------------------------------
     |
-    | Here you can activate the favicon.
+    | Aqui você pode ativar o favicon.
     |
-    | For detailed instructions you can look the favicon section here:
+    | Para obter instruções detalhadas, você pode consultar a seção de favicon aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
@@ -38,28 +38,28 @@ return [
     | Logo
     |--------------------------------------------------------------------------
     |
-    | Here you can change the logo of your admin panel.
+    | Aqui você pode alterar o logotipo do seu painel de administração.
     |
-    | For detailed instructions you can look the logo section here:
+    | Para obter instruções detalhadas, você pode consultar a seção do logotipo aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
 
     'logo' => '<b>Sou</b>Sapo',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'SouSapo',
 
     /*
     |--------------------------------------------------------------------------
-    | User Menu
+    | Menu do Usuário
     |--------------------------------------------------------------------------
     |
-    | Here you can activate and change the user menu.
+    | Aqui você pode ativar e alterar o menu do usuário.
     |
-    | For detailed instructions you can look the user menu section here:
+    | Para obter instruções detalhadas, você pode consultar a seção do menu do usuário aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
@@ -76,28 +76,28 @@ return [
     | Layout
     |--------------------------------------------------------------------------
     |
-    | Here we change the layout of your admin panel.
+    | Aqui, mudamos o layout do seu painel de administração.
     |
-    | For detailed instructions you can look the layout section here:
+    | Para obter instruções detalhadas, você pode consultar a seção de layout aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
     |
     */
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Views Classes
+    | Classes de view de Autenticação
     |--------------------------------------------------------------------------
     |
-    | Here you can change the look and behavior of the authentication views.
+    | Aqui você pode alterar a aparência e o comportamento das views de autenticação.
     |
-    | For detailed instructions you can look the auth classes section here:
+    | Para obter instruções detalhadas, você pode consultar a seção de classes de autenticação aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
     |
     */
@@ -111,12 +111,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Admin Panel Classes
+    | Classes do Painel de Administração
     |--------------------------------------------------------------------------
     |
-    | Here you can change the look and behavior of the admin panel.
+    | Aqui você pode alterar a aparência e o comportamento do painel de administração.
     |
-    | For detailed instructions you can look the admin panel classes here:
+    | Para obter instruções detalhadas, você pode consultar as classes do painel de administração aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
     |
     */
@@ -135,12 +135,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Sidebar
+    | Barra Lateral
     |--------------------------------------------------------------------------
     |
-    | Here we can modify the sidebar of the admin panel.
+    | Aqui podemos modificar a barra lateral do painel de administração.
     |
-    | For detailed instructions you can look the sidebar section here:
+    | Para obter instruções detalhadas, você pode consultar a seção da barra lateral aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
     |
     */
@@ -157,12 +157,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Control Sidebar (Right Sidebar)
+    | Barra Lateral de Controle (Barra Lateral Direita)
     |--------------------------------------------------------------------------
     |
-    | Here we can modify the right sidebar aka control sidebar of the admin panel.
+    | Aqui podemos modificar a barra lateral direita, também conhecida como barra lateral de controle do painel de administração.
     |
-    | For detailed instructions you can look the right sidebar section here:
+    | Para obter instruções detalhadas, você pode consultar a seção da barra lateral direita aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
     |
     */
@@ -180,9 +180,9 @@ return [
     | URLs
     |--------------------------------------------------------------------------
     |
-    | Here we can modify the url settings of the admin panel.
+    | Aqui podemos modificar as configurações de url do painel de administração.
     |
-    | For detailed instructions you can look the urls section here:
+    | Para obter instruções detalhadas, você pode consultar a seção de urls aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
@@ -201,9 +201,9 @@ return [
     | Laravel Mix
     |--------------------------------------------------------------------------
     |
-    | Here we can enable the Laravel Mix option for the admin panel.
+    | Aqui podemos habilitar a opção Laravel Mix para o painel de administração.
     |
-    | For detailed instructions you can look the laravel mix section here:
+    | Para obter instruções detalhadas, você pode olhar a seção de mix de laravel aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
     |
     */
@@ -214,12 +214,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Menu Items
+    | Itens do Menu
     |--------------------------------------------------------------------------
     |
-    | Here we can modify the sidebar/top navigation of the admin panel.
+    | Aqui podemos modificar a barra lateral / navegação superior do painel de administração.
     |
-    | For detailed instructions you can look here:
+    | Para obter instruções detalhadas, você pode olhar aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
     */
@@ -228,7 +228,7 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
+            'text'         => 'procurar',
             'topnav_right' => true,
         ],
         [
@@ -239,7 +239,7 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'procurar',
         ],
         ['header' => 'Configurações do Site'],
         [
@@ -270,12 +270,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Menu Filters
+    | Filtros de menu
     |--------------------------------------------------------------------------
     |
-    | Here we can modify the menu filters of the admin panel.
+    | Aqui podemos modificar os filtros do menu do painel de administração.
     |
-    | For detailed instructions you can look the menu filters section here:
+    | Para obter instruções detalhadas, você pode consultar a seção de filtros de menu aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
     */
@@ -292,12 +292,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Plugins Initialization
+    | Inicialização de Plugins
     |--------------------------------------------------------------------------
     |
-    | Here we can modify the plugins used inside the admin panel.
+    | Aqui podemos modificar os plug-ins usados ​​no painel de administração.
     |
-    | For detailed instructions you can look the plugins section here:
+    | Para obter instruções detalhadas, você pode consultar a seção de plug-ins aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Plugins-Configuration
     |
     */
@@ -380,9 +380,9 @@ return [
     | Livewire
     |--------------------------------------------------------------------------
     |
-    | Here we can enable the Livewire support.
+    | Aqui podemos habilitar o suporte Livewire.
     |
-    | For detailed instructions you can look the livewire here:
+    | Para obter instruções detalhadas, você pode procurar o livewire aqui:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
     */
 
