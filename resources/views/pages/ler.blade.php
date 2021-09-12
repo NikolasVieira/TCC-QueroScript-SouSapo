@@ -47,11 +47,9 @@
         <div class="hard" id="vazio"></div>
         @foreach ($page as $pages)
         <div id="page">
-            <img src="{{ asset('storage') }}/{{ $pages->path }}" alt="{{ $pages->page_number }}" id="img">
+            <img src="{{ asset('storage') }}/{{ $pages->path }}" alt="Pagina numero: {{ $pages->page_number }}" id="img">
         </div>
         @endforeach
-        <div class="hard" id="vazio"></div>
-	    <div class="hard" id="vazio"></div>
     </div>
 </div>
 
