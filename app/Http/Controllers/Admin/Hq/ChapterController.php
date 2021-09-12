@@ -26,6 +26,7 @@ class ChapterController extends Controller
         $chapter->chapter_name = $request->input('chapter_name');
         $chapter->chapter_number = $request->input('chapter_number');
         $chapter->pages = $request->input('pages');
+        $chapter->path = $request->file('capa')->store('cover');
         $chapter->save();
 
         return redirect()->route('chapter.index', compact('chapter'));

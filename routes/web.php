@@ -3,11 +3,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HqController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Hq\PageController;
-use App\Http\Controllers\Admin\Hq\UploadController;
 use App\Http\Controllers\Admin\Hq\ChapterController;
-use App\Http\Controllers\ForumController;
 
 //ROTAS DE AUTENTICAÇÃO
 Auth::routes();
@@ -40,7 +39,3 @@ Route::view('/comunidade', 'pages.comunidade')->name('sousapo.comunidade');
 Route::view('/cadastrar',  'pages.cadastrar')->name('sousapo.cadastrar');
 Route::get('/lendo/{id}',  [HqController::class, 'show'])->name('sousapo.ler');
 Route::get('/quadrinhos',  [HqController::class, 'quadrinhos'])->name('sousapo.quadrinhos');
-
-//TESTES
-Route::view('/form',    'admin.hq.upload.form');
-Route::post('/upload',  [UploadController::class, 'upload'])->name('upload');

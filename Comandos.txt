@@ -5,6 +5,9 @@ composer update
 //exclui e cria novas tabelas no banco de dados
 php artisan migrate:fresh
 
+//Linka as imagens na public
+php artisan storage:link
+
 //atualiza as dependencias
 npm install
 
