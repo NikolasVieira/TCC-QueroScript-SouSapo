@@ -1,12 +1,7 @@
 COMANDOS PARA LEMBRAR
-//Baixa todos os pacotes
-composer update
 
 //exclui e cria novas tabelas no banco de dados
 php artisan migrate:fresh
-
-//Linka as imagens na public
-php artisan storage:link
 
 //atualiza as dependencias
 npm install
@@ -14,5 +9,6 @@ npm install
 //atualiza os processos
 npm run dev
 
-//linka as imagens na public (tem q colocar na .env em baixo de LOG_LEVEL=debug)
-FILESYSTEM_DRIVER=public
+//Instala o pacote adminlte
+composer require jeroennoten/laravel-adminlte
+php artisan adminlte:install

@@ -13,18 +13,18 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'public'),
 
     /*
     |--------------------------------------------------------------------------
-    | Discos de sistema de arquivos
+    | Filesystem Disks
     |--------------------------------------------------------------------------
     |
-    | Aqui você pode configurar quantos "discos" de sistema de arquivos desejar, e você
-    | pode até configurar vários discos do mesmo driver. Os padrões foram
-    | configurados para cada driver como um exemplo das opções necessárias.
+    | Here you may configure as many filesystem "disks" as you wish, and you
+    | may even configure multiple disks of the same driver. Defaults have
+    | been setup for each driver as an example of the required options.
     |
-    | Drivers suportados: "local", "ftp", "sftp", "s3"
+    | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
     */
 
@@ -32,7 +32,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => storage_path('app/public'),
         ],
 
         'public' => [
@@ -41,7 +41,7 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-
+        
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -56,12 +56,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Links Simbólicos
+    | Symbolic Links
     |--------------------------------------------------------------------------
     |
-    | Aqui você pode configurar os links simbólicos que serão criados quando o
-    | O comando `storage: link` Artisan é executado. As chaves do array devem ser
-    | as localizações dos links e os valores devem ser seus alvos.
+    | Here you may configure the symbolic links that will be created when the
+    | `storage:link` Artisan command is executed. The array keys should be
+    | the locations of the links and the values should be their targets.
     |
     */
 
