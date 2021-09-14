@@ -13,7 +13,10 @@ class User extends Authenticatable
 
     protected $fillable = [
         'name',
+        'nick',
+        'bio',
         'email',
+        'profile_photo_path',
         'password',
     ];
 
@@ -25,4 +28,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tweets()
+    {
+        return $this->hasMany(Tweet::class);
+    }
+
+    public function likes(){
+        
+        return $this->hasMany(like::class);
+    }
+
+    public function respostas()
+
+    {
+        return $this->hasMany(Respostas::class);
+    }
 }
+
+

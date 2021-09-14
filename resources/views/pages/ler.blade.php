@@ -26,12 +26,8 @@
         box-shadow: 0 4px 10px #666;
     }
 
-    #page {
+    #pagina {
         background: white;
-    }
-
-    #vazio {
-        background: gray;
     }
 
     #img {
@@ -39,20 +35,17 @@
     }
 </style>
 
+@if($page)
 <div class="container" id="cont">
     <div id="flipbook">
-        <div class="hard" id="cover">
-            <img src="{{ asset('storage') }}/{{ $chapter->path }}" alt="Capa" id="img">
-        </div>
-        <div class="hard" id="vazio"></div>
         @foreach ($page as $pages)
-        <div id="page">
-            <img src="{{ asset('storage') }}/{{ $pages->path }}" alt="Pagina numero: {{ $pages->page_number }}" id="img">
+        <div id="pagina">
+            <img src="{{ asset('storage') }}/{{ $pages->path }}" alt="{{ $pages->page_number }}" id="img">
         </div>
         @endforeach
     </div>
 </div>
-
+@endif
 
 <script type="text/javascript">
     $('#flipbook').turn({
@@ -60,7 +53,7 @@
         height:600,
         page:1,
         autoCenter:false,
-        duration:1500
+        duration:1200
     })
 </script>
 

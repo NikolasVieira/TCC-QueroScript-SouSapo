@@ -1,7 +1,7 @@
-<li @isset($item['id']) id="{{ $item['id'] }}" @endisset class="nav-item has-treeview {{ $item['submenu_class'] }}">
+<li @if(isset($item['id'])) id="{{ $item['id'] }}" @endif class="nav-item has-treeview {{ $item['submenu_class'] }}">
 
     {{-- Menu toggler --}}
-    <a class="nav-link {{ $item['class'] }} @isset($item['shift']) {{ $item['shift'] }} @endisset"
+    <a class="nav-link {{ $item['class'] }} @if(isset($item['shift'])) {{ $item['shift'] }} @endif"
        href="" {!! $item['data-compiled'] ?? '' !!}>
 
         <i class="{{ $item['icon'] ?? 'far fa-fw fa-circle' }} {{
@@ -12,11 +12,11 @@
             {{ $item['text'] }}
             <i class="fas fa-angle-left right"></i>
 
-            @isset($item['label'])
+            @if(isset($item['label']))
                 <span class="badge badge-{{ $item['label_color'] ?? 'primary' }} right">
                     {{ $item['label'] }}
                 </span>
-            @endisset
+            @endif
         </p>
 
     </a>

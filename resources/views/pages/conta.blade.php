@@ -2,42 +2,66 @@
 
 @section('content')
 
-<section class="minha-conta">
-    <link rel="stylesheet" href="/css/conta.css">
+    @if (session('success'))
+        <div class="alert alert-success" id="message">{{ session('success') }}</div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-error" id="message">{{ session('error') }}</div>
+    @endif
 
-    <div class="perfil">
-        <div id="foto"></div>
-        <p>nome do usuario</p>
-        <p>frase do usuario</p>
-        <h1>configuração</h1>
-        <a href="">sobre mim</a>
-        <a href="#">notificação</a>
-        <a href="#">privacidade</a>
-    </div>
-    <div class="container-cont">
-        <div class="infos">
+<div class="infos">
+    <img class="h-8 w-8 rounded-full object-cover" src="storage/users/{{Auth::user()->profile_photo_path}}" alt="{{ Auth::user()->name }}">
+    <h1>nome: {{Auth::user()->name}}</h1>
+    <h1>nick: {{Auth::user()->nick}}</h1>
+    <h1>bio: {{Auth::user()->bio}}</h1>
 
-            <div class="form">
-                <form>
-                    <label for="nome">Nome de Exibição:</label><br>
-                    <input type="text" id="nome" name="nome"><br>
-
-                    <label for="frase">Frase:</label><br>
-                    <textarea name="frase" id="frase" cols="40" rows="10"></textarea>
-
-                </form>
-            </div>
-            <div class="config">
-                <div class="avatar">
-
-                </div>
-                <div class="tema">
-
-                </div>
-            </div>
+</div>
+<div class="editar">
+    <form method="post" action="{{ route('sousapo.conta-update') }}" enctype="multipart/form-data">
+        @csrf
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" aria-describedby="name" name="name"
+                value="{{ Auth::User()->name }}">
         </div>
-    </div>
+        <div class="mb-3">
+            <label for="nick" class="form-label">Nick</label>
+            @if (isset(Auth::User()->nick))
+                <input type="text" class="form-control" id="nick" aria-describedby="nick" name="nick"
+                    value="{{ Auth::User()->nick }}">
+            @else
+                <input type="text" class="form-control" id="nick" aria-describedby="nick" name="nick"
+                    placeholder="Escreva o seu nick">
+            @endif
+        </div>
+        <div class="mb-3">
+            <div class="mb-3">
+                <label for="bio" class="form-label">Bio</label>
 
-</section>
+                @if (isset(Auth::User()->bio))
+                    <input type="text" class="form-control" id="bio" name="bio" aria-describedby="bio"
+                        value="{{ Auth::User()->bio }}">
+                @else
+                    <input type="text" class="form-control" id="bio" aria-describedby="bio" name="bio"
+                        placeholder="Escreva uma frase">
+                @endif
+
+            </div>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ Auth::User()->email }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Escolher foto de perfil</label>
+            <input class="form-control" type="file" name="image" id="image">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</div>
+
+
 
 @endsection

@@ -30,10 +30,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/conta.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+  @livewireStyles
 </head>
 
 <body>
@@ -75,7 +75,7 @@
                         </li>
 
                         <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{url('/forum') }}" role="button">Fórum</a>
+                            <a class="btn btn-sapinho" href="{{ url('/forum') }}" role="button">Fórum</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active ml-2">
@@ -103,10 +103,35 @@
 
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                                @if (isset(Auth::user()->nick))
+                                    <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                                        @if (isset(Auth::user()->profile_photo_path))
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="storage/users/{{ Auth::user()->profile_photo_path }}"
+                                                alt="{{ Auth::user()->name }}">
+                                        @else
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;" src="{{ asset('img/deus.png') }}" alt="imagem default">
+                                        @endif
+                                        {{ Auth::user()->nick }}
+                                    </a>
+                                @else
+                                    <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        @if (isset(Auth::user()->profile_photo_path))
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="storage/users/{{ Auth::user()->profile_photo_path }}"
+                                                alt="{{ Auth::user()->name }}">
+                                        @else
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;" src="{{ asset('img/deus.png') }}" alt="imagem default">
+                                        @endif
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                @endif
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('sousapo.conta') }}">
@@ -116,7 +141,7 @@
                                         {{ __('Dashboard') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Sair') }}
                                     </a>
 
@@ -133,6 +158,7 @@
         <!-- CONTEUDO -->
         <main class="pb-0 bg-sapao">
             @yield('content')
+            
         </main>
 
         <!-- FOOTER -->
@@ -142,7 +168,10 @@
                     <div class="container">
                         <div class="sec sobrenos">
                             <h2>Sobre Nós</h2>
-                            <p>Os Fundadores de SouSapo são Maria Fernanda, Nikolas Raposo, Victor Guzella, Kayky Martins, Kaelaine Pereira e Micaeli Almeida. Para fazer o TCC nós nos juntamos para criar o SouSapo, cada um com seu trabalho a desempenhar, nenhum menos importante do que o outro, todos necessários.</p>
+                            <p>Os Fundadores de SouSapo são Maria Fernanda, Nikolas Raposo, Victor Guzella, Kayky Martins,
+                                Kaelaine Pereira e Micaeli Almeida. Para fazer o TCC nós nos juntamos para criar o SouSapo,
+                                cada um com seu trabalho a desempenhar, nenhum menos importante do que o outro, todos
+                                necessários.</p>
                             <ul class="sci">
                                 <li><a class="facebook" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i>
                                     </a></li>
@@ -161,7 +190,7 @@
                                 <li><a href="{{ route('sousapo.quadrinhos') }}">Quadrinhos</a></li>
                                 <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
                                 <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
-                                <li><a href="{{url('/forum')}}">Fórum</a></li>
+                                <li><a href="{{ url('/forum') }}">Fórum</a></li>
                                 <li><a href="{{ route('sousapo.comunidade') }}">Comunidade</a></li>
                             </ul>
                         </div>
@@ -192,6 +221,8 @@
             </div>
         @show
     </div>
+
+    @livewireScripts
 </body>
 
 </html>
