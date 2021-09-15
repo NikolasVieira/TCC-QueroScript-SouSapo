@@ -11,7 +11,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RespostaController;
 use App\Http\Livewire\ShowTweets;
 
-
 //ROTAS DE AUTENTICAÇÃO
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -20,7 +19,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/page',            PageController::class)->middleware('auth');
 Route::resource('/chapter',         ChapterController::class)->middleware('auth');
 Route::resource('/dashboard',       DashboardController::class)->middleware('auth');
-
 
 //DASHBOARD
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('sousapo.dashboard')->middleware('auth');
@@ -34,8 +32,6 @@ Route::get('/page/delete/{id}',     [PageController::class, 'destroy'])->name('p
 //VIEWS SOUSAPO
 Route::view('/',           'pages.index')->name('sousapo.index');
 Route::view('/apoio',      'pages.apoio')->name('sousapo.apoio');
-
-
 Route::view('/sobre',      'pages.sobre')->name('sousapo.sobre');
 Route::view('/comunidade', 'pages.comunidade')->name('sousapo.comunidade');
 Route::view('/cadastrar',  'pages.cadastrar')->name('sousapo.cadastrar');
@@ -48,7 +44,6 @@ Route::post('/upload',  [UploadController::class, 'upload'])->name('upload');
 Route::post('/conta-update', [UserController::class , 'Updateprofile'] )->name('sousapo.conta-update');
 Route::post('/conta-photo', [UserController::class , 'storagePhoto'] )->name('sousapo.conta-photo');
 Route::view('/conta', 'pages.conta')->name('sousapo.conta')->middleware('auth');
-
 
 route::get('forum' , ShowTweets::class)->name('forum')->middleware('auth');
 Route::get('forum/show/{id}', [ShowTweets::class , 'show'])->name('sousapo.forum-show')->middleware('auth');
