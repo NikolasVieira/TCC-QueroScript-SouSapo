@@ -3,7 +3,7 @@
 @section('content')
     <h2>CRUD DA HQ</h2>
     <hr />
-    <a href="{{ route('chapter.create') }}" class="btn btn-success">Novo Capitulo</a>
+    <a href="{{ route('chapters.create') }}" class="btn btn-success">Novo Capitulo</a>
     <br><br>
     <table class="table table-striped">
         <thead>
@@ -23,9 +23,9 @@
                 <td>{{ $chapters->chapter_number }}</td>
                 <td>{{ $chapters->pages }}</td>
                 <td>
-                    <a href="{{ route('chapter.edit',$chapters->id)}}" class="btn btn-primary btn-sm">Editar</a>
-                    <a href="{{ route('chapter.show',$chapters->id)}}" class="btn btn-success btn-sm">ler</a>
-                    <a href="{{ route('chapter.destroy',['id'=>$chapters->id])}}" class="btn btn-danger btn-sm">Remover</a>
+                    <a href="{{ route('chapters.edit',$chapters->id)}}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{{ route('chapters.show',$chapters->id)}}" class="btn btn-success btn-sm">ler</a>
+                    <a href="{{ route('chapters.destroy',['id'=>$chapters->id])}}" class="btn btn-danger btn-sm">Remover</a>
                 </td>
             </tr>
             @endforeach

@@ -4,9 +4,9 @@
 
 <h2>AQUI VAI SER A PAGINA PARA ADICIONAR OS CAPITULOS</h2>
 <hr />
-<a href="{{ route('chapter.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+<a href="{{ route('chapters.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
-<form id="frmchapter" name="frmchapter" action="{{ route('chapter.store') }}" method="POST">
+<form id="frmchapter" name="frmchapter" action="{{ route('chapters.store') }}" method="POST">
     @csrf
     <div class="row">
         <div class="form-group col">

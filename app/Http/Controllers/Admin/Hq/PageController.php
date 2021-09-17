@@ -30,7 +30,7 @@ class PageController extends Controller
         $page = new Page();
         $page->chapter_number = $request->input('chapter_number');
         $page->page_number = $request->input('page_number');
-        $page->path = $request->file('pagina')->store('quadrinhos');
+        $page->path = $request->file('pagina')->store('pages');
         $page->save();
 
         return redirect()->route('page.index', compact('page'));

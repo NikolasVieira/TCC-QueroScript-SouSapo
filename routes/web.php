@@ -16,14 +16,14 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //RESOURCES
-Route::resource('/page',            PageController::class)->middleware('auth');
-Route::resource('/chapter',         ChapterController::class)->middleware('auth');
-Route::resource('/dashboard',       DashboardController::class)->middleware('auth');
 
-//DASHBOARD
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('sousapo.dashboard')->middleware('auth');
-Route::get('/chapters',  [ChapterController::class, 'index'])->name('dashboard.chapter')->middleware('auth');
-Route::get('/pages',     [PageController::class, 'index'])->name('dashboard.page')->middleware('auth');
+
+//PAINEL ADMINISTRATIVO
+Route::prefix('/admin')->group( function(){
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.index')->middleware('auth');
+    Route::resource('/pages',      PageController::class)->middleware('auth');
+    Route::resource('/chapters',   ChapterController::class)->middleware('auth');
+});
 
 //DELETES
 Route::get('/chapter/delete/{id}',  [ChapterController::class, 'destroy'])->name('chapter.destroy')->middleware('auth');
@@ -44,7 +44,6 @@ Route::post('/upload',  [UploadController::class, 'upload'])->name('upload');
 Route::post('/conta-update', [UserController::class , 'Updateprofile'] )->name('sousapo.conta-update');
 Route::post('/conta-photo', [UserController::class , 'storagePhoto'] )->name('sousapo.conta-photo');
 Route::view('/conta', 'pages.conta')->name('sousapo.conta')->middleware('auth');
-
 route::get('forum' , ShowTweets::class)->name('forum')->middleware('auth');
 Route::get('forum/show/{id}', [ShowTweets::class , 'show'])->name('sousapo.forum-show')->middleware('auth');
 Route::get('forum/resposta/{id}', [RespostaController::class , 'RespostaTweet'])->name('sousapo.forumresposta')->middleware('auth');
