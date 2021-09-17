@@ -44,6 +44,8 @@ Route::post('/upload',  [UploadController::class, 'upload'])->name('upload');
 Route::post('/conta-update', [UserController::class , 'Updateprofile'] )->name('sousapo.conta-update');
 Route::post('/conta-photo', [UserController::class , 'storagePhoto'] )->name('sousapo.conta-photo');
 Route::view('/conta', 'pages.conta')->name('sousapo.conta')->middleware('auth');
+
+
 route::get('forum' , ShowTweets::class)->name('forum')->middleware('auth');
 Route::get('forum/show/{id}', [ShowTweets::class , 'show'])->name('sousapo.forum-show')->middleware('auth');
 Route::get('forum/resposta/{id}', [RespostaController::class , 'RespostaTweet'])->name('sousapo.forumresposta')->middleware('auth');

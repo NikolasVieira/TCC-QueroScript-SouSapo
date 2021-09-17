@@ -137,7 +137,7 @@
                                     <a class="dropdown-item" href="{{ route('sousapo.conta') }}">
                                         {{ __('Minha Conta') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('sousapo.dashboard') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.index') }}">
                                         {{ __('Dashboard') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
