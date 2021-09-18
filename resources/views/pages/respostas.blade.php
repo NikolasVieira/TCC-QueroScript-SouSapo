@@ -6,11 +6,11 @@
     <h3>{{ $tweets->titulo }}</h3>
     <p>{{ $tweets->content }}</p>
     <p>{{ $tweets->categoria }}</p>
-
-    @foreach ($resposta as $respostas)@endforeach
+<hr>
+    @foreach ($resposta as $respostas)
     <h2>{{ $respostas->user->name }}</h2>
     <h2>{{ $respostas->content }}</h2>
-
+    @endforeach
     <form method="get" action="{{ url('forum/resposta/{id}') }}">
         @csrf
         @method('post')

@@ -30,7 +30,7 @@ class ShowTweets extends Component
     public function render()
     {
 
-        $tweets = Tweet::with('user')->latest()->paginate(4);
+        $tweets = Tweet::with('user')->latest()->paginate(2);
         
         return view('livewire.show-tweets', [
             'tweets' => $tweets,
@@ -46,6 +46,7 @@ class ShowTweets extends Component
         $this->validate();
 
         auth()->user()->Tweets()->create([
+
             'titulo' => $this->titulo ,
             'content' => $this->content,
             'categoria' => $this->categoria
@@ -82,21 +83,7 @@ class ShowTweets extends Component
         $resposta = Resposta::all();
         return view('pages.respostas', compact('tweet', 'resposta'));
     }
-    public function RespostaTweet(Request $request) 
-    {
-        $this->validate();
-
-        $resposta = new resposta();
-        $resposta->tweet_id = $request->input('tweet_id');
-        $resposta->content = $request->input('content');
-        $resposta->user_id = auth()->user()->id;
-        
-        return session('msg' , 'creio que pinto');
-        
-         
-      
-    }
-
+   
     /*public function unlike(tweet $tweet)
             {
        $tweet->likes()->delete();
