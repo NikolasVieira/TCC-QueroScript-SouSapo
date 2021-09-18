@@ -7,7 +7,7 @@
 
 <div>
 <button aling="right">Filtro</button>
-<button aling="center" >Artes Originais</button>
+<button aling="center">Artes Originais</button>
 <button aling="left">Enviar Imagem</button>
 </div>
 

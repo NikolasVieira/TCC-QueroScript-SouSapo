@@ -2,38 +2,7 @@
 @section('content')
 <script src="{{ asset("js/jquery.min.js") }}"></script>
 <script src="{{ asset('vendor/turnjs4/lib/turn.min.js') }}"></script>
-
-<style>
-    body {
-        overflow: hidden;
-    }
-
-    #cont {
-        padding-top: 5%;
-        padding-bottom: 5%;
-    }
-
-    #flipbook {
-        margin-left: 10%;
-    }
-
-    #flipbook .shadow,
-    #flipbook.shadow {
-        -webkit-box-shadow: 0 4px 10px #666;
-        -moz-box-shadow: 0 4px 10px #666;
-        -ms-box-shadow: 0 4px 10px #666;
-        -o-box-shadow: 0 4px 10px #666;
-        box-shadow: 0 4px 10px #666;
-    }
-
-    #pagina {
-        background: white;
-    }
-
-    #img {
-        width: 100%;
-    }
-</style>
+<link href="{{ asset('css/ler.css') }}" rel="stylesheet">
 
 @if($page)
 <div class="container" id="cont">

@@ -257,21 +257,18 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'CRUDs'],
         [
-            'text'    => 'CRUDs',
+            'text'    => 'Quadrinhos',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Quadrinhos',
-                    'url'  => '#',
-                ],
-                [
                     'text'    => 'Capitulos',
-                    'url'     => 'dashboard/chapters',
+                    'url'     => 'admin/chapters',
                 ],
                 [
                     'text' => 'Paginas',
-                    'url'  => 'dashboard/pages',
+                    'url'  => 'admin/pages',
                 ],
             ],
         ],

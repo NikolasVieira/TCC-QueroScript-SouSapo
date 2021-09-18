@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import url(app.css);
+
+body {
+    overflow: hidden;
+}
+
+#cont {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#flipbook {
+    margin-left: 10%;
+}
+
+#flipbook .shadow,
+#flipbook.shadow {
+    -webkit-box-shadow: 0 4px 10px #666;
+    -moz-box-shadow: 0 4px 10px #666;
+    -ms-box-shadow: 0 4px 10px #666;
+    -o-box-shadow: 0 4px 10px #666;
+    box-shadow: 0 4px 10px #666;
+}
+
+#pagina {
+    background: white;
+}
+
+#img {
+    width: 100%;
+}

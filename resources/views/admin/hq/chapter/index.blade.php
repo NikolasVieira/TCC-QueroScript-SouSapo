@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-    <h2>CRUD DA HQ</h2>
+    <h2>Capitulos</h2>
     <hr />
     <a href="{{ route('chapters.create') }}" class="btn btn-success">Novo Capitulo</a>
     <br><br>
