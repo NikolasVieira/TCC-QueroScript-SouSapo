@@ -13,6 +13,8 @@ class CreateChaptersTable extends Migration
             $table->string('chapter_name');
             $table->string('chapter_number');
             $table->string('pages');
+            $table->string('path');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

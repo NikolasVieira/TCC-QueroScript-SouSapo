@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $page = Page::all()->sortBy([
+        $page = Page::where('status', '=', true)->get()->sortBy([
             ['chapter_number', 'asc'],
             ['page_number', 'asc'],
         ]);
@@ -68,8 +68,9 @@ class PageController extends Controller
     {
         $page = Page::find($id);
         if (isset($page)) {
-            $page->delete();
+            $page->status = false;
+            $page->save();
         }
-        return redirect()->route('page.index');
+        return redirect()->route('page.index', compact('page'));
     }
 }
