@@ -6,9 +6,9 @@
         height: 10rem;
     }
 </style>
-    <h2>CRUD DAS PAGINAS</h2>
+    <h2>Paginas</h2>
     <hr />
-    <a href="{{ route('page.create') }}" class="btn btn-success">Nova Pagina</a>
+    <a href="{{ route('pages.create') }}" class="btn btn-success">Nova Pagina</a>
     <br><br>
     <table class="table table-striped">
         <thead>
@@ -28,9 +28,9 @@
                 <td>{{ $pages->chapter_number }}</td>
                 <td>{{ $pages->page_number }}</td>
                 <td>
-                    <a href="{{ route('page.edit',$pages->id)}}" class="btn btn-primary btn-sm">Editar</a>
-                    <a href="{{ route('page.show',$pages->id)}}" class="btn btn-success btn-sm">Visualizar</a>
-                    <a href="{{ route('page.destroy',['id'=>$pages->id])}}" class="btn btn-danger btn-sm">Remover</a>
+                    <a href="{{ route('pages.edit',$pages->id)}}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{{ route('pages.show',$pages->id)}}" class="btn btn-success btn-sm">ler</a>
+                    <a href="{{ route('pages.destroy',['id'=>$pages->id])}}" class="btn btn-danger btn-sm">Remover</a>
                 </td>
             </tr>
             @endforeach

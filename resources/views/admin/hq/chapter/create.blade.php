@@ -4,9 +4,9 @@
 
 <h2>AQUI VAI SER A PAGINA PARA ADICIONAR OS CAPITULOS</h2>
 <hr />
-<a href="{{ route('chapter.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+<a href="{{ route('chapters.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
-<form action="{{ route('chapter.store') }}" method="post" enctype="multipart/form-data">
+<form id="frmchapter" name="frmchapter" action="{{ route('chapters.store') }}" method="POST">
     @csrf
     <div class="row">
         <div class="form-group col">
@@ -42,12 +42,6 @@
                 {{$errors->first('pages','Atenção o campo é obrigatório!')}}
             </div>
             @endif
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col">
-            <label for="file">Capa do Capitulo</label>
-            <input type="file" class="form-control" id="file" name="capa">
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>

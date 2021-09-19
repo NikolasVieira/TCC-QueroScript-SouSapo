@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
 @section('content')
-<form id="frmchapter" name="frmchapter" action="{{route('chapter.update', $chapter->id)}}" method="POST">
+<form id="frmchapter" name="frmchapter" action="{{route('chapters.update', $chapter->id)}}" method="POST">
     @csrf
     @method('PUT')
     <h3>AQUI VAI SER A PAGINA PARA EDITAR OS CAPITULOS</h3>
     <p> Você esta editando as informações do capitulo numero {{ $chapter->chapter_number }}</p>
     <hr />
-    <a href="{{ route('chapter.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+    <a href="{{ route('chapters.index') }}" class="btn btn-secondary mb-3">Voltar</a>
     <div class="row">
         <div class="form-group col">
             <label for="chapter_name">Titulo do Capitulo</label>

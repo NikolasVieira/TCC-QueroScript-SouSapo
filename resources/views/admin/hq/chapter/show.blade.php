@@ -38,7 +38,7 @@
 
 <h2>PREVIEW DO CAPITULO</h2>
 <hr />
-<a href="{{ route('chapter.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+<a href="{{ route('chapters.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
 @if($page)
 <div class="container" id="cont">

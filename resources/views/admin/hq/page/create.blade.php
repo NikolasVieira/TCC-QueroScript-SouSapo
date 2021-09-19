@@ -4,11 +4,12 @@
 
 <h2>AQUI VAI SER A PAGINA PARA ADICIONAR AS PAGINAS AOS CAPITULOS</h2>
 <hr />
-<a href="{{ route('page.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+<a href="{{ route('pages.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
-<form action="{{ route('page.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('pages.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
+
         <div class="form-group col">
             <label for="chapter_number">Capitulo pertencente</label>
             <select class="form-control" id="chapter_number" name="chapter_number">
