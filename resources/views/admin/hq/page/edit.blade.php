@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-<form id="frmpage" name="frmpage" action="{{route('hq.update', $page->id)}}" method="POST">
+<form id="frmpage" name="frmpage" action="{{route('page.update', $page->id)}}" method="POST">
     @csrf
     @method('PUT')
     <h3>VOCÊ ESTA EDITANDO UMA PAGINA</h3>

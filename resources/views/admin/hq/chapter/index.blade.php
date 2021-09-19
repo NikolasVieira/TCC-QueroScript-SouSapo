@@ -18,7 +18,6 @@
                 <th scope="col">Nome do Capitulo</th>
                 <th scope="col">Número do Capitulo</th>
                 <th scope="col">Número de Paginas</th>
-                <th scope="col">Caminho</th>
                 <th scope="col">Opções</th>
             </tr>
         </thead>
@@ -30,10 +29,9 @@
                 <td>{{ $chapters->chapter_name }}</td>
                 <td>{{ $chapters->chapter_number }}</td>
                 <td>{{ $chapters->pages }}</td>
-                <td>{{ $chapters->path }}</td>
                 <td>
                     <a href="{{ route('chapter.edit',$chapters->id)}}" class="btn btn-primary btn-sm">Editar</a>
-                    <a href="{{ route('chapter.show',$chapters->id)}}" class="btn btn-success btn-sm">ler</a>
+                    <a href="{{ route('chapter.show',$chapters->id)}}" class="btn btn-success btn-sm">Visualizar</a>
                     <a href="{{ route('chapter.destroy',['id'=>$chapters->id])}}" class="btn btn-danger btn-sm">Remover</a>
                 </td>
             </tr>
