@@ -19,6 +19,8 @@ Route::prefix('/admin')->group( function(){
     Route::get('/', [DashboardController::class, 'index'])->name('admin.index')->middleware('auth');
     Route::resource('/pages', PageController::class)->middleware('auth');
     Route::resource('/chapters', ChapterController::class)->middleware('auth');
+    Route::get('/pages/delete/{page}', [PageController::class, 'destroy'])->name('pages.delete');
+    Route::get('/chapters/delete/{chapter}', [ChapterController::class, 'destroy'])->name('chapters.delete');
 });
 
 //PAGINAS SOUSAPO
@@ -28,15 +30,21 @@ Route::view('/sobre',      'pages.sobre')->name('sousapo.sobre');
 Route::view('/comunidade', 'pages.comunidade')->name('sousapo.comunidade');
 
 //QUADRINHOS
-Route::get('/lendo/{id}',  [HqController::class, 'show'])->name('sousapo.ler');
-Route::get('/quadrinhos',  [HqController::class, 'quadrinhos'])->name('sousapo.quadrinhos');
+Route::prefix('/quadrinhos')->group( function(){
+    Route::get('/',  [HqController::class, 'quadrinhos'])->name('sousapo.quadrinhos');
+    Route::get('/lendo/capitulo-{id}',  [HqController::class, 'show'])->name('sousapo.ler');
+});
 
 //MINHA CONTA
-Route::post('/conta-update', [UserController::class , 'Updateprofile'] )->name('sousapo.conta-update');
-Route::post('/conta-photo',  [UserController::class , 'storagePhoto'] )->name('sousapo.conta-photo');
-Route::view('/conta', 'pages.conta')->name('sousapo.conta')->middleware('auth');
+Route::prefix('/conta')->group( function(){
+    Route::view('/', 'pages.conta')->name('sousapo.conta')->middleware('auth');
+    Route::post('/update', [UserController::class , 'Updateprofile'] )->name('sousapo.conta-update');
+    Route::post('/photo',  [UserController::class , 'storagePhoto'] )->name('sousapo.conta-photo');
+});
 
 //FÓRUM
-route::get('forum' , ShowTweets::class)->name('forum')->middleware('auth');
-Route::get('forum/show/{id}', [ShowTweets::class , 'show'])->name('sousapo.forum-show')->middleware('auth');
-Route::get('forum/resposta/{id}', [RespostaController::class , 'RespostaTweet'])->name('sousapo.forumresposta')->middleware('auth');
+Route::prefix('/forum')->group( function(){
+    route::get('/' ,             ShowTweets::class)->name('forum')->middleware('auth');
+    Route::get('/show/{id}',     [ShowTweets::class , 'show'])->name('sousapo.forum-show')->middleware('auth');
+    Route::get('/resposta/{id}', [RespostaController::class , 'RespostaTweet'])->name('sousapo.forumresposta')->middleware('auth');
+});

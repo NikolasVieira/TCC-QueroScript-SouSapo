@@ -10,14 +10,14 @@ class HqController extends Controller
 {
     public function quadrinhos()
     {
-        $chapter = Chapter::all()->sortBy('chapter_number');
+        $chapter = Chapter::where('status', '=', true)->get()->sortBy('chapter_number');
         $page = Page::all();
         return view('pages.quadrinhos', compact('chapter', 'page'));
     }
     public function show($id)
     {
         $chapter = Chapter::where('id', $id)->first();
-        $page = $chapter->page()->orderBy('page_number', 'ASC')->get();
+        $page = $chapter->page()->where('status', '=', true)->get()->sortBy('page_number', SORT_NATURAL);
         return view('pages.ler', compact('chapter', 'page'));
     }
 }

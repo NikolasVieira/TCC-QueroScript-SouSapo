@@ -59,7 +59,7 @@ class ChapterController extends Controller
         return redirect()->route('chapters.index', compact('chapter'));
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $chapter = Chapter::find($id);
         if (isset($chapter)) {

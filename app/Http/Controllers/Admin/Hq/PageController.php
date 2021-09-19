@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin\Hq;
 
 use App\Http\Controllers\Controller;
-use App\Models\Chapter;
 use Illuminate\Http\Request;
+use App\Models\Chapter;
 use App\Models\Page;
 
 class PageController extends Controller
@@ -21,7 +21,7 @@ class PageController extends Controller
     public function create()
     {
         $page = Page::all();
-        $chapter = Chapter::all()->sortBy('chapter_number');
+        $chapter = Chapter::where('status', '=', true)->get()->sortBy('chapter_number');
         return view('admin.hq.page.create', compact('page', 'chapter'));
     }
 
@@ -33,7 +33,7 @@ class PageController extends Controller
         $page->path = $request->file('pagina')->store('pages');
         $page->save();
 
-        return redirect()->route('page.index', compact('page'));
+        return redirect()->route('pages.index', compact('page'));
     }
 
     public function show($id)
@@ -61,7 +61,7 @@ class PageController extends Controller
             $page->path = $request->input('path');
             $page->save();
         }
-        return redirect()->route('page.index', compact('page'));
+        return redirect()->route('pages.index', compact('page'));
     }
 
     public function destroy($id)
@@ -71,6 +71,6 @@ class PageController extends Controller
             $page->status = false;
             $page->save();
         }
-        return redirect()->route('page.index', compact('page'));
+        return redirect()->route('pages.index', compact('page'));
     }
 }

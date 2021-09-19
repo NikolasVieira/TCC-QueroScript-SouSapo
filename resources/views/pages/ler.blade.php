@@ -7,9 +7,12 @@
 @if($page)
 <div class="container" id="cont">
     <div id="flipbook">
+        <div id="capa">
+            <img src="{{ asset('storage') }}/{{ $chapter->path }}" alt="capa" id="cover">
+        </div>
         @foreach ($page as $pages)
         <div id="pagina">
-            <img src="{{ asset('storage') }}/{{ $pages->path }}" alt="{{ $pages->page_number }}" id="img">
+            <img src="{{ asset('storage') }}/{{ $pages->path }}" alt="Pagina numero: {{ $pages->page_number }}" id="page">
         </div>
         @endforeach
     </div>

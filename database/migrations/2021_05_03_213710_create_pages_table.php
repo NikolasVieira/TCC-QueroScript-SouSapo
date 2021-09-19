@@ -14,7 +14,6 @@ class CreatePagesTable extends Migration
             $table->string('page_number');
             $table->string('path');
             $table->boolean('status')->default(true);
-
             $table->foreign('chapter_number')->references('chapter_number')->on('chapters')->onDelete('CASCADE');
         });
     }

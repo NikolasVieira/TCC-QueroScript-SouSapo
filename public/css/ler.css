@@ -27,6 +27,9 @@ body {
     background: white;
 }
 
-#img {
+#cover {
+    width: 100%;
+}
+#page {
     width: 100%;
 }
