@@ -12,6 +12,7 @@ use App\Http\Livewire\ShowTweets;
 
 //ROTAS DE AUTENTICAÇÃO
 Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //PAINEL ADMINISTRATIVO
 Route::prefix('/admin')->group( function(){
