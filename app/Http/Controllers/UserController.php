@@ -43,7 +43,7 @@ class UserController extends Controller
 
                     $nameFile = "{$name}. {$extension}";
             
-                    $upload = $requestImage->storeAs('users ', $nameFile);
+                    $upload = $requestImage->move(public_path('img/users'), $nameFile);
 
                     $info->profile_photo_path = $nameFile;
 

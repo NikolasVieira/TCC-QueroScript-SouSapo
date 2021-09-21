@@ -110,7 +110,7 @@
                                         @if (isset(Auth::user()->profile_photo_path))
                                             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
                                                 class="h-8 w-8 rounded-full object-cover"
-                                                src="storage/users/{{ Auth::user()->profile_photo_path }}"
+                                                src="/img/users/{{Auth::user()->profile_photo_path}}" 
                                                 alt="{{ Auth::user()->name }}">
                                         @else
                                             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;" src="{{ asset('img/deus.png') }}" alt="imagem default">
@@ -123,7 +123,7 @@
                                         @if (isset(Auth::user()->profile_photo_path))
                                             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
                                                 class="h-8 w-8 rounded-full object-cover"
-                                                src="storage/users/{{ Auth::user()->profile_photo_path }}"
+                                                src="/img/users/{{Auth::user()->profile_photo_path}}" 
                                                 alt="{{ Auth::user()->name }}">
                                         @else
                                             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;" src="{{ asset('img/deus.png') }}" alt="imagem default">

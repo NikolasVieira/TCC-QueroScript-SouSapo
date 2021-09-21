@@ -26,7 +26,7 @@
     @foreach ($tweets as $tweet)
         @if ($tweet->user->profile_photo_path))
             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                class="h-8 w-8 rounded-full object-cover" src="storage/users/{{ $tweet->user->profile_photo_path }}"
+                class="h-8 w-8 rounded-full object-cover" src="/img/users/{{Auth::user()->profile_photo_path}}" 
                 alt="{{ $tweet->user->name }}">
         @else
             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"

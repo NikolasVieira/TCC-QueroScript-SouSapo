@@ -10,7 +10,7 @@
     @endif
 
 <div class="infos">
-    <img class="h-8 w-8 rounded-full object-cover" src="storage/users/{{Auth::user()->profile_photo_path}}" alt="{{ Auth::user()->name }}">
+    <img class="h-8 w-8 rounded-full object-cover" style="width: 100px; height: 100px;" src="/img/users/{{Auth::user()->profile_photo_path}}" alt="{{ Auth::user()->name }}">
     <h1>nome: {{Auth::user()->name}}</h1>
     <h1>nick: {{Auth::user()->nick}}</h1>
     <h1>bio: {{Auth::user()->bio}}</h1>
