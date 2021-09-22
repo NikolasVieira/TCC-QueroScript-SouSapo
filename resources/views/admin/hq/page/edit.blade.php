@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
 @section('content')
-<form id="frmpage" name="frmpage" action="{{route('hq.update', $page->id)}}" method="POST">
+<form id="frmpage" name="frmpage" action="{{route('pages.update', $page->id)}}" method="POST">
     @csrf
     @method('PUT')
     <h3>VOCÊ ESTA EDITANDO UMA PAGINA</h3>
     <p> Você esta editando as informações da pagina número {{ $page->page_number }}</p>
     <hr />
-    <a href="{{ route('page.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+    <a href="{{ route('pages.index') }}" class="btn btn-secondary mb-3">Voltar</a>
     <div class="row">
         <div class="form-group col">
             <label for="chapter_number">Numero do Capitulo</label>

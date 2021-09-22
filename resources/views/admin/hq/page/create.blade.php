@@ -4,9 +4,9 @@
 
 <h2>AQUI VAI SER A PAGINA PARA ADICIONAR AS PAGINAS AOS CAPITULOS</h2>
 <hr />
-<a href="{{ route('page.index') }}" class="btn btn-secondary mb-3">Voltar</a>
+<a href="{{ route('pages.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
-<form action="{{ route('page.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('pages.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
 

@@ -6,7 +6,7 @@
 <hr />
 <a href="{{ route('chapters.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
-<form id="frmchapter" name="frmchapter" action="{{ route('chapters.store') }}" method="POST">
+<form action="{{ route('chapters.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="form-group col">
@@ -42,6 +42,10 @@
                 {{$errors->first('pages','Atenção o campo é obrigatório!')}}
             </div>
             @endif
+        </div>
+        <div class="form-group col">
+            <label for="capa">Imagem da Capa</label>
+            <input type="file" class="form-control" id="capa" name="capa">
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>

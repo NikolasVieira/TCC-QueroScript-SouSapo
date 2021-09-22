@@ -2,6 +2,8 @@
 
 @section('content')
 <h1>PREVIEW DA PAGINA</h1>
+<hr>
+<a href="{{ route('pages.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
 @if ($page)
 <p>Id da Pagina: {{ $page->id }}</p>

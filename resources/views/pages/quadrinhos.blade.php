@@ -8,7 +8,7 @@
         @foreach($chapter as $chapters)
         <div class="col-3 p-2">
             <div class="card text-white bg-ra text-center h-100 p-3">
-                <img src="{{ asset('img/hq_marvel_capa.jpg') }}" class="card-img-top" alt="capa">
+                <img src="{{ asset('storage') }}/{{ $chapters->path }}"class="card-img-top" alt="capa" id="cover">
                 <div class="card-body">
                     <h5 class="card-title">{{ $chapters->chapter_name }}</h5>
                     <div class="card-footer">

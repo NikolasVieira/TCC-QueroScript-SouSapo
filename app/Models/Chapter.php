@@ -11,6 +11,8 @@ class Chapter extends Model
         'chapter_name',
         'chapter_number',
         'pages',
+        'path',
+        'status',
     ];
 
     public function page()

@@ -16,4 +16,9 @@
         <span id="head">Capitulos Recentes</p>
     </div>
 </div>
+<div id="novidades" class="container-fluid bg-sapao">
+    <div id="header">
+        <span id="head">Discussões Recentes</p>
+    </div>
+</div>
 @endsection

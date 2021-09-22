@@ -2,27 +2,23 @@
 
 @section('content')
     @foreach ($tweet as $tweets)@endforeach
-    <h2>{{ $tweets->user->name }}</h2>
-    <h3>{{ $tweets->titulo }}</h3>
+    <h3><b>{{ $tweets->titulo }}</b></h3>
     <p>{{ $tweets->content }}</p>
-    <p>{{ $tweets->categoria }}</p>
-<hr>
+    <p>Tags: {{ $tweets->categoria }}</p>
+    <p>Perguntado por: {{ $tweets->user->name }}</p>
+    <hr>
     @foreach ($resposta as $respostas)
-    <h2>{{ $respostas->user->name }}</h2>
-    <h2>{{ $respostas->content }}</h2>
+    <p><b>Usuario:</b> {{ $respostas->user->name }}</p>
+    <p><b>Resposta:</b> {{ $respostas->content }}</p>
+    <hr>
     @endforeach
+
     <form method="get" action="{{ url('forum/resposta/{id}') }}">
         @csrf
         @method('post')
-
         <input type="text" name="tweet_id" id="tweet_id" wire:model="tweet_id" value="{{ $tweets->id }}">
-
         <input type="text" name="content" id="content" wire:model="content">
-
-
         <button type="submit">salvar</button>
-
-
     </form>
 
     @if (\Session::has('success'))

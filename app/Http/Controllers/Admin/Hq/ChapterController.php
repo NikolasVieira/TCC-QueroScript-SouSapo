@@ -10,7 +10,7 @@ class ChapterController extends Controller
 {
     public function index()
     {
-        $chapter = Chapter::all()->sortBy('chapter_number');
+        $chapter = Chapter::where('status', '=', true)->get()->sortBy('chapter_number');
         return view('admin.hq.chapter.index', compact('chapter'));
     }
 
@@ -28,7 +28,6 @@ class ChapterController extends Controller
         $chapter->pages = $request->input('pages');
         $chapter->path = $request->file('capa')->store('cover');
         $chapter->save();
-
         return redirect()->route('chapters.index', compact('chapter'));
     }
 
@@ -60,12 +59,13 @@ class ChapterController extends Controller
         return redirect()->route('chapters.index', compact('chapter'));
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $chapter = Chapter::find($id);
         if (isset($chapter)) {
-            $chapter->delete();
+            $chapter->status = false;
+            $chapter->save();
         }
-        return redirect()->route('chapters.index');
+        return redirect()->route('chapters.index', compact('chapter'));
     }
 }
