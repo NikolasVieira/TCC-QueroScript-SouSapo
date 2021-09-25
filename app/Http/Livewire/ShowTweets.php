@@ -14,25 +14,30 @@ class ShowTweets extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
+
     public $content = '';
     public $titulo = '';
-    public $categoria = '';
+    public $categoria_ti = '';
+   
     
     protected $rules = [
 
         'content' => 'required',
         'titulo' => 'required',
-        'categoria' => 'required',
+        'categoria_ti' => 'required',
     ];
 
     public function render()
     {
         $tweets = Tweet::with('user')->latest()->paginate(4);
-        $categoria = Categoria::all();
+        $categorias = Categoria::all();
+        
         
         return view('livewire.show-tweets', [
             'tweets' => $tweets,
-            'categoria' => $categoria,
+            'categoria' => $categorias,
+
+
         ])->extends('layouts.app');
     }
 
@@ -42,7 +47,7 @@ class ShowTweets extends Component
         auth()->user()->Tweets()->create([
             'titulo' => $this->titulo,
             'content' => $this->content,
-            'categoria' => $this->categoria,
+            'categoria' => $this->categoria_ti,
         ]);
         $this->titulo = '';
         $this->content = '';

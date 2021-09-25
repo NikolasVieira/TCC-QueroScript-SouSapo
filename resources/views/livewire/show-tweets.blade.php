@@ -13,12 +13,15 @@
 
 
 
-        <select wire:model="categoria" class="form-select" aria-label="Default select example" name="categoria"
+        <select wire:model="categoria_ti" class="form-select" aria-label="Default select example" name="categoria"
             id="categoria">
 
-            <option selected>Selecione a categoria</option>
-            @foreach ($categoria as $categorias)
-                <option wire:model="categoria" value="{{ $categorias->titulo }}"> {{ $categorias->titulo }}</option>
+            <option selected> Selecione a categoria</option>
+           
+            @foreach ($categoria as  $categorias)
+           
+                <option   value="{{ $categorias->titulo }}"> {{ $categorias->titulo }}</option>
+
             @endforeach
 
         </select>
