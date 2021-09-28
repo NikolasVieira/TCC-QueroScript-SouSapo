@@ -2,8 +2,28 @@
     <h1 style="color: black;">teste</h1>
     <p>{{ $titulo }}</p>
     <p>{{ $content }}</p>
-    
+    <p>{{ $search }}</p>
+    <div class="pesquisa">
 
+        <h1> PARTE DE PESQUISA</h1>
+        <select wire:model="filtroCat" class="form-select" aria-label="Default select example" name="filtroCat"
+            id="filtroCat">
+
+            <option selected value=""> todos os tipos</option>
+
+            @foreach ($categoria as $categorias)
+
+                <option value="{{ $categorias->titulo }}"> {{ $categorias->titulo }}</option>
+
+            @endforeach
+
+        </select>
+
+        <input type="text" name="search" id="search" placeholder="Procure por titulo.." wire:model="search">
+    </div>
+
+    <br>
+    <hr>
     <form method="POST" wire:submit.prevent="create">
         <input type="text" name="titulo" id="titulo" placeholder="titulo" wire:model="titulo">
         @error('titulo') <span class="error">É nescessario titulo!</span> @enderror
@@ -17,15 +37,15 @@
             id="categoria">
 
             <option selected> Selecione a categoria</option>
-           
-            @foreach ($categoria as  $categorias)
-           
-                <option   value="{{ $categorias->titulo }}"> {{ $categorias->titulo }}</option>
+
+            @foreach ($categoria as $categorias)
+
+                <option value="{{ $categorias->titulo }}"> {{ $categorias->titulo }}</option>
 
             @endforeach
 
         </select>
-       
+
 
         <button type="submit">salvar</button>
     </form>

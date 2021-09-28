@@ -8,6 +8,7 @@ use App\Models\Tweet;
 use App\Models\like;
 use App\Models\Resposta;
 use App\Models\Categoria;
+
 use App\Http\Requests\Request;
 
 class ShowTweets extends Component
@@ -18,8 +19,9 @@ class ShowTweets extends Component
     public $content = '';
     public $titulo = '';
     public $categoria_ti = '';
-   
-    
+    public $filtroCat;
+    public $search = null;
+
     protected $rules = [
 
         'content' => 'required',
@@ -31,27 +33,44 @@ class ShowTweets extends Component
     {
         $tweets = Tweet::with('user')->latest()->paginate(4);
         $categorias = Categoria::all();
-        
-        
+
+        if ($this->filtroCat) {
+
+            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->latest()->paginate(4);
+        }
+
+        if ($this->search) {
+            
+            $tweets = Tweet::with('user')->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(4);
+        }
+
+        if ($this->filtroCat and $this->search) {
+
+            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)
+                                            ->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(4);
+        }
+
+
         return view('livewire.show-tweets', [
+
             'tweets' => $tweets,
             'categoria' => $categorias,
-
 
         ])->extends('layouts.app');
     }
 
-    public function create( Request $request)
+    public function create(Request $request)
     {
         $this->validate();
+
         auth()->user()->Tweets()->create([
             'titulo' => $this->titulo,
             'content' => $this->content,
             'categoria' => $this->categoria_ti,
         ]);
+
         $this->titulo = '';
         $this->content = '';
-        
     }
 
     public function like($idtweet)
