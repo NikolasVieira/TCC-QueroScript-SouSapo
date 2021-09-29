@@ -14,9 +14,9 @@ class HqController extends Controller
         $page = Page::all();
         return view('pages.quadrinhos', compact('chapter', 'page'));
     }
-    public function show($id)
+    public function show($chapter_number)
     {
-        $chapter = Chapter::where('id', $id)->first();
+        $chapter = Chapter::where('chapter_number', $chapter_number)->first();
         $page = $chapter->page()->where('status', '=', true)->get()->sortBy('page_number', SORT_NATURAL);
         return view('pages.ler', compact('chapter', 'page'));
     }

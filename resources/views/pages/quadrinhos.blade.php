@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $chapters->chapter_name }}</h5>
                     <div class="card-footer">
-                        <a href="{{ route('sousapo.ler',$chapters->id)}}" class="btn btn-success btn">ler</a>
+                        <a href="{{ route('sousapo.ler',$chapters->chapter_number)}}" class="btn btn-success btn">ler</a>
                     </div>
                 </div>
             </div>
