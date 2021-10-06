@@ -13,10 +13,9 @@ use App\Http\Controllers\Admin\Hq\ChapterController;
 
 //ROTAS DE AUTENTICAÇÃO
 Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //PAGINAS SOUSAPO
-Route::view('/',           'pages.index')->name('sousapo.index');
+Route::get('/',    [HomeController::class, 'index'])->name('sousapo.index');
 Route::view('/apoio',      'pages.apoio')->name('sousapo.apoio');
 Route::view('/sobre',      'pages.sobre')->name('sousapo.sobre');
 Route::view('/comunidade', 'pages.comunidade')->name('sousapo.comunidade');

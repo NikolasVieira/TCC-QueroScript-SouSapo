@@ -31,9 +31,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/conta.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     @livewireStyles
 </head>
 
@@ -45,7 +45,7 @@
 
                 <!-- Logo e Titulo da NavBar -->
                 <a id="logo" class="navbar-brand" href="{{ route('sousapo.index') }}">
-                    <img src="https://a-static.mlcdn.com.br/618x463/quadro-infantil-desenho-sapo-conspecto/conspecto/148957/9b142972fa26b3c5f14c9d865d408650.jpg"
+                    <img src="img/ico/frog.svg"
                         width="30" height="30" class="d-inline-block align-top" alt="">
                     SouSapo
                 </a>
@@ -74,13 +74,19 @@
                             <a class="btn btn-sapinho" href="{{ route('sousapo.apoio') }}" role="button">Apoiar</a>
                         </li>
 
-                        <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{ route('forum.index') }}" role="button">Fórum</a>
-                        </li>
+                        <li id="navbotao" class="nav-item dropdown active ml-2">
+                            <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Comunidade</a>
 
-                        <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{ route('sousapo.comunidade') }}"
-                                role="button">Comunidade</a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{ route('forum.index') }}">
+                                    Fórum
+                                </a>
+                                <a class="dropdown-item" href="{{ route('sousapo.comunidade') }}">
+                                    Artes
+                                </a>
+                            </div>
                         </li>
                     </ul>
 

@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Tweet;
-use App\Models\like;
 use App\Models\Resposta;
 use App\Models\Categoria;
 use App\Http\Requests\Request;
