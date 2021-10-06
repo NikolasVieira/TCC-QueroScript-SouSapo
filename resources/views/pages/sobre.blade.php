@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-body card-color">
                     <p>
-                        Os Fundadores de SouSapo são e Kaelaine Pereira, Kayky Martins, Maria Fernanda Guizelin, Micaeli
+                        Os Fundadores de SouSapo são Kaelaine Pereira, Kayky Martins, Maria Fernanda Guizelin, Micaeli
                         Almeida, Nikolas Raposo e Victor Guzella. Para fazer o TCC nós nos juntamos para criar o
                         SouSapo, cada um com seu trabalho a desempenhar, nenhum menos importante do que o outro, todos
                         necessários.

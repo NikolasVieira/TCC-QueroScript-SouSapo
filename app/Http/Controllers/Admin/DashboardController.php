@@ -8,8 +8,7 @@ use App\Models\User;
 
 class DashboardController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         $user = User::all();
         return view('admin.dashboard', compact('user'));
     }

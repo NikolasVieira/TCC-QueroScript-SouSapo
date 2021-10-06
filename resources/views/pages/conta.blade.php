@@ -1,23 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-
     @if (session('success'))
         <div class="alert alert-success" id="message">{{ session('success') }}</div>
     @endif
     @if (session('error'))
         <div class="alert alert-error" id="message">{{ session('error') }}</div>
     @endif
-
 <div class="infos">
     <img class="h-8 w-8 rounded-full object-cover" style="width: 100px; height: 100px;" src="/img/users/{{Auth::user()->profile_photo_path}}" alt="{{ Auth::user()->name }}">
     <h1>nome: {{Auth::user()->name}}</h1>
     <h1>nick: {{Auth::user()->nick}}</h1>
     <h1>bio: {{Auth::user()->bio}}</h1>
-
 </div>
 <div class="editar">
-    <form method="post" action="{{ route('sousapo.conta-update') }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('conta.update') }}" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>

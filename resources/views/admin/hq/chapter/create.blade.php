@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2>AQUI VAI SER A PAGINA PARA ADICIONAR OS CAPITULOS</h2>
+<h2>ADICIONAR CAPITULO</h2>
 <hr />
 <a href="{{ route('chapters.index') }}" class="btn btn-secondary mb-3">Voltar</a>
 
@@ -48,6 +48,6 @@
             <input type="file" class="form-control" id="capa" name="capa">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
 </form>
 @endsection

@@ -21,37 +21,33 @@ Route::view('/apoio',      'pages.apoio')->name('sousapo.apoio');
 Route::view('/sobre',      'pages.sobre')->name('sousapo.sobre');
 Route::view('/comunidade', 'pages.comunidade')->name('sousapo.comunidade');
 
-//PAINEL ADMINISTRATIVO
-Route::prefix('/admin')->group( function(){
-    Route::get('/', [DashboardController::class, 'index'])->name('admin.index')->middleware('auth');
-    Route::resource('/pages', PageController::class)->middleware('auth');
-    Route::resource('/chapters', ChapterController::class)->middleware('auth');
-    Route::get('/pages/delete/{page}', [PageController::class, 'destroy'])->name('pages.delete');
-    Route::get('/chapters/delete/{chapter}', [ChapterController::class, 'destroy'])->name('chapters.delete');
-});
-
 //QUADRINHOS
 Route::prefix('/quadrinhos')->group( function(){
     Route::get('/',  [HqController::class, 'quadrinhos'])->name('sousapo.quadrinhos');
-    Route::get('/lendo/capitulo/{chapter_number}',  [HqController::class, 'show'])->name('sousapo.ler');
+    Route::get('/capitulo/{chapter_number}',  [HqController::class, 'show'])->name('sousapo.ler')->middleware('auth');
+});
+
+//PAINEL ADMINISTRATIVO
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+    Route::resource('/pages', PageController::class);
+    Route::resource('/chapters', ChapterController::class);
+    Route::resource('/categoria', CategoriaController::class);
+    Route::get('/pages/delete/{page}', [PageController::class, 'destroy'])->name('pages.delete');
+    Route::get('/chapters/delete/{chapter}', [ChapterController::class, 'destroy'])->name('chapters.delete');
+    Route::get('/categoria/delete/{id}', [CategoriaController::class, 'destroy'])->name('categoria.delete');
 });
 
 //MINHA CONTA
-Route::prefix('/conta')->group( function(){
-    Route::view('/', 'pages.conta')->name('sousapo.conta')->middleware('auth');
-    Route::post('/update', [UserController::class , 'Updateprofile'] )->name('sousapo.conta-update');
-    Route::post('/photo',  [UserController::class , 'storagePhoto'] )->name('sousapo.conta-photo');
+Route::group(['prefix' => 'conta', 'middleware' => 'auth'], function(){
+    Route::view('/', 'pages.conta')->name('conta.index');
+    Route::post('/update', [UserController::class , 'Updateprofile'] )->name('conta.update');
+    Route::post('/photo',  [UserController::class , 'storagePhoto'] )->name('conta.photo');
 });
 
 //FÓRUM
-Route::prefix('/forum')->group( function(){
-    Route::get('/' ,             ShowTweets::class)->name('forum')->middleware('auth');
-    Route::get('/show/{id}',     [ShowTweets::class , 'show'])->name('sousapo.forum-show')->middleware('auth');
-    Route::get('/resposta/{id}', [RespostaController::class , 'RespostaTweet'])->name('sousapo.forumresposta')->middleware('auth');
-});
-
-//CATEGORIA
-Route::prefix('/categoria')->group( function(){
-    Route::resource('/', CategoriaController::class)->middleware('auth');
-    Route::get('/delete/{id}', [CategoriaController::class, 'destroy'])->middleware('auth')->name('delete');
+Route::group(['prefix' => 'forum', 'middleware' => 'auth'], function(){
+    Route::get('/' ,             ShowTweets::class)->name('forum.index');
+    Route::get('/show/{id}',     [ShowTweets::class , 'show'])->name('forum.show');
+    Route::get('/resposta/{id}', [RespostaController::class , 'RespostaTweet'])->name('forum.resposta');
 });
