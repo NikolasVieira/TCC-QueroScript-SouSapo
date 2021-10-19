@@ -2,12 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Tweet;
-use App\Models\Resposta;
+use Livewire\Component;
 use App\Models\Categoria;
-use App\Http\Requests\Request;
+use App\Models\Resposta;
+use App\Models\Tweet;
 
 class ShowTweets extends Component
 {
@@ -26,16 +25,16 @@ class ShowTweets extends Component
 
     public function render()
     {
-        $tweets = Tweet::with('user')->latest()->paginate(4);
+        $tweets = Tweet::with('user')->latest()->paginate(25);
         $categorias = Categoria::all();
         if ($this->filtroCat) {
-            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->latest()->paginate(4);
+            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->latest()->paginate(25);
         }
         if ($this->search) {
-            $tweets = Tweet::with('user')->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(4);
+            $tweets = Tweet::with('user')->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(25);
         }
         if ($this->filtroCat and $this->search) {
-            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(4);
+            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(25);
         }
         return view('livewire.show-tweets', [
             'tweets' => $tweets,
@@ -43,7 +42,8 @@ class ShowTweets extends Component
         ])->extends('layouts.app');
     }
 
-    public function create(Request $request) {
+    public function create()
+    {
         $this->validate();
         auth()->user()->Tweets()->create([
             'titulo' => $this->titulo,
@@ -54,17 +54,20 @@ class ShowTweets extends Component
         $this->content = '';
     }
 
-    public function like($idtweet) {
+    public function like($idtweet)
+    {
         $tweet =  Tweet::find($idtweet);
         $tweet->likes()->create(['user_id' => auth()->user()->id]);
     }
 
-    public function unlike($idtweet) {
+    public function unlike($idtweet)
+    {
         $tweet =  Tweet::find($idtweet);
         $tweet->likes()->where('user_id', auth()->user()->id)->delete();
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         $tweet = tweet::all();
         $resposta = Resposta::all();
         return view('pages.respostas', compact('tweet', 'resposta'));

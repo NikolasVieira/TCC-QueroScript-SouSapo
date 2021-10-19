@@ -45,8 +45,7 @@
 
                 <!-- Logo e Titulo da NavBar -->
                 <a id="logo" class="navbar-brand" href="{{ route('sousapo.index') }}">
-                    <img src="img/ico/frog.svg"
-                        width="30" height="30" class="d-inline-block align-top" alt="">
+                    <img src="img/ico/frog.svg" width="30" height="30" class="d-inline-block align-top" alt="">
                     SouSapo
                 </a>
 
@@ -83,7 +82,7 @@
                                 <a class="dropdown-item" href="{{ route('forum.index') }}">
                                     Fórum
                                 </a>
-                                <a class="dropdown-item" href="{{ route('sousapo.comunidade') }}">
+                                <a class="dropdown-item" href="{{ route('sousapo.artes') }}">
                                     Artes
                                 </a>
                             </div>
@@ -120,7 +119,7 @@
                                     alt="{{ Auth::user()->name }}">
                                 @else
                                 <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                                    src="{{ asset('img/deus.png') }}" alt="imagem default">
+                                    src="{{ asset('img/personagens/Deus.png') }}" alt="imagem padrão">
                                 @endif
                                 {{ Auth::user()->nick }}
                             </a>
@@ -134,7 +133,7 @@
                                     alt="{{ Auth::user()->name }}">
                                 @else
                                 <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                                    src="{{ asset('img/deus.png') }}" alt="imagem default">
+                                    src="{{ asset('img/personagens/Deus.png') }}" alt="imagem default">
                                 @endif
                                 {{ Auth::user()->name }}
                             </a>
@@ -198,8 +197,8 @@
                             <li><a href="{{ route('sousapo.quadrinhos') }}">Quadrinhos</a></li>
                             <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
                             <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
-                            <li><a href="{{ url('/forum') }}">Fórum</a></li>
-                            <li><a href="{{ route('sousapo.comunidade') }}">Comunidade</a></li>
+                            <li><a href="{{ route('forum.index') }}">Fórum</a></li>
+                            <li><a href="{{ route('sousapo.artes') }}">Artes</a></li>
                         </ul>
                     </div>
                     <div class="sec contato">

@@ -8,12 +8,14 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function show() {
+    public function show()
+    {
         $user = User::all();
         return view('', compact('user'));
     }
 
-    public function Updateprofile(Request $request) {
+    public function Updateprofile(Request $request)
+    {
         $id = auth()->user()->id;
         $info = User::find($id);
         $user = auth()->user();
