@@ -10,6 +10,8 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Hq\PageController;
 use App\Http\Controllers\Admin\Hq\ChapterController;
+use App\http\Controllers\ArteController;
+
 
 //ROTAS DE AUTENTICAÇÃO
 Auth::routes();
@@ -18,7 +20,7 @@ Auth::routes();
 Route::get('/',    [HomeController::class, 'index'])->name('sousapo.index');
 Route::view('/apoio',      'pages.apoio')->name('sousapo.apoio');
 Route::view('/sobre',      'pages.sobre')->name('sousapo.sobre');
-Route::view('/comunidade', 'pages.comunidade')->name('sousapo.comunidade');
+
 
 //QUADRINHOS
 Route::prefix('/quadrinhos')->group( function(){
@@ -41,12 +43,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 Route::group(['prefix' => 'conta', 'middleware' => 'auth'], function(){
     Route::view('/', 'pages.conta')->name('conta.index');
     Route::post('/update', [UserController::class , 'Updateprofile'] )->name('conta.update');
-    Route::post('/photo',  [UserController::class , 'storagePhoto'] )->name('conta.photo');
+   
 });
 
 //FÓRUM
 Route::group(['prefix' => 'forum', 'middleware' => 'auth'], function(){
-    Route::get('/' ,             ShowTweets::class)->name('forum.index');
-    Route::get('/show/{id}',     [ShowTweets::class , 'show'])->name('forum.show');
+    Route::get('/' ,ShowTweets::class)->name('forum.index');
+    Route::get('/show/{id}', [ShowTweets::class , 'show'])->name('forum.show');
     Route::get('/resposta/{id}', [RespostaController::class , 'RespostaTweet'])->name('forum.resposta');
 });
+
+Route::resource('/artes', ArteController::class); 

@@ -1,78 +1,94 @@
 @extends('layouts.app')
-
 @section('content')
+    <div>
 
-<div class="container">
-<h1>Artes da Comunidade</h1>
+        <div class="container">
+            <h1>Artes da Comunidade</h1>
+            <div class="d-flex">
+                
+                @if (isset($filtro))
+                    <form class="d-flex" method="GET" action="{{ route('artes.index') }}">
 
-<div>
-<button aling="right">Filtro</button>
-<button aling="center">Artes Originais</button>
-<button aling="left">Enviar Imagem</button>
-</div>
+                        <input style="display: none" class="form-control me-2" type="search" placeholder="filtro"
+                            aria-label="filtro" id="filtro" name="filtro" value="">
+                        <button class="btn btn-success me-2" type="submit">Limpar busca</button>
+                    </form>
 
-<hr>
+                @endif
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100" style="background-color: var(--sapo);">
-        <img src="https://cdn.discordapp.com/attachments/741335125480177756/847716087217782804/unknown.png" class="card-img-top" alt="..." height="170px">
-        <div class="card-body">
-          <h5 class="card-title">Deus (Nanthjan)</h5>
-          <p class="card-text">O Deus de toda criação existente.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100" style="background-color: var(--sapo);">
-        <img src="https://cdn.discordapp.com/attachments/741335125480177756/847716342660333568/unknown.png" class="card-img-top" alt="..." height="170px">
-        <div class="card-body">
-          <h5 class="card-title">Deus (Klaus)</h5>
-          <p class="card-text">A cópia de Nanthjan, cujo se sentiu solitário.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100" style="background-color: var(--sapo);">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-      </div>
-    </div>
-</div>
- <div id="linha-vertical" class="col-sm-2 col-md-1 mb-5">
-</div><div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100" style="background-color: var(--sapo);">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100" style="background-color: var(--sapo);">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100" style="background-color: var(--sapo);">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-      </div>
-    </div>
-</div>
+                <form class="d-flex" method="GET" action="{{ route('artes.index') }}">
 
-<hr>
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar.." aria-label="filtro" id="filtro"
+                        name="filtro">
+                    <button class="btn btn-success" type="submit">Procurar</button>
+                </form>
+            </div>
+            <div>
+                <button aling="right">Filtro</button>
+                <button aling="center">Artes Originais</button>
+
+            </div>
+
+            <hr>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach ($arte as $artes)
+
+                    <div class="col">
+                        <div class="card h-100" style="background-color: var(--sapo);">
+                            <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..." height="170px">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $artes->titulo }}</h5>
+                                <p class="card-text">{{ $artes->descricao }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                @endforeach
+
+                <div class="col">
+                    <div class="card h-100" style="background-color: var(--sapo);">
+                        <img src="https://cdn.discordapp.com/attachments/741335125480177756/847716342660333568/unknown.png"
+                            class="card-img-top" alt="..." height="170px">
+                        <div class="card-body">
+                            <h5 class="card-title">Deus (Klaus)</h5>
+                            <p class="card-text">A cópia de Nanthjan, cujo se sentiu solitário.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="col p-5 bg-razinha" id="Criar_Topico">
+                <h1>Adicionar Arte</h1>
+                <form method="POST" action="{{ route('artes.store') }}" enctype="multipart/form-data">
+
+                    <div class="row">
+                        <input class="col m-1" type="text" name="titulo" id="titulo" placeholder="titulo">
+                        @error('titulo') <span class="error">É nescessario titulo!</span> @enderror
+                        <input class="col m-1" type="text" name="descricao" id="descricao" placeholder="descricao">
+                        @error('descricao') <span class="error">É nescessario preencher o conteudo!</span>
+                        @enderror
+                        <input type="file" name="image" id="image">
+                        @error('image')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                    <button class="btn btn-ra" style="width: 10rem" type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+
+
+
+
+    </div>
+
 
 @endsection

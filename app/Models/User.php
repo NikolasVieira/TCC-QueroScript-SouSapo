@@ -44,6 +44,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Respostas::class);
     }
+
+    public function artes()
+
+    {
+        return $this->hasMany(Arte::class);
+    }
 }
+
 
 

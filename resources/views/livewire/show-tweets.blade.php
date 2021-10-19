@@ -12,9 +12,9 @@
                 <option value="{{ $categorias->titulo }}"> {{ $categorias->titulo }}</option>
                 @endforeach
             </select>
-            <!--
+            
             <input type="text" name="search" id="search" placeholder="Procure por titulo.." wire:model="search">
-            -->
+            
         </div>
         <div class="col p-5 bg-razinha" id="Criar_Topico">
             <h1>Criar Tópico</h1>

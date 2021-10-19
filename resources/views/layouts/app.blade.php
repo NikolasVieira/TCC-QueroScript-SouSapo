@@ -83,7 +83,7 @@
                                 <a class="dropdown-item" href="{{ route('forum.index') }}">
                                     Fórum
                                 </a>
-                                <a class="dropdown-item" href="{{ route('sousapo.comunidade') }}">
+                                <a class="dropdown-item" href="{{ route('artes.index') }}">
                                     Artes
                                 </a>
                             </div>
@@ -199,7 +199,7 @@
                             <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
                             <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
                             <li><a href="{{ url('/forum') }}">Fórum</a></li>
-                            <li><a href="{{ route('sousapo.comunidade') }}">Comunidade</a></li>
+                            <li><a href="{{ route('artes.index') }}">Comunidade</a></li>
                         </ul>
                     </div>
                     <div class="sec contato">

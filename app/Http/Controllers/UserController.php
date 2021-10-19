@@ -14,6 +14,7 @@ class UserController extends Controller
     }
 
     public function Updateprofile(Request $request) {
+        
         $id = auth()->user()->id;
         $info = User::find($id);
         $user = auth()->user();
@@ -27,12 +28,12 @@ class UserController extends Controller
                 $name = Str::slug(auth()->user()->name);
                 $extension = $requestImage->extension();
                 $nameFile = "{$name}. {$extension}";
-                $upload = $requestImage->storeAs('users ', $nameFile);
+                $requestImage ->move(public_path('img/users'), $nameFile);
                 $info->profile_photo_path = $nameFile;
             }
             $info->save();
             if ($info) {
-                return redirect()->route('sousapo.conta')->with('success', 'dados editados com sucesso!');
+                return redirect()->route('conta.index')->with('success', 'dados editados com sucesso!');
             } else {
                 return redirect()->back()->with('error', 'dados nao editados !');
             }
