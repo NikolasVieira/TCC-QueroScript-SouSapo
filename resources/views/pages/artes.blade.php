@@ -67,7 +67,7 @@
             <div class="col p-5 bg-razinha" id="Criar_Topico">
                 <h1>Adicionar Arte</h1>
                 <form method="POST" action="{{ route('artes.store') }}" enctype="multipart/form-data">
-
+                     @csrf
                     <div class="row">
                         <input class="col m-1" type="text" name="titulo" id="titulo" placeholder="titulo">
                         @error('titulo') <span class="error">É nescessario titulo!</span> @enderror

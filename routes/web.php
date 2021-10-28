@@ -29,7 +29,7 @@ Route::view('/sobre',      'pages.sobre')->name('sousapo.sobre');
 Route::get('/', [HomeController::class, 'index'])->name('sousapo.index');
 Route::view('/apoio', 'pages.apoio')->name('sousapo.apoio');
 Route::view('/sobre', 'pages.sobre')->name('sousapo.sobre');
-Route::view('/artes', 'pages.artes')->name('sousapo.artes');
+
 
 
 //QUADRINHOS
@@ -89,4 +89,4 @@ Route::middleware('auth')->group(function() {
 
 });
 
-Route::resource('/artes', ArteController::class); 
+Route::resource('artes', ArteController::class); 

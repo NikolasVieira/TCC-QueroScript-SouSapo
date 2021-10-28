@@ -25,16 +25,16 @@ class ShowTweets extends Component
 
     public function render()
     {
-        $tweets = Tweet::with('user')->latest()->paginate(25);
+        $tweets = Tweet::with('user')->latest()->paginate(4);
         $categorias = Categoria::all();
         if ($this->filtroCat) {
-            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->latest()->paginate(25);
+            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->latest()->paginate(4);
         }
         if ($this->search) {
-            $tweets = Tweet::with('user')->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(25);
+            $tweets = Tweet::with('user')->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(4);
         }
         if ($this->filtroCat and $this->search) {
-            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(25);
+            $tweets = Tweet::with('user')->where('categoria', $this->filtroCat)->where('titulo', 'LIKE', '%' . $this->search . '%')->paginate(4);
         }
         return view('livewire.show-tweets', [
             'tweets' => $tweets,

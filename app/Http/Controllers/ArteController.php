@@ -22,7 +22,7 @@ class ArteController extends Controller
         }
 
         $arte = Arte::all();
-        return view('pages.comunidade', compact('arte'));
+        return view('pages.artes', compact('arte'));
     }
 
 

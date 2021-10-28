@@ -6,23 +6,12 @@
     <div class="row">
 
         <div class="col p-5 bg-sapinho" id="Filtro">
-            <h1>Filtro</h1>
-            <select wire:model="filtroCat" class="form-select" aria-label="Default select example" name="filtroCat"
-                id="filtroCat">
-                <option selected value="">Todos os Tipos</option>
-                @foreach ($categoria as $categorias)
-                <option value="{{ $categorias->titulo }}"> {{ $categorias->titulo }}</option>
-                @endforeach
-            </select>
-            
-            <input type="text" name="search" id="search" placeholder="Procure por titulo.." wire:model="search">
-            
 
         <div id="Filtro" class="col">
             <h2>Filtro</h2>
             <div id="Filtros" class="row">
                 <select wire:model="filtroCat" class="col-5 form-select" aria-label="Default select example">
-                    <option selected>Todos os Tópicos</option>
+                    <option selected value="">Todos os Tópicos</option>
                     @foreach ($categoria as $categorias)
                     <option value="{{ $categorias->titulo }}">{{ $categorias->titulo }}</option>
                     @endforeach
