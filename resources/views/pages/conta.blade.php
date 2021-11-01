@@ -5,6 +5,9 @@
         @if (session('success'))
             <div class="alert alert-success" id="message">{{ session('success') }}</div>
         @endif
+        @if (session('delete'))
+            <div class="alert alert-error" id="message">{{ session('delete') }}</div>
+        @endif
         @if (session('error'))
             <div class="alert alert-error" id="message">{{ session('error') }}</div>
         @endif
@@ -59,52 +62,57 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+
         <div class="artes">
-
-
-
-            <div class="col">
-
-                @foreach ($arte as $artes)
-                    <div class="card h-100" style="background-color: var(--sapo);">
-                        <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..." height="170px">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $artes->titulo }}</h5>
-                            <p class="card-text">{{ $artes->descricao }}</p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal{{ $artes->id }}">
-                                Abrir imagem
-                            </button>
-                            <!-- modal -->
-                            <div class="modal fade " id="exampleModal{{ $artes->id }}" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">{{ $artes->titulo }} --
-                                                {{ $artes->user->name }}
-                                            </h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..."
-                                                height="300px" width="500px">
+            @if (count($arte) > 0)
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach ($arte as $artes)
+                        <div class="col">
+                            <div class="card h-100" style="background-color: var(--sapo);">
+                                <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..."
+                                    height="170px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $artes->titulo }}</h5>
+                                    <a href="{{ url('arte/delete', ['id' => $artes->id]) }}"
+                                        class="btn btn-danger btn-sm">Remover</a>
+                                    <p class="card-text">{{ $artes->descricao }}</p>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal{{ $artes->id }}">
+                                        Abrir imagem
+                                    </button>
+                                    <!-- modal -->
+                                    <div class="modal fade " id="exampleModal{{ $artes->id }}" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        {{ $artes->titulo }} --
+                                                        {{ $artes->user->name }}
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="img/artes/{{ $artes->img_path }}" class="card-img-top"
+                                                        alt="..." height="300px" width="500px">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
 
-            </div>
-
+            @else
+                <h1>voce nao tem artes !!</h1>
+            @endif
 
         </div>
     </div>
-
 
 
 @endsection

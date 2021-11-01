@@ -76,7 +76,8 @@ Route::group(['prefix' => 'forum', 'middleware' => 'auth'], function(){
 Route::middleware('auth')->group(function() {
     //MINHA CONTA
     Route::prefix('conta')->group(function () {
-        Route::view('/', 'pages.conta')->name('conta.index');
+        Route::get('/', [ArteController::class, 'artes'])->name('conta.index');
+       
         Route::post('/photo',  [UserController::class, 'storagePhoto'])->name('conta.photo');
         Route::post('/update', [UserController::class, 'Updateprofile'])->name('conta.update');
     });
@@ -90,3 +91,4 @@ Route::middleware('auth')->group(function() {
 });
 
 Route::resource('artes', ArteController::class); 
+Route::get('arte/delete/{id}', [ArteController::class, 'destroy'])->name('arte.delete');

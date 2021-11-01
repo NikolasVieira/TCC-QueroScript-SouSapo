@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Arte;
+
 
 class UserController extends Controller
 {
    
-
     public function Updateprofile(Request $request)
     {
 
@@ -39,13 +38,8 @@ class UserController extends Controller
             }
         }
     }
-    public function artes()
-    {
-        $user = auth()->user()->id;
-        $arte = DB::table('artes')->where('user_id' , $user)->get();
-        return view('pages.conta', compact('arte'));
-    }
-
+    
+   
     /*
    public function storagePhoto(Request $request)
     {
