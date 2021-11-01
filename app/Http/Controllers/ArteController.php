@@ -7,11 +7,7 @@ use App\Models\Arte;
 
 class ArteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $filtro = request('filtro');
@@ -24,13 +20,6 @@ class ArteController extends Controller
         $arte = Arte::all();
         return view('pages.artes', compact('arte'));
     }
-
-
-    
-
-    
-    
-
     
     public function store(Request $request)
     {
@@ -52,6 +41,6 @@ class ArteController extends Controller
 
         return redirect()->back()->with('success', 'dados cadastrados com sucesso !');
     }
-
+    
     
 }
