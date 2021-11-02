@@ -46,7 +46,7 @@ return [
     */
 
     'logo' => '<b>Sou</b>Sapo',
-    'logo_img' => 'img/deus.png',
+    'logo_img' => 'img/personagens/deus.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
