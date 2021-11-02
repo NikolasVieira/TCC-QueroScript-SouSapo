@@ -4,7 +4,7 @@ function viewPage() {
 }
 
 function viewImage() {
-    var el = document.getElementById('hq');
+    var el = document.getElementById('flipbook');
     toggleFullscreen(el);
 }
 

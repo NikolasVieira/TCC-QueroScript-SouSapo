@@ -45,7 +45,7 @@
 
                 <!-- Logo e Titulo da NavBar -->
                 <a id="logo" class="navbar-brand" href="{{ route('sousapo.index') }}">
-                    <img src="img/ico/frog.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <img src="img/ico/frog.svg" width="30" height="30" class="d-inline-block align-top">
                     SouSapo
                 </a>
 
