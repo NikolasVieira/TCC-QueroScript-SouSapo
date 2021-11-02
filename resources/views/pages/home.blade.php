@@ -64,7 +64,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="row">
-                        <a class="col my-3 mr-1 btn btn-success" href="{{ route('forum.index') }}">Ver no Fórum</a>
+                        <a class="col my-3 mr-1 btn btn-success" href="{{ route('sousapo.forum') }}">Ver no Fórum</a>
                     </div>
                 </div>
             </div>

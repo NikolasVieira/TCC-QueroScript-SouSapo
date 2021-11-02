@@ -29,19 +29,19 @@ Route::name('sousapo.')->group(function () {
 //ROTAS LOGIN
 Route::middleware('auth')->group(function () {
     //MINHA CONTA
-    Route::group(['prefix' => 'conta', 'name' => 'conta.'], function () {
+    Route::group(['prefix' => 'conta', 'as' => 'conta.'], function () {
         Route::get('/',                 [ArteController::class, 'artes'])->name('index');
         Route::post('/photo',           [UserController::class, 'storagePhoto'])->name('photo');
         Route::post('/update',          [UserController::class, 'Updateprofile'])->name('update');
         Route::get('/arte/delete/{id}', [ArteController::class, 'destroy'])->name('arte.delete');
     });
     //FÓRUM
-    Route::group(['prefix' => 'forum', 'name' => 'forum.'], function () {
+    Route::group(['prefix' => 'forum', 'as' => 'forum.'], function () {
         Route::get('/show/{id}',     [ShowTweets::class, 'show'])->name('show');
         Route::get('/resposta/{id}', [RespostaController::class, 'RespostaTweet'])->name('resposta');
     });
     //QUADRINHOS
-    Route::get('/capitulo/{chapter_number}', [HqController::class, 'show'])->name('ler');
+    Route::get('/capitulo/{chapter_number}', [HqController::class, 'show'])->name('sousapo.ler');
 });
 
 //ROTAS ADMIN

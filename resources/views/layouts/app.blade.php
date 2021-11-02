@@ -79,11 +79,11 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="{{ route('forum.index') }}">
+                                <a class="dropdown-item" href="{{ route('sousapo.forum') }}">
                                     Fórum
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('artes.index') }}">
+                                <a class="dropdown-item" href="{{ route('sousapo.artes.index') }}">
                                     Artes
                                 </a>
                             </div>
@@ -198,12 +198,8 @@
                             <li><a href="{{ route('sousapo.quadrinhos') }}">Quadrinhos</a></li>
                             <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
                             <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
-
-                            
-                            <li><a href="{{ route('artes.index') }}">Comunidade artes</a></li>
-                           <li><a href="{{ route('forum.index') }}">Fórum</a></li>
-                            
-
+                            <li><a href="{{ route('sousapo.artes.index') }}">Artes da Comunidade</a></li>
+                            <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>
                         </ul>
                     </div>
                     <div class="sec contato">
