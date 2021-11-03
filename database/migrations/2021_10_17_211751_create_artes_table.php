@@ -19,6 +19,7 @@ class CreateArtesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('titulo');
             $table->string('descricao');
+            $table->boolean('status')->default(true);
             $table->string('img_path');
             $table->timestamps();
         });

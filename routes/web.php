@@ -18,11 +18,11 @@ Auth::routes();
 
 //ROTAS SEM LOGIN
 Route::name('sousapo.')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('index'); //PAGINA PRINCIPAL
+    Route::get('/',           [HomeController::class, 'index'])->name('index'); //PAGINA PRINCIPAL
     Route::get('/quadrinhos', [HqController::class, 'quadrinhos'])->name('quadrinhos'); //QUADRINHOS
-    Route::get('/forum', ShowTweets::class)->name('forum'); //FÓRUM
-    Route::view('/apoio', 'pages.apoio')->name('apoio'); //APOIO
-    Route::view('/sobre', 'pages.sobre')->name('sobre'); //SOBRE
+    Route::get('/forum',      ShowTweets::class)->name('forum'); //FÓRUM
+    Route::view('/apoio',     'pages.apoio')->name('apoio'); //APOIO
+    Route::view('/sobre',     'pages.sobre')->name('sobre'); //SOBRE
     Route::resource('/artes', ArteController::class); //ARTES DA COMUNIDADE
 });
 
@@ -53,7 +53,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
     Route::resource('/chapters',  ChapterController::class);
     Route::resource('/categoria', CategoryController::class);
     //DELETES
-    Route::get('/pages/delete/{page}',       [PageController::class, 'destroy'])->name('pages.delete');
-    Route::get('/chapters/delete/{chapter}', [ChapterController::class, 'destroy'])->name('chapters.delete');
+    Route::get('/pages/delete/{page}',       [PageController::class,     'destroy'])->name('pages.delete');
+    Route::get('/chapters/delete/{chapter}', [ChapterController::class,  'destroy'])->name('chapters.delete');
     Route::get('/categoria/delete/{id}',     [CategoryController::class, 'destroy'])->name('categoria.delete');
 });

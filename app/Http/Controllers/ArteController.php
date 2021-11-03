@@ -16,7 +16,7 @@ class ArteController extends Controller
             return view('pages.artes', compact(['arte', 'filtro']));
         }
 
-        $arte = Arte::all();
+        $arte = Arte::where('status', '=', true)->get();
         return view('pages.artes', compact('arte'));
     }
 
@@ -28,7 +28,6 @@ class ArteController extends Controller
         $arte->descricao =  $request->input('descricao');
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-
             $requestImage = $request->image;
             $extension = $requestImage->extension();
             $imageName = md5($requestImage->getClientOriginalName());
@@ -40,22 +39,21 @@ class ArteController extends Controller
 
         return redirect()->back()->with('success', 'dados cadastrados com sucesso !');
     }
-    
+
     public function artes()
     {
         $user_id = auth()->user()->id;
-        $arte = Arte::where('user_id', $user_id)->get();;
+        $arte = Arte::where('user_id', $user_id)->where('status', '=', true)->get();
         return view('pages.conta', compact('arte'));
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $arte = Arte::find($id);
         if (isset($arte)) {
-
-            $arte->delete();
+            $arte->status = false;
+            $arte->save();
         }
-        return redirect()->back()->with('delete', 'Arte removida do sistema !');
+        return redirect()->route('conta.index');
     }
-
 }

@@ -73,7 +73,7 @@
                                     height="170px">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $artes->titulo }}</h5>
-                                    <a href="{{ url('arte/delete', ['id' => $artes->id]) }}"
+                                    <a href="{{ route('conta.arte.delete', $artes->id) }}"
                                         class="btn btn-danger btn-sm">Remover</a>
                                     <p class="card-text">{{ $artes->descricao }}</p>
                                     <!-- Button trigger modal -->
