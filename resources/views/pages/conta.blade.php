@@ -12,11 +12,18 @@
             <div class="alert alert-error" id="message">{{ session('error') }}</div>
         @endif
         <div class="infos">
-            <img class="h-8 w-8 rounded-full object-cover" style="width: 100px; height: 100px;"
-                src="/img/users/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}">
-            <h1>nome: {{ Auth::user()->name }}</h1>
-            <h1>nick: {{ Auth::user()->nick }}</h1>
-            <h1>bio: {{ Auth::user()->bio }}</h1>
+            @if (isset(Auth::user()->profile_photo_path))
+            <img class="h-8 w-8 rounded-full object-cover" style="width: 100px; height: 100px;" src="/img/users/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}">
+            @else
+            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;" src="{{ asset('img/personagens/Deus.png') }}" alt="imagem padrão">
+            @endif
+            <h1>Nome: {{ Auth::user()->name }}</h1>
+            @if (isset(Auth::user()->nick))
+            <h1>Nick: {{ Auth::user()->nick }}</h1>
+            @endif
+            @if (isset(Auth::user()->bio))
+            <h1>Biografia: {{ Auth::user()->bio }}</h1>
+            @endif
         </div>
 
         <div class="editar">
@@ -106,13 +113,10 @@
                         </div>
                     @endforeach
                 </div>
-
             @else
                 <h1>voce nao tem artes !!</h1>
             @endif
-
         </div>
     </div>
-
 
 @endsection
