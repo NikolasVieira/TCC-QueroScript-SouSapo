@@ -13,10 +13,11 @@ class ShowTweets extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     public $content = '';
-    public $titulo = '';
+    public $titulo;
     public $categoria_ti = '';
     public $filtroCat;
     public $search = null;
+    
     protected $rules = [
         'content' => 'required',
         'titulo' => 'required',

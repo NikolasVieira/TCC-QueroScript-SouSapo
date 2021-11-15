@@ -20,12 +20,11 @@ Auth::routes();
 Route::name('sousapo.')->group(function () {
     Route::get('/',           [HomeController::class, 'index'])->name('index'); //PAGINA PRINCIPAL
     Route::get('/quadrinhos', [HqController::class, 'quadrinhos'])->name('quadrinhos'); //QUADRINHOS
-    Route::get('/forum',      ShowTweets::class)->name('forum'); //FÓRUM
+    Route::get('forum',      ShowTweets::class)->name('forum'); //FÓRUM
     Route::view('/apoio',     'pages.apoio')->name('apoio'); //APOIO
     Route::view('/sobre',     'pages.sobre')->name('sobre'); //SOBRE
     Route::resource('/artes', ArteController::class); //ARTES DA COMUNIDADE
 });
-
 //ROTAS LOGIN
 Route::middleware('auth')->group(function () {
     //MINHA CONTA

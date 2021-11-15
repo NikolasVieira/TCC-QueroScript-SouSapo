@@ -1,7 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
-    <div id="Forum">
+   <div id="Forum">
         <link href="{{ asset('css/forum.css') }}" rel="stylesheet">
         <div id="Banner">
             <h1 class="text-white">Fórum</h1>
@@ -23,8 +20,10 @@
                     </div>
 
                 </div>
+               
                 <div id="Criar Topico" class="col">
                     <form method="POST" wire:submit.prevent="create">
+                     
                         <div id="campos" class="row">
                             <input type="text" class="form-control" placeholder="Titulo" wire:model="titulo">
                             @error('titulo')
@@ -98,4 +97,4 @@
                 </div>
             </div>
         </div>
-    @endsection
+
