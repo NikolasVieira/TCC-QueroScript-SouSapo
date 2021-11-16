@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="intro py-4 position-relative text-white" style="background-color: var(--sapao);">
+<div class="intro py-5 position-relative text-white" style="background-color: var(--sapao);">
     <div class="intro-content mt-5">
         <div class="container">
             <div class="row">

@@ -145,9 +145,11 @@
                                 <a class="dropdown-item" href="{{ route('conta.index') }}">
                                     {{ __('Minha Conta') }}
                                 </a>
+                                @if (Auth::user()->is_admin)
                                 <a class="dropdown-item" href="{{ route('admin.index') }}">
                                     {{ __('Dashboard') }}
                                 </a>
+                                @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
                                     {{ __('Sair') }}

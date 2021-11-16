@@ -15,7 +15,6 @@
                                 <button class="btn btn-ra me-2" type="submit">Limpar busca</button>
                             </form>
                         @endif
-
                         <form class="d-flex" method="GET" action="{{ route('sousapo.artes.index') }}">
                             <input class="form-control me-2" type="search" placeholder="Pesquisar.." aria-label="filtro"
                                 id="filtro" name="filtro">
@@ -48,13 +47,13 @@
                                     <input class="col form-control mr-1" type="text" name="titulo" id="titulo"
                                         placeholder="Titulo">
                                     @error('titulo')
-                                    <span class="error">É nescessario titulo!</span>
+                                        <span class="error">É nescessario titulo!</span>
                                     @enderror
 
                                     <input class="col form-control ml-1 " type="text" name="descricao" id="descricao"
                                         placeholder="Descricao">
                                     @error('descricao')
-                                    <span class="error">É nescessario preencher o conteudo!</span>
+                                        <span class="error">É nescessario preencher o conteudo!</span>
                                     @enderror
 
                                     <input class="form-control mt-2" type="file" id="image" name="image">
@@ -73,43 +72,51 @@
 
             <!-- Artes -->
             <hr>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                @foreach ($arte as $artes)
-                    <div class="col">
-                        <div class="card h-100" style="background-color: var(--sapo);">
-                            <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..." height="170px">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $artes->titulo }}</h5>
-                                <p class="card-text">{{ $artes->descricao }}</p>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal{{ $artes->id }}">
-                                    Abrir imagem
-                                </button>
-                                <!-- modal -->
-                                <div class="modal fade " id="exampleModal{{ $artes->id }}" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">{{ $artes->titulo }} --
-                                                    {{ $artes->user->name }}
-                                                </h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <img src="img/artes/{{ $artes->img_path }}" class="card-img-top"
-                                                    alt="..." height="300px" width="500px">
+            @if (count($arte) > 0)
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach ($arte as $artes)
+                        <div class="col">
+                            <div class="card h-100" style="background-color: var(--sapo);">
+                                <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..."
+                                    height="170px">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $artes->titulo }}</h5>
+                                    <p class="card-text">{{ $artes->descricao }}</p>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal{{ $artes->id }}">
+                                        Abrir imagem
+                                    </button>
+                                    <!-- modal -->
+                                    <div class="modal fade " id="exampleModal{{ $artes->id }}" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">{{ $artes->titulo }}
+                                                        --
+                                                        {{ $artes->user->name }}
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="img/artes/{{ $artes->img_path }}" class="card-img-top"
+                                                        alt="..." height="300px" width="500px">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="container">
+                    <h1>não tem arte</h1>
+                </div>
+            @endif
             <br>
         </div>
     </div>
