@@ -8,7 +8,7 @@
     </div>
     <a class="btn btn-ra m-4" href="{{ route('sousapo.forum') }}">Voltar</a>
     <div class="container py-4">
-        @foreach ($tweet as $tweets)@endforeach
+        @foreach ($tweet as $tweets)
         <div class="card">
             <div class="card-header">
                 {{ $tweets->titulo }} | Perguntado por: {{ $tweets->user->name }} | Tags: {{ $tweets->categoria }}
@@ -16,16 +16,16 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">{{ $tweets->content }}</li>
             </ul>
-            @foreach ($resposta as $respostas)
+
             <div class="card-header">
-                Resposta de</b> {{ $respostas->user->name }}
+                Resposta de</b> {{ $tweets->$resposta->user->name }}
             </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ $respostas->content }}</li>
+                    <li class="list-group-item">{{$tweets->$respostas->content }}</li>
                 </ul>
-            @endforeach
-        </div>
 
+        </div>
+        @endforeach
         @if (\Session::has('success'))
             <div class="alert alert-success my-2">
                 <ul>

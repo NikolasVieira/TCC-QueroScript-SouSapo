@@ -11,27 +11,27 @@ class tweet extends Model
 
     protected $fillable = ['content' , 'titulo', 'categoria', 'user_id'];
 
-    public function user() 
+    public function user()
     {
         return  $this->belongsTo(User::class);
     }
-    
+
     public function likes(){
-        
-        return $this->hasMany(like::class);
-               
-               /*
+
+        return $this->hasMany(like::class)
+
+
                ->where(function ($query){
                         if ( auth()->check()){
                             $query->where('user_id' , auth()->user()->id);
                         }
-                     });*/
+                     });
     }
 
     public function respostas()
 
     {
-        return $this->hasMany(Respostas::class);
+        return $this->hasMany(Resposta::class);
     }
 }
 

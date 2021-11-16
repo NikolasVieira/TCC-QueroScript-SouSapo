@@ -17,7 +17,7 @@ class ShowTweets extends Component
     public $categoria_ti = '';
     public $filtroCat;
     public $search = null;
-    
+
     protected $rules = [
         'content' => 'required',
         'titulo' => 'required',
@@ -69,7 +69,7 @@ class ShowTweets extends Component
 
     public function show($id)
     {
-        $tweet = tweet::all();
+        $tweet = tweet::with('respostas')->get();
         $resposta = Resposta::all();
         return view('pages.respostas', compact('tweet', 'resposta'));
     }
