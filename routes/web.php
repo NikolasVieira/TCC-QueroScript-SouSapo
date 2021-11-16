@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     });
     //FÓRUM
     Route::group(['prefix' => 'forum', 'as' => 'forum.'], function () {
-        Route::get('/show/{id}',     [ShowTweets::class, 'show'])->name('show');
+        Route::get('/show/{id}',     [RespostaController::class, 'show'])->name('show');
         Route::get('/resposta/{id}', [RespostaController::class, 'RespostaTweet'])->name('resposta');
     });
     //QUADRINHOS

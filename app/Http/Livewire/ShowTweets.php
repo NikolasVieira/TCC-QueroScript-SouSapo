@@ -67,12 +67,7 @@ class ShowTweets extends Component
         $tweet->likes()->where('user_id', auth()->user()->id)->delete();
     }
 
-    public function show($id)
-    {
-        $tweet = tweet::with('respostas')->get();
-        $resposta = Resposta::all();
-        return view('pages.respostas', compact('tweet', 'resposta'));
-    }
+  
     /*
     public function unlike(tweet $tweet) {
        $tweet->likes()->delete();

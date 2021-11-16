@@ -8,24 +8,30 @@
     </div>
     <a class="btn btn-ra m-4" href="{{ route('sousapo.forum') }}">Voltar</a>
     <div class="container py-4">
-        @foreach ($tweet as $tweets)
+
         <div class="card">
             <div class="card-header">
-                {{ $tweets->titulo }} | Perguntado por: {{ $tweets->user->name }} | Tags: {{ $tweets->categoria }}
+                {{ $tweet->titulo }} | Perguntado por: {{ $tweet->user->name }} | Tags: {{ $tweet->categoria }}
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{ $tweets->content }}</li>
+                <li class="list-group-item">{{ $tweet->content }}</li>
             </ul>
 
-            <div class="card-header">
-                Resposta de</b> {{ $tweets->$resposta->user->name }}
-            </div>
+            @foreach ($resposta as $r)
+                <div class="card-header">
+                    Resposta de</b> {{ $r->user->name }}
+                </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{$tweets->$respostas->content }}</li>
+                    <li class="list-group-item">{{ $r->content }}</li>
                 </ul>
+                
+                
+            @endforeach
+  
 
         </div>
-        @endforeach
+        <br>
+
         @if (\Session::has('success'))
             <div class="alert alert-success my-2">
                 <ul>
@@ -37,9 +43,11 @@
         <form method="get" action="{{ url('forum/resposta/{id}') }}">
             @csrf
             @method('post')
-            <input type="text" name="tweet_id" id="tweet_id" wire:model="tweet_id" value="{{ $tweets->id }}" style="display: none">
+            <input type="text" name="tweet_id" id="tweet_id" wire:model="tweet_id" value="{{ $tweet->id }}"
+                style="display: none">
             <div class="form-floating py-1">
-                <textarea class="form-control" name="content" placeholder="Escreva a resposta aqui" id="floatingTextarea2" wire:model="content" style="height: 100px"></textarea>
+                <textarea class="form-control" name="content" placeholder="Escreva a resposta aqui" id="floatingTextarea2"
+                    wire:model="content" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Responder</label>
             </div>
             <button type="submit" class="btn btn-ra">salvar</button>
