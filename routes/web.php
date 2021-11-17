@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     });
     //FÓRUM
     Route::group(['prefix' => 'forum', 'as' => 'forum.'], function () {
+        Route::post('/create',  [ShowTweets::class, 'create'])->name('create'); //FÓRUM
         Route::get('/show/{id}',     [RespostaController::class, 'show'])->name('show');
         Route::get('/resposta/{id}', [RespostaController::class, 'RespostaTweet'])->name('resposta');
     });

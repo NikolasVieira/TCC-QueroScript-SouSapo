@@ -24,10 +24,10 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{ $r->content }}</li>
                 </ul>
-                
-                
+
+
             @endforeach
-  
+
 
         </div>
         <br>
@@ -40,16 +40,19 @@
             </div>
         @endif
 
-        <form method="get" action="{{ url('forum/resposta/{id}') }}">
+        <form method="get" action="{{ route('forum.resposta',$tweet->id) }}">
             @csrf
             @method('post')
             <input type="text" name="tweet_id" id="tweet_id" wire:model="tweet_id" value="{{ $tweet->id }}"
                 style="display: none">
             <div class="form-floating py-1">
-                <textarea class="form-control" name="content" placeholder="Escreva a resposta aqui" id="floatingTextarea2"
+                <textarea class="form-control" name="content" placeholder="Escreva a resposta aqui"
                     wire:model="content" style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Responder</label>
+                <label>Responder</label>
             </div>
+            @error('content')
+            <span class="error">É nescessario escolher uma Categoria!</span>
+        @enderror
             <button type="submit" class="btn btn-ra">salvar</button>
         </form>
     </div>
