@@ -1,5 +1,9 @@
 
 .infos {
-   
+
     padding: 2rem;
+}
+
+.cor-borda{
+    border-color: brown;
 }

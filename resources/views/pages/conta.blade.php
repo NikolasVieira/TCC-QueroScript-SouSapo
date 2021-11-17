@@ -1,7 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
+        <br/>
+    <div class="">
+        <nav class="nav nav-tabs justify-content-center cor-borda">
+            <a class="nav-link active cor-borda" aria-current="page" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+        </nav>
+    </div>
         @if (session('success'))
             <div class="alert alert-success" id="message">{{ session('success') }}</div>
         @endif
