@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'SouSapo | Sobre')
+
 @section('content')
 
 <link href="{{ asset('css/sobre.css') }}" rel="stylesheet">

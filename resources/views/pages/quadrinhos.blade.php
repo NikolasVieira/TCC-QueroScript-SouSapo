@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'SouSapo | Quadrinhos')
+
 @section('content')
 <div class="container">
     <h2>Selecione o capitulo que deseja ler</h2>

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'SouSapo | Apoiar')
+
 @section('content')
 
 <div class="intro py-5 position-relative text-white" style="background-color: var(--sapao);">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'SouSapo | Minha Conta')
+
 @section('content')
     <div class="container py-2">
         @if (session('success'))

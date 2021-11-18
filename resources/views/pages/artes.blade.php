@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'SouSapo | Artes')
+
 @section('content')
     <div>
         <div class="container">

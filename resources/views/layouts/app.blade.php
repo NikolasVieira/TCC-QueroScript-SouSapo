@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SouSapo') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -95,71 +95,72 @@
                         <!-- Links de autenticação -->
                         @guest
 
-                        @if (Route::has('login'))
-                        <li id="navbotao" class="nav-item mr-2">
-                            <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                        <li id="navbotao" class="nav-item mr-2">
-                            <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
-                        </li>
-                        @endif
-
-                        @else
-                        <li class="nav-item dropdown">
-                            @if (isset(Auth::user()->nick))
-                            <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-
-                                @if (isset(Auth::user()->profile_photo_path))
-                                <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                                    class="h-8 w-8 rounded-full object-cover"
-                                    src="/img/users/{{Auth::user()->profile_photo_path}}"
-                                    alt="{{ Auth::user()->name }}">
-                                @else
-                                <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                                    src="{{ asset('img/personagens/Deus.png') }}" alt="imagem padrão">
-                                @endif
-                                {{ Auth::user()->nick }}
-                            </a>
-                            @else
-                            <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                @if (isset(Auth::user()->profile_photo_path))
-                                <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                                    class="h-8 w-8 rounded-full object-cover"
-                                    src="/img/users/{{Auth::user()->profile_photo_path}}"
-                                    alt="{{ Auth::user()->name }}">
-                                @else
-                                <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                                    src="{{ asset('img/personagens/Deus.png') }}" alt="imagem default">
-                                @endif
-                                {{ Auth::user()->name }}
-                            </a>
-
+                            @if (Route::has('login'))
+                                <li id="navbotao" class="nav-item mr-2">
+                                    <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
                             @endif
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('conta.index') }}">
-                                    {{ __('Minha Conta') }}
-                                </a>
-                                @if (Auth::user()->is_admin)
-                                <a class="dropdown-item" href="{{ route('admin.index') }}">
-                                    {{ __('Dashboard') }}
-                                </a>
-                                @endif
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                    {{ __('Sair') }}
-                                </a>
+                            @if (Route::has('register'))
+                                <li id="navbotao" class="nav-item mr-2">
+                                    <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                                </li>
+                            @endif
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                @if (isset(Auth::user()->nick))
+                                    <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                                        @if (isset(Auth::user()->profile_photo_path))
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="/img/users/{{ Auth::user()->profile_photo_path }}"
+                                                alt="{{ Auth::user()->name }}">
+                                        @else
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                                                src="{{ asset('img/personagens/Deus.png') }}" alt="imagem padrão">
+                                        @endif
+                                        {{ Auth::user()->nick }}
+                                    </a>
+                                @else
+                                    <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        @if (isset(Auth::user()->profile_photo_path))
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="/img/users/{{ Auth::user()->profile_photo_path }}"
+                                                alt="{{ Auth::user()->name }}">
+                                        @else
+                                            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                                                src="{{ asset('img/personagens/Deus.png') }}" alt="imagem default">
+                                        @endif
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                @endif
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('conta.index') }}">
+                                        {{ __('Minha Conta') }}
+                                    </a>
+                                    @if (Auth::user()->is_admin)
+                                        <a class="dropdown-item" href="{{ route('admin.index') }}">
+                                            {{ __('Dashboard') }}
+                                        </a>
+                                    @endif
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                        {{ __('Sair') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -168,12 +169,10 @@
         <!-- CONTEUDO -->
         <main class="pb-0 bg-sapao">
             @yield('content')
-
         </main>
 
         <!-- FOOTER -->
         @section('footer_padrao')
-        <div id="footer">
             <footer>
                 <div class="container">
                     <div class="sec sobrenos">
@@ -183,7 +182,8 @@
                             cada um com seu trabalho a desempenhar, nenhum menos importante do que o outro, todos
                             necessários.</p>
                         <ul class="sci">
-                            <li><a class="facebook" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook-official"
+                                        aria-hidden="true"></i>
                                 </a></li>
                             <li><a class="instagram" href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a></li>
@@ -228,10 +228,8 @@
             <div class="copyrightText">
                 <p>Copyright © 2021 QueroScripts. All Rights Reserved.</p>
             </div>
-        </div>
         @show
     </div>
-
     @livewireScripts
 </body>
 

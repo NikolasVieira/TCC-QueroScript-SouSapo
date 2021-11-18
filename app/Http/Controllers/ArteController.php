@@ -27,6 +27,7 @@ class ArteController extends Controller
         $arte->titulo =  $request->input('titulo');
         $arte->descricao =  $request->input('descricao');
 
+        //ADICIONANDO IMAGEM
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
             $extension = $requestImage->extension();
