@@ -69,10 +69,6 @@
                             <a class="btn btn-sapinho" href="{{ route('sousapo.sobre') }}" role="button">Sobre</a>
                         </li>
 
-                        <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{ route('sousapo.apoio') }}" role="button">Apoiar</a>
-                        </li>
-
                         <li id="navbotao" class="nav-item dropdown active ml-2">
                             <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Comunidade</a>
@@ -199,7 +195,6 @@
                             <li><a href="{{ route('sousapo.index') }}">Inicio</a></li>
                             <li><a href="{{ route('sousapo.quadrinhos') }}">Quadrinhos</a></li>
                             <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
-                            <li><a href="{{ route('sousapo.apoio') }}">Apoiar</a></li>
                             <li><a href="{{ route('sousapo.artes.index') }}">Artes da Comunidade</a></li>
                             <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>
                         </ul>
@@ -220,6 +215,13 @@
                             <li>
                                 <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                 <p><a href="mailto:quemleuperdeu@hotmail.com">quemleuperdeu@hotmail.com</a></p>
+                            </li>
+                            <li>
+                                <form action="https://www.paypal.com/donate" method="post" target="_top">
+                                    <input type="hidden" name="hosted_button_id" value="ZV6B24GHCHMTQ" />
+                                    <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Faça doações com o botão do PayPal" />
+                                    <img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
+                                    </form>
                             </li>
                         </ul>
                     </div>

@@ -45,6 +45,13 @@ class ArteController extends Controller
     {
         $user_id = auth()->user()->id;
         $arte = Arte::where('user_id', $user_id)->where('status', '=', true)->get();
+        return view('pages.galeria', compact('arte'));
+    }
+
+    public function conta()
+    {
+        $user_id = auth()->user()->id;
+        $arte = Arte::where('user_id', $user_id)->where('status', '=', true)->get();
         return view('pages.conta', compact('arte'));
     }
 

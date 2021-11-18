@@ -80,8 +80,7 @@
                     @foreach ($arte as $artes)
                         <div class="col">
                             <div class="card h-100" style="background-color: var(--sapo);">
-                                <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..."
-                                    height="170px">
+                                <img src="img/artes/{{ $artes->img_path }}" class="card-img-top">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $artes->titulo }}</h5>
                                     <p class="card-text">{{ $artes->descricao }}</p>
