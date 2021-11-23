@@ -15,16 +15,18 @@
         @endif
         <div class="infos card-body bg-razinha">
             @if (isset(Auth::user()->profile_photo_path))
-            <img class="h-8 w-8 rounded-full object-cover" style="width: 100px; height: 100px;" src="/img/users/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}">
+                <img class="h-8 w-8 rounded-full object-cover" style="width: 100px; height: 100px;"
+                    src="/img/users/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}">
             @else
-            <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;" src="{{ asset('img/personagens/Deus.png') }}" alt="imagem padrão">
+                <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                    src="{{ asset('img/personagens/Deus.png') }}" alt="imagem padrão">
             @endif
             <h1>Nome: {{ Auth::user()->name }}</h1>
             @if (isset(Auth::user()->nick))
-            <h1>Nick: {{ Auth::user()->nick }}</h1>
+                <h1>Nick: {{ Auth::user()->nick }}</h1>
             @endif
             @if (isset(Auth::user()->bio))
-            <h1>Biografia: {{ Auth::user()->bio }}</h1>
+                <h1>Biografia: {{ Auth::user()->bio }}</h1>
             @endif
         </div>
 
@@ -63,16 +65,69 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" value="{{ Auth::User()->email }}">
                 </div>
-
-                <div class="mb-3">
-                    <label for="image" class="form-label">Escolher foto de perfil</label>
-                    <input class="form-control" type="file" name="image" id="image">
+                <div class="row row-cols-1 row-cols-md-6 g-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                            value="1.jpeg">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            <img style="width: 80px; height:80px;" src="img/users/1.jpeg" alt="imagem 1">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" checked
+                            value="2.jpeg">
+                        <label class="form-check-label" for="profile_img">
+                            <img style="width: 80px; height:80px;" src="img/users/2.jpeg" alt="imagem 2">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" checked
+                            value="3.jpeg">
+                        <label class="form-check-label" for="profile_img">
+                            <img style="width: 80px; height:80px;" src="img/users/3.jpeg" alt="imagem 3">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" checked
+                            value="4.jpeg">
+                        <label class="form-check-label" for="profile_img">
+                            <img style="width: 80px; height:80px;" src="img/users/4.jpeg" alt="imagem 4">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" checked
+                            value="5.jpeg">
+                        <label class="form-check-label" for="profile_img">
+                            <img style="width: 80px; height:80px;" src="img/users/5.jpeg" alt="imagem 5">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" checked
+                            value="6.jpeg">
+                        <label class="form-check-label" for="profile_img">
+                            <img style="width: 80px; height:80px;" src="img/users/6.jpeg" alt="imagem 6">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" checked
+                            value="7.jpeg">
+                        <label class="form-check-label" for="profile_img">
+                            <img style="width: 80px; height:80px;" src="img/users/7.jpeg" alt="imagem 7">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" checked
+                            value="8.jpeg">
+                        <label class="form-check-label" for="profile_img">
+                            <img style="width: 80px; height:80px;" src="img/users/8.jpeg" alt="imagem 8">
+                        </label>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <br/>
+        <br />
 
         <div class="artes">
             @if (count($arte) > 0)
@@ -121,7 +176,7 @@
                 <div class="h1 text-white">Você não possui nenhuma arte.</div>
             @endif
         </div>
-        <br/>
+        <br />
     </div>
 
 @endsection

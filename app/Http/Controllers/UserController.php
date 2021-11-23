@@ -16,21 +16,16 @@ class UserController extends Controller
 
         $id = auth()->user()->id;
         $info = User::find($id);
-        $user = auth()->user();
+        
         if (isset($info)) {
             $info->name = $request->input('name');
             $info->nick = $request->input('nick');
             $info->bio = $request->input('bio');
             $info->email = $request->input('email');
+            $info->email = $request->input('email');
+            $info->profile_photo_path = $request->input('profile_img');
             //ADICIONANDO IMAGEM
-            if ($request->file('image') && $request->file('image')->isValid()) {
-                $requestImage = $request->image;
-                $name = Str::slug(auth()->user()->name);
-                $extension = $requestImage->extension();
-                $nameFile = "{$name}.{$extension}";
-                $requestImage ->move(public_path('img/users'), $nameFile);
-                $info->profile_photo_path = $nameFile;
-            }
+            
             $info->save();
             if ($info) {
                 return redirect()->route('conta.index')->with('success', 'dados editados com sucesso!');
