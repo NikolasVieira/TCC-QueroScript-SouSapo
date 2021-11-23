@@ -27,6 +27,7 @@ class ArteController extends Controller
         $arte->titulo =  $request->input('titulo');
         $arte->descricao =  $request->input('descricao');
 
+        //ADICIONANDO IMAGEM
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
             $extension = $requestImage->extension();
@@ -41,6 +42,13 @@ class ArteController extends Controller
     }
 
     public function artes()
+    {
+        $user_id = auth()->user()->id;
+        $arte = Arte::where('user_id', $user_id)->where('status', '=', true)->get();
+        return view('pages.galeria', compact('arte'));
+    }
+
+    public function conta()
     {
         $user_id = auth()->user()->id;
         $arte = Arte::where('user_id', $user_id)->where('status', '=', true)->get();

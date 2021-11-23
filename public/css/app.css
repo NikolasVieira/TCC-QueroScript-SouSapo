@@ -28,11 +28,13 @@
   --danger: #e3342f;
   --light: #f8f9fa;
   --dark: #343a40;
-  --sapinho: #DDA0DD;
-  --sapo: #FFFACD;
-  --sapao: #20B2AA;
-  --razinha: #FFD700;
+  --sapinho: #d37070;
+  --sapo: #fff170cb;
+  --sapao: #1f6479;
+  --razinha: #a5932d;
   --ra: #3CB371;
+  --footertext: #ffffff;
+  --naousar: #ccad00;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -2783,13 +2785,13 @@ fieldset:disabled a.btn {
 
 .btn-sapinho {
   color: #212529;
-  background-color: #DDA0DD;
-  border-color: #DDA0DD;
+  background-color: #d37070;
+  border-color: #d37070;
 }
 .btn-sapinho:hover {
   color: #212529;
-  background-color: #d384d3;
-  border-color: #d07ad0;
+  background-color: #d370aa;
+  border-color: #d370aa;
 }
 .btn-sapinho:focus, .btn-sapinho.focus {
   color: #212529;
@@ -6756,7 +6758,7 @@ button.bg-dark:focus {
 }
 
 .bg-sapinho {
-  background-color: #DDA0DD !important;
+  background-color: #d37070 !important;
 }
 
 a.bg-sapinho:hover, a.bg-sapinho:focus,
@@ -6776,7 +6778,7 @@ button.bg-sapo:focus {
 }
 
 .bg-sapao {
-  background-color: #20B2AA !important;
+  background-color: #1f6479 !important;
 }
 
 a.bg-sapao:hover, a.bg-sapao:focus,
@@ -6786,7 +6788,7 @@ button.bg-sapao:focus {
 }
 
 .bg-razinha {
-  background-color: #FFD700 !important;
+  background-color: #ffd900c4 !important;
 }
 
 a.bg-razinha:hover, a.bg-razinha:focus,

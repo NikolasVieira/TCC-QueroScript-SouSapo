@@ -1,18 +1,16 @@
 @charset "UTF-8";
 @import url(app.css);
 
-#Sobrenos {
+#Sobrenos, #SobreoProjeto {
     text-align: center;
+    color: white;
 }
 
-#SobreoProjeto {
-    text-align: center;
-}
-
-/* Cor dos Cards */
+/* Cor dos Cards
 .card-color {
     background-color: #DDA0DD;
 }
+*/
 
 /* Linha Vertical */
 #linha-vertical {

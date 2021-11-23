@@ -1,33 +1,55 @@
 @extends('layouts.app')
 
+@section('title', 'SouSapo | Resposta')
+
 @section('content')
 
     <link href="{{ asset('css/forum.css') }}" rel="stylesheet">
     <div id="Banner">
         <h1 class="text-white">Fórum</h1>
     </div>
-    <a class="btn btn-ra m-4" href="{{ route('sousapo.forum') }}">Voltar</a>
+    <hr>
+    <a class="btn btn-sapinho m-4 text-white" href="{{ route('sousapo.forum') }}">Voltar</a>
     <div class="container py-4">
 
-        <div class="card">
-            <div class="card-header">
-                {{ $tweet->titulo }} | Perguntado por: {{ $tweet->user->name }} | Tags: {{ $tweet->categoria }}
+        <div class="card-header bg-razinha">
+            <!--A PERGUNTA-->
+            <div class="card-body">
+                @if ($tweet->user->profile_photo_path)
+                    <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                        class="h-8 w-8 rounded-full object-cover" src="/img/users/{{ $tweet->user->profile_photo_path }}"
+                        alt="{{ $tweet->user->name }}">
+                @else
+                    <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                        src="{{ asset('img/personagens/Deus.png') }}" alt="imagem default">
+                @endif
+                {{ $tweet->titulo }} | Perguntado por: {{ $tweet->user->nick }} | Tags: {{ $tweet->categoria }}
             </div>
+
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">{{ $tweet->content }}</li>
             </ul>
 
+            <!--AS RESPOSTAS-->
             @foreach ($resposta as $r)
-                <div class="card-header">
-                    Resposta de</b> {{ $r->user->name }}
+                <div class="card-body">
+                    @if ($r->user->profile_photo_path)
+                        <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                            class="h-8 w-8 rounded-full object-cover"
+                            src="/img/users/{{ $r->user->profile_photo_path }}" alt="{{ $r->user->name }}">
+                    @else
+                        <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
+                            src="{{ asset('img/personagens/Deus.png') }}" alt="imagem default">
+                    @endif
+                    Resposta de</b> {{ $r->user->nick }}
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{ $r->content }}</li>
                 </ul>
-                
-                
+
+
             @endforeach
-  
+
 
         </div>
         <br>
@@ -40,17 +62,20 @@
             </div>
         @endif
 
-        <form method="get" action="{{ url('forum/resposta/{id}') }}">
+        <form method="get" action="{{ route('forum.resposta', $tweet->id) }}">
             @csrf
             @method('post')
             <input type="text" name="tweet_id" id="tweet_id" wire:model="tweet_id" value="{{ $tweet->id }}"
                 style="display: none">
             <div class="form-floating py-1">
-                <textarea class="form-control" name="content" placeholder="Escreva a resposta aqui" id="floatingTextarea2"
-                    wire:model="content" style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Responder</label>
+                <textarea class="form-control" name="content" placeholder="Escreva a resposta aqui" wire:model="content"
+                    style="height: 100px"></textarea>
+                <label>Responder</label>
             </div>
-            <button type="submit" class="btn btn-ra">salvar</button>
+            @error('content')
+                <span class="error">É nescessario escolher uma Categoria!</span>
+            @enderror
+            <button type="submit" class="btn btn-sapinho text-white">Salvar</button>
         </form>
     </div>
 @endsection

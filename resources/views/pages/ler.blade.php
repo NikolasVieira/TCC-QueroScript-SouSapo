@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'SouSapo | Lendo')
+
 @section('content')
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/turnjs4/lib/turn.min.js') }}"></script>

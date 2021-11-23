@@ -21,21 +21,23 @@ Route::name('sousapo.')->group(function () {
     Route::get('/',           [HomeController::class, 'index'])->name('index'); //PAGINA PRINCIPAL
     Route::get('/quadrinhos', [HqController::class, 'quadrinhos'])->name('quadrinhos'); //QUADRINHOS
     Route::get('forum',      ShowTweets::class)->name('forum'); //FÓRUM
-    Route::view('/apoio',     'pages.apoio')->name('apoio'); //APOIO
     Route::view('/sobre',     'pages.sobre')->name('sobre'); //SOBRE
     Route::resource('/artes', ArteController::class); //ARTES DA COMUNIDADE
 });
+
 //ROTAS LOGIN
 Route::middleware('auth')->group(function () {
     //MINHA CONTA
     Route::group(['prefix' => 'conta', 'as' => 'conta.'], function () {
-        Route::get('/',                 [ArteController::class, 'artes'])->name('index');
+        Route::get('/',                 [ArteController::class, 'conta'])->name('index');
         Route::post('/photo',           [UserController::class, 'storagePhoto'])->name('photo');
         Route::post('/update',          [UserController::class, 'Updateprofile'])->name('update');
+        Route::get('/galeria',          [ArteController::class, 'artes'])->name('galeria');
         Route::get('/arte/delete/{id}', [ArteController::class, 'destroy'])->name('arte.delete');
     });
     //FÓRUM
     Route::group(['prefix' => 'forum', 'as' => 'forum.'], function () {
+        Route::post('/create',       [ShowTweets::class, 'create'])->name('create');
         Route::get('/show/{id}',     [RespostaController::class, 'show'])->name('show');
         Route::get('/resposta/{id}', [RespostaController::class, 'RespostaTweet'])->name('resposta');
     });

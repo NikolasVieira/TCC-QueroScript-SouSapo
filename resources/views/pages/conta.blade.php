@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'SouSapo | Minha Conta')
+
 @section('content')
     <div class="container py-2">
         @if (session('success'))
@@ -11,7 +13,7 @@
         @if (session('error'))
             <div class="alert alert-error" id="message">{{ session('error') }}</div>
         @endif
-        <div class="infos">
+        <div class="infos card-body bg-razinha">
             @if (isset(Auth::user()->profile_photo_path))
             <img class="h-8 w-8 rounded-full object-cover" style="width: 100px; height: 100px;" src="/img/users/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}">
             @else
@@ -26,7 +28,8 @@
             @endif
         </div>
 
-        <div class="editar">
+        <div class="card-header bg-razinha h2">{{ __('Editar informações') }}</div>
+        <div class="card-body bg-razinha editar">
             <form method="post" action="{{ route('conta.update') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
@@ -69,6 +72,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+        <br/>
 
         <div class="artes">
             @if (count($arte) > 0)
@@ -114,9 +118,10 @@
                     @endforeach
                 </div>
             @else
-                <h1>voce nao tem artes !!</h1>
+                <div class="h1 text-white">Você não possui nenhuma arte.</div>
             @endif
         </div>
+        <br/>
     </div>
 
 @endsection

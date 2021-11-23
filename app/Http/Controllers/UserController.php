@@ -10,7 +10,7 @@ use App\Models\Arte;
 
 class UserController extends Controller
 {
-   
+
     public function Updateprofile(Request $request)
     {
 
@@ -22,11 +22,12 @@ class UserController extends Controller
             $info->nick = $request->input('nick');
             $info->bio = $request->input('bio');
             $info->email = $request->input('email');
+            //ADICIONANDO IMAGEM
             if ($request->file('image') && $request->file('image')->isValid()) {
                 $requestImage = $request->image;
                 $name = Str::slug(auth()->user()->name);
                 $extension = $requestImage->extension();
-                $nameFile = "{$name}. {$extension}";
+                $nameFile = "{$name}.{$extension}";
                 $requestImage ->move(public_path('img/users'), $nameFile);
                 $info->profile_photo_path = $nameFile;
             }
@@ -38,8 +39,8 @@ class UserController extends Controller
             }
         }
     }
-    
-   
+
+
     /*
    public function storagePhoto(Request $request)
     {
