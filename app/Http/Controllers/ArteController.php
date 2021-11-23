@@ -22,6 +22,14 @@ class ArteController extends Controller
 
     public function store(Request $request)
     {
+        //VALIDAÇÃO
+        $request->validate([
+            'titulo' => 'required|max:30',
+            'descricao' => 'required|max:300',
+            'image' => 'required'
+        ]);
+
+        //VARIAVEIS
         $arte = new arte();
         $arte->user_id = auth()->user()->id;
         $arte->titulo =  $request->input('titulo');

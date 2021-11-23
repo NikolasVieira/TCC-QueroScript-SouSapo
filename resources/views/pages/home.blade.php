@@ -22,14 +22,13 @@
                 @foreach ($chapter as $chapters)
                     <div class="col-3 p-2">
                         <div class="card bg-razinha text-center h-100 p-3">
-                            <img src="{{ asset('storage') }}/{{ $chapters->path }}" class="card-img-top" alt="capa"
+                            <img class="card-img-top" src="{{ asset('storage') }}/{{ $chapters->path }}" alt="capa"
                                 id="cover">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $chapters->chapter_name }}</h5>
-                                <div class="card-footer">
-                                    <a href="{{ route('sousapo.ler', $chapters->chapter_number) }}"
-                                        class="btn btn-sapinho btn text-white">Ler</a>
-                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-sapinho text-white w-100" href="{{ route('sousapo.ler',$chapters->chapter_number)}}">Ler</a>
                             </div>
                         </div>
                     </div>

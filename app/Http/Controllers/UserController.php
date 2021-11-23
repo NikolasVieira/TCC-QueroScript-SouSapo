@@ -16,7 +16,7 @@ class UserController extends Controller
 
         $id = auth()->user()->id;
         $info = User::find($id);
-        
+
         if (isset($info)) {
             $info->name = $request->input('name');
             $info->nick = $request->input('nick');
@@ -25,7 +25,6 @@ class UserController extends Controller
             $info->email = $request->input('email');
             $info->profile_photo_path = $request->input('profile_img');
             //ADICIONANDO IMAGEM
-            
             $info->save();
             if ($info) {
                 return redirect()->route('conta.index')->with('success', 'dados editados com sucesso!');
