@@ -13,13 +13,11 @@ html {
 }
 
 #Banner {
-    background-color: var(--ra);
     padding: 5.5rem 7rem;
 }
 
 #Filtro {
     padding: 3rem;
-    background-color: var(--sapinho);
 }
 
 #Filtro select {
@@ -36,7 +34,6 @@ html {
 
 #Criar\ Topico {
     padding: 3rem;
-    background-color: var(--razinha);
 }
 
 #Criar\ Topico input {

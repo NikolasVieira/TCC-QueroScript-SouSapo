@@ -40,11 +40,11 @@
 <body>
     <div id="app">
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: var(--sapo);">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: var(--ra);">
             <div class="container-fluid">
 
                 <!-- Logo e Titulo da NavBar -->
-                <a id="logo" class="navbar-brand" href="{{ route('sousapo.index') }}">
+                <a id="logo" class="navbar-brand text-white" href="{{ route('sousapo.index') }}">
                     <img src="img/ico/frog.svg" width="30" height="30" class="d-inline-block align-top">
                     SouSapo
                 </a>
@@ -61,16 +61,16 @@
                     <ul class="nav navbar-nav mr-auto">
 
                         <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{ route('sousapo.quadrinhos') }}"
+                            <a class="btn btn-sapinho text-white" href="{{ route('sousapo.quadrinhos') }}"
                                 role="button">Quadrinhos</a>
                         </li>
 
                         <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho" href="{{ route('sousapo.sobre') }}" role="button">Sobre</a>
+                            <a class="btn btn-sapinho text-white" href="{{ route('sousapo.sobre') }}" role="button">Sobre</a>
                         </li>
 
                         <li id="navbotao" class="nav-item dropdown active ml-2">
-                            <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle" href="#" role="button"
+                            <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Comunidade</a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -93,20 +93,20 @@
 
                             @if (Route::has('login'))
                                 <li id="navbotao" class="nav-item mr-2">
-                                    <a class="btn btn-sapao" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="btn btn-sapinho text-white" href="{{ route('login') }}">{{ __('Entrar') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li id="navbotao" class="nav-item mr-2">
-                                    <a class="btn btn-sapao" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                                    <a class="btn btn-sapinho text-white" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
 
                         @else
                             <li class="nav-item dropdown">
                                 @if (isset(Auth::user()->nick))
-                                    <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                    <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 
                                         @if (isset(Auth::user()->profile_photo_path))
@@ -121,7 +121,7 @@
                                         {{ Auth::user()->nick }}
                                     </a>
                                 @else
-                                    <a id="navbarDropdown" class="btn btn-sapao dropdown-toggle" href="#" role="button"
+                                    <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         @if (isset(Auth::user()->profile_photo_path))
                                             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
@@ -195,7 +195,7 @@
                             <li><a href="{{ route('sousapo.index') }}">Inicio</a></li>
                             <li><a href="{{ route('sousapo.quadrinhos') }}">Quadrinhos</a></li>
                             <li><a href="{{ route('sousapo.sobre') }}">Sobre</a></li>
-                            <li><a href="{{ route('sousapo.artes.index') }}">Artes da Comunidade</a></li>
+                            <li><a href="{{ route('sousapo.artes.index') }}">Artes</a></li>
                             <li><a href="{{ route('sousapo.forum') }}">Fórum</a></li>
                         </ul>
                     </div>

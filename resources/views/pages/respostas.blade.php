@@ -8,12 +8,13 @@
     <div id="Banner">
         <h1 class="text-white">Fórum</h1>
     </div>
-    <a class="btn btn-ra m-4" href="{{ route('sousapo.forum') }}">Voltar</a>
+    <hr>
+    <a class="btn btn-sapinho m-4 text-white" href="{{ route('sousapo.forum') }}">Voltar</a>
     <div class="container py-4">
 
-        <div class="card">
+        <div class="card-header bg-razinha">
             <!--A PERGUNTA-->
-            <div class="card-header">
+            <div class="card-body">
                 @if ($tweet->user->profile_photo_path)
                     <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
                         class="h-8 w-8 rounded-full object-cover" src="/img/users/{{ $tweet->user->profile_photo_path }}"
@@ -24,13 +25,14 @@
                 @endif
                 {{ $tweet->titulo }} | Perguntado por: {{ $tweet->user->nick }} | Tags: {{ $tweet->categoria }}
             </div>
+
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">{{ $tweet->content }}</li>
             </ul>
 
             <!--AS RESPOSTAS-->
             @foreach ($resposta as $r)
-                <div class="card-header">
+                <div class="card-body">
                     @if ($r->user->profile_photo_path)
                         <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
                             class="h-8 w-8 rounded-full object-cover"
@@ -73,7 +75,7 @@
             @error('content')
                 <span class="error">É nescessario escolher uma Categoria!</span>
             @enderror
-            <button type="submit" class="btn btn-ra">salvar</button>
+            <button type="submit" class="btn btn-sapinho text-white">Salvar</button>
         </form>
     </div>
 @endsection

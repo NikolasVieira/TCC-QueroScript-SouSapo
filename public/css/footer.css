@@ -6,7 +6,7 @@ footer {
     width: 100%;
     height: auto;
     padding: 50px 100px;
-    background: var(--sapo);
+    background: var(--ra);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -29,7 +29,7 @@ footer .container .sec.sobrenos {
 
 footer .container h2 {
     position: relative;
-    color: var(--sapinho);
+    color: var(--footertext);
     font-weight: 500;
     margin-bottom: 15px;
 }
@@ -45,7 +45,7 @@ footer .container h2:before {
 }
 
 footer p {
-    color: var(--ra);
+    color: var(--footertext);
 }
 
 .sci {
@@ -91,7 +91,7 @@ footer p {
 }
 
 .sci li a .fa {
-    color: var(--sapo);
+    color: var(--footertext);
     font-size: 20px;
 }
 
@@ -105,7 +105,7 @@ footer p {
 }
 
 .quickLinks ul li a {
-    color: var(--ra);
+    color: var(--footertext);
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
@@ -132,11 +132,11 @@ footer p {
 }
 
 .contato .info li span {
-    color: var(--ra);
+    color: var(--footertext);
 }
 
 .contato .info li a {
-    color: var(--ra);
+    color: var(--footertext);
     text-decoration: none;
 }
 
@@ -146,10 +146,10 @@ footer p {
 
 .copyrightText {
     width: 100%;
-    background: var(--sapo);
+    background: var(--ra);
     padding: 8px 100px;
     text-align: center;
-    color: var(--ra);
+    color: var(--footertext);
 }
 
 @media (max-width: 991px) {

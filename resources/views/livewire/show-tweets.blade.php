@@ -5,11 +5,13 @@
     <div id="Banner">
         <h1 class="text-white">Fórum</h1>
     </div>
+    <hr>
+
     <div class="row">
 
-        <div class="col p-5 bg-sapinho" id="Filtro">
-            <div id="Filtro" class="col">
-                <h2>Filtro</h2>
+        <div class="col p-5" id="Filtro">
+            <div id="Filtro" class="col bg-razinha card-header">
+                <div class="h2">{{ __('Filtro de Pesquisa')}}</div>
                 <div id="Filtros" class="row">
                     <select wire:model="filtroCat" class="col-5 form-select" aria-label="Default select example">
                         <option selected value="">Todos os Tópicos</option>
@@ -21,7 +23,8 @@
                 </div>
             </div>
 
-            <div id="Criar Topico" class="col">
+            <div id="Criar Topico" class="col bg-razinha">
+                <div class="card-body h2">{{ __('Criar Tópico')}}</div>
                 <form method="POST" wire:submit.prevent="create">
                     <div id="campos" class="row">
                         <input type="text" class="form-control" placeholder="Titulo" wire:model="titulo">
@@ -48,7 +51,11 @@
                     <button class="btn btn-ra" type="submit">Publicar</button>
                 </form>
             </div>
-
+            <br/>
+            <div class="card bg-sapinho">
+                <hr>
+                <div class="card-header h2 text-white">{{ __('Tweets')}}</div>
+            </div>
             <div id="Topico">
                 @foreach ($tweets as $tweet)
                     <div class="mx-5 accordion" id="topico-{{ $tweet->id }}">

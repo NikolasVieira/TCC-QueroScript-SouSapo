@@ -49,7 +49,7 @@
                     @endforeach
                 </div>
             @else
-                <h1>voce nao tem artes !!</h1>
+                <div class="h1 text-white">Você não possui nenhuma arte.</div>
             @endif
         </div>
     </div>
