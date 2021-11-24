@@ -10,21 +10,8 @@
     <div class="row">
 
         <div class="col p-5" id="Filtro">
-            <div id="Filtro" class="col bg-razinha card-header">
-                <div class="h2">{{ __('Filtro de Pesquisa')}}</div>
-                <div id="Filtros" class="row">
-                    <select wire:model="filtroCat" class="col-5 form-select" aria-label="Default select example">
-                        <option selected value="">Todos os Tópicos</option>
-                        @foreach ($categoria as $categorias)
-                            <option value="{{ $categorias->titulo }}">{{ $categorias->titulo }}</option>
-                        @endforeach
-                    </select>
-                    <input class="col-5 form-control" type="text" placeholder="Procure por titulo" wire:model="search">
-                </div>
-            </div>
-
             <div id="Criar Topico" class="col bg-razinha">
-                <div class="card-body h2">{{ __('Criar Tópico')}}</div>
+                <div class="card-header h2">{{ __('Criar Tópico')}}</div>
                 <form method="POST" wire:submit.prevent="create">
                     <div id="campos" class="row">
                         <input type="text" class="form-control" placeholder="Titulo" wire:model="titulo">
@@ -51,7 +38,22 @@
                     <button class="btn btn-ra" type="submit">Publicar</button>
                 </form>
             </div>
+
+            <div id="Filtro" class="col bg-razinha card-body">
+                <div class="h2">{{ __('Filtro de Pesquisa')}}</div>
+                <div id="Filtros" class="row">
+                    <select wire:model="filtroCat" class="col-5 form-select" aria-label="Default select example">
+                        <option selected value="">Todos os Tópicos</option>
+                        @foreach ($categoria as $categorias)
+                            <option value="{{ $categorias->titulo }}">{{ $categorias->titulo }}</option>
+                        @endforeach
+                    </select>
+                    <input class="col-5 form-control" type="text" placeholder="Procure por titulo" wire:model="search">
+                </div>
+            </div>
+
             <br/>
+
             <div class="card bg-sapinho">
                 <hr>
                 <div class="card-header h2 text-white">{{ __('Tweets')}}</div>
@@ -107,3 +109,4 @@
             </div>
         </div>
     </div>
+</div>

@@ -9,7 +9,6 @@
         <h1 class="text-white">Fórum</h1>
     </div>
     <hr>
-    <a class="btn btn-sapinho m-4 text-white" href="{{ route('sousapo.forum') }}">Voltar</a>
     <div class="container py-4">
 
         <div class="card-header bg-razinha">
@@ -76,6 +75,7 @@
                 <span class="error">É nescessario escolher uma Categoria!</span>
             @enderror
             <button type="submit" class="btn btn-sapinho text-white">Salvar</button>
+            <a class="btn btn-sapinho m-4 text-white" href="{{ route('sousapo.forum') }}">Voltar</a>
         </form>
     </div>
 @endsection
