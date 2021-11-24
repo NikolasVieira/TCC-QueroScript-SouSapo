@@ -7,12 +7,31 @@
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
 
     <div class="text-center">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img src="img/banner/banner1.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/banner/banner2.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/banner/banner3.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="1">
+                <img src="img/banner/banner1.jpeg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>
+        <!--ANTIGO
         <figure>
             <video autoplay loop muted>
                 <source src="video/teste.mp4" type="video/mp4">
             </video>
         </figure>
+        -->
     </div>
+
 
     <!--CAPITULOS MAIS RECENTES-->
     <div id="novidades" class="container-fluid bg-sapao">
