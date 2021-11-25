@@ -4,10 +4,10 @@
 
 @section('content')
 
-<link href="{{ asset('css/sobre.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sobre.css') }}" rel="stylesheet">
 
-<div class="container">
-    <br/>
+    <div class="container">
+        <br />
         <div class="row">
             <div class="col-sm-6 col-md-5 mb-2">
                 <h1 id="Sobrenos">Sobre Nós</h1>
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-    <br/>
-</div>
+        <br />
+    </div>
 
 @endsection

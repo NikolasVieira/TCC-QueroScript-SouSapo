@@ -66,12 +66,14 @@
                         </li>
 
                         <li id="navbotao" class="nav-item active ml-2">
-                            <a class="btn btn-sapinho text-white" href="{{ route('sousapo.sobre') }}" role="button">Sobre</a>
+                            <a class="btn btn-sapinho text-white" href="{{ route('sousapo.sobre') }}"
+                                role="button">Sobre</a>
                         </li>
 
                         <li id="navbotao" class="nav-item dropdown active ml-2">
-                            <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Comunidade</a>
+                            <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                v-pre>Comunidade</a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
@@ -93,21 +95,24 @@
 
                             @if (Route::has('login'))
                                 <li id="navbotao" class="nav-item mr-2">
-                                    <a class="btn btn-sapinho text-white" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                                    <a class="btn btn-sapinho text-white"
+                                        href="{{ route('login') }}">{{ __('Entrar') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li id="navbotao" class="nav-item mr-2">
-                                    <a class="btn btn-sapinho text-white" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                                    <a class="btn btn-sapinho text-white"
+                                        href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
 
                         @else
                             <li class="nav-item dropdown">
                                 @if (isset(Auth::user()->nick))
-                                    <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        v-pre>
 
                                         @if (isset(Auth::user()->profile_photo_path))
                                             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
@@ -121,8 +126,9 @@
                                         {{ Auth::user()->nick }}
                                     </a>
                                 @else
-                                    <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="btn btn-sapinho dropdown-toggle text-white" href="#"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        v-pre>
                                         @if (isset(Auth::user()->profile_photo_path))
                                             <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
                                                 class="h-8 w-8 rounded-full object-cover"
@@ -147,7 +153,7 @@
                                         </a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Sair') }}
                                     </a>
 
@@ -219,9 +225,13 @@
                             <li>
                                 <form action="https://www.paypal.com/donate" method="post" target="_top">
                                     <input type="hidden" name="hosted_button_id" value="ZV6B24GHCHMTQ" />
-                                    <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Faça doações com o botão do PayPal" />
-                                    <img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
-                                    </form>
+                                    <input type="image"
+                                        src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0"
+                                        name="submit" title="PayPal - The safer, easier way to pay online!"
+                                        alt="Faça doações com o botão do PayPal" />
+                                    <img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1"
+                                        height="1" />
+                                </form>
                             </li>
                         </ul>
                     </div>

@@ -34,8 +34,8 @@
                 <div class="card-body">
                     @if ($r->user->profile_photo_path)
                         <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                            class="h-8 w-8 rounded-full object-cover"
-                            src="/img/users/{{ $r->user->profile_photo_path }}" alt="{{ $r->user->name }}">
+                            class="h-8 w-8 rounded-full object-cover" src="/img/users/{{ $r->user->profile_photo_path }}"
+                            alt="{{ $r->user->name }}">
                     @else
                         <img style="border-radius:50%; width:35px; height:35px; margin-right:5px;"
                             src="{{ asset('img/personagens/Deus.png') }}" alt="imagem default">

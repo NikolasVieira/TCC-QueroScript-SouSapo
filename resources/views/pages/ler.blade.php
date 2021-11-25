@@ -10,18 +10,26 @@
     @if ($page)
         <div class="container" id="cont">
             <div class="bg-razinha p-3">
-            <div id="flipbook">
-                <div id="capa">
-                    <img src="{{ asset('storage') }}/{{ $chapter->path }}" alt="capa" id="cover">
-                </div>
-                @foreach ($page as $pages)
-                    <div id="pagina">
-                        <img src="{{ asset('storage') }}/{{ $pages->path }}"
-                            alt="Pagina numero: {{ $pages->page_number }}" id="page">
+                <div id="flipbook">
+                    <div id="capa">
+                        <img src="{{ asset('storage') }}/{{ $chapter->path }}" alt="capa" id="cover">
                     </div>
-                @endforeach
+                    @foreach ($page as $pages)
+                        <div id="pagina">
+                            <img src="{{ asset('storage') }}/{{ $pages->path }}"
+                                alt="Pagina numero: {{ $pages->page_number }}" id="page">
+                        </div>
+                    @endforeach
+                    <!-- Futuramente fazer contracapa
+
+                    <div id="capa2">
+                        <img src="{ { asset('storage') }}/{ { $chapter->path }}" alt="capa2" id="cover">
+                    </div>
+                    <div id="capa2">
+                        <img src="{ { asset('storage') }}/{ { $chapter->path }}" alt="capa2" id="cover">
+                    </div> -->
+                </div>
             </div>
-        </div>
         </div>
     @endif
 

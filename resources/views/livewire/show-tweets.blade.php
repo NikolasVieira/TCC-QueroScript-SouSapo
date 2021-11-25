@@ -11,7 +11,7 @@
 
         <div class="col p-5" id="Filtro">
             <div id="Criar Topico" class="col bg-razinha">
-                <div class="card-header h2">{{ __('Criar Tópico')}}</div>
+                <div class="card-header h2">{{ __('Criar Tópico') }}</div>
                 <form method="POST" wire:submit.prevent="create">
                     <div id="campos" class="row">
                         <input type="text" class="form-control" placeholder="Titulo" wire:model="titulo">
@@ -38,9 +38,9 @@
                     <button class="btn btn-ra" type="submit">Publicar</button>
                 </form>
             </div>
-
+            <hr>
             <div id="Filtro" class="col bg-razinha card-body">
-                <div class="h2">{{ __('Filtro de Pesquisa')}}</div>
+                <div class="h2">{{ __('Filtro de Pesquisa') }}</div>
                 <div id="Filtros" class="row">
                     <select wire:model="filtroCat" class="col-5 form-select" aria-label="Default select example">
                         <option selected value="">Todos os Tópicos</option>
@@ -52,11 +52,11 @@
                 </div>
             </div>
 
-            <br/>
+            <br />
 
             <div class="card bg-sapinho">
                 <hr>
-                <div class="card-header h2 text-white">{{ __('Tópicos')}}</div>
+                <div class="card-header h2 text-white">{{ __('Tópicos') }}</div>
             </div>
             <div id="Topico">
                 @foreach ($tweets as $tweet)

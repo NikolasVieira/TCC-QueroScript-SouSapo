@@ -19,7 +19,7 @@
                     src="/img/users/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}">
             @else
                 <img style=" border-radius:50%; width:35px; height:35px; margin-right:5px;"
-                    src="{{ asset('img/personagens/Deus.png') }}" alt="imagem padrão">
+                    src="{{ asset('img/users/1.jpeg') }}" alt="imagem padrão">
             @endif
             <h1>Nome: {{ Auth::user()->name }}</h1>
             @if (isset(Auth::user()->nick))
@@ -67,57 +67,49 @@
                 </div>
                 <div class="row row-cols-1 row-cols-md-6 g-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="1.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="1.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/1.jpeg" alt="imagem 1">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="2.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="2.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/2.jpeg" alt="imagem 2">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="3.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="3.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/3.jpeg" alt="imagem 3">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="4.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="4.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/4.jpeg" alt="imagem 4">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="5.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="5.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/5.jpeg" alt="imagem 5">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="6.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="6.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/6.jpeg" alt="imagem 6">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="7.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="7.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/7.jpeg" alt="imagem 7">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
-                            value="8.jpeg">
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" value="8.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/8.jpeg" alt="imagem 8">
                         </label>
@@ -147,7 +139,7 @@
                                         data-bs-target="#exampleModal{{ $artes->id }}">
                                         Abrir imagem
                                     </button>
-                                    <!-- modal -->
+                                    <!-- Modal -->
                                     <div class="modal fade " id="exampleModal{{ $artes->id }}" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">

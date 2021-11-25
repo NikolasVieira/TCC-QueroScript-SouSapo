@@ -1,5 +1,8 @@
 COMANDOS PARA LEMBRAR
 
+//Atualiza as dependências
+composer update
+
 //reseta as tabelas do banco de dados
 php artisan migrate:fresh
 
@@ -19,3 +22,8 @@ php artisan make:seeder UserSeeder
 //Usa a seed
 php artisan db:seed --class=UserSeeder
 
+//Faz as imagens funcionar
+php artisan storage:link
+
+//Limpar cache
+?
