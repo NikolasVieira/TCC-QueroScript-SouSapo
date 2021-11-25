@@ -3,7 +3,7 @@
 @section('title', 'SouSapo | Artes')
 
 @section('content')
-    <div class="container py-3" style="height: 30rem">
+    <div class="container py-3">
         <!--VALIDACAO DE ERROS-->
         @if ($errors->any())
             <div class="alert alert-danger my-2">

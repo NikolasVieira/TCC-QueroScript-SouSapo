@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use HasFactory, Notifiable;
 
     protected $fillable = [
@@ -29,28 +28,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tweets()
-    {
+    public function tweets() {
         return $this->hasMany(Tweet::class);
     }
 
     public function likes(){
-        
         return $this->hasMany(like::class);
     }
 
-    public function respostas()
-
-    {
+    public function respostas() {
         return $this->hasMany(Respostas::class);
     }
 
-    public function artes()
-
-    {
+    public function artes() {
         return $this->hasMany(Arte::class);
     }
 }
-
-
-

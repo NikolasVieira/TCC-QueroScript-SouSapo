@@ -13,10 +13,10 @@ use App\Http\Controllers\Admin\Hq\PageController;
 use App\Http\Controllers\Admin\Hq\ChapterController;
 use App\Http\Controllers\Admin\Forum\CategoryController;
 
-//ROTAS DE AUTENTICAÇÃO
+//ROTA DE AUTENTICAÇÃO
 Auth::routes();
 
-//ROTAS SEM LOGIN
+//ROTAS QUE NÃO PRECISAM LOGIN
 Route::name('sousapo.')->group(function () {
     Route::get('/',           [HomeController::class, 'index'])->name('index'); //PAGINA PRINCIPAL
     Route::get('/quadrinhos', [HqController::class, 'quadrinhos'])->name('quadrinhos'); //QUADRINHOS
@@ -25,9 +25,9 @@ Route::name('sousapo.')->group(function () {
     Route::resource('/artes', ArteController::class); //ARTES DA COMUNIDADE
 });
 
-//ROTAS LOGIN
+//ROTAS QUE PRECISAM DE LOGIN
 Route::middleware('auth')->group(function () {
-    //MINHA CONTA
+    //ROTAS DA CONTA
     Route::group(['prefix' => 'conta', 'as' => 'conta.'], function () {
         Route::get('/',                 [ArteController::class, 'conta'])->name('index');
         Route::post('/photo',           [UserController::class, 'storagePhoto'])->name('photo');
@@ -35,17 +35,17 @@ Route::middleware('auth')->group(function () {
         Route::get('/galeria',          [ArteController::class, 'artes'])->name('galeria');
         Route::get('/arte/delete/{id}', [ArteController::class, 'destroy'])->name('arte.delete');
     });
-    //FÓRUM
+    //ROTAS DO FÓRUM
     Route::group(['prefix' => 'forum', 'as' => 'forum.'], function () {
         Route::post('/create',       [ShowTweets::class, 'create'])->name('create');
         Route::get('/show/{id}',     [RespostaController::class, 'show'])->name('show');
         Route::get('/resposta/{id}', [RespostaController::class, 'RespostaTweet'])->name('resposta');
     });
-    //QUADRINHOS
+    //ROTAS DOS QUADRINHOS
     Route::get('/capitulo/{chapter_number}', [HqController::class, 'show'])->name('sousapo.ler');
 });
 
-//ROTAS ADMIN
+//ROTAS DO ADMIN
 Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
     //DASHBOARD
     Route::get('/', [DashboardController::class, 'index'])->name('admin.index');

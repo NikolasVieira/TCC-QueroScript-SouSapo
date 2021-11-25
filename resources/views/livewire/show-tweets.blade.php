@@ -56,7 +56,7 @@
 
             <div class="card bg-sapinho">
                 <hr>
-                <div class="card-header h2 text-white">{{ __('Tweets')}}</div>
+                <div class="card-header h2 text-white">{{ __('Tópicos')}}</div>
             </div>
             <div id="Topico">
                 @foreach ($tweets as $tweet)

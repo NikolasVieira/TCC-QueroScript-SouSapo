@@ -74,49 +74,49 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" 
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
                             value="2.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/2.jpeg" alt="imagem 2">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" 
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
                             value="3.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/3.jpeg" alt="imagem 3">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" 
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
                             value="4.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/4.jpeg" alt="imagem 4">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" 
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
                             value="5.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/5.jpeg" alt="imagem 5">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" 
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
                             value="6.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/6.jpeg" alt="imagem 6">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" 
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
                             value="7.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/7.jpeg" alt="imagem 7">
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img" 
+                        <input class="form-check-input" type="radio" name="profile_img" id="profile_img"
                             value="8.jpeg">
                         <label class="form-check-label" for="profile_img">
                             <img style="width: 80px; height:80px;" src="img/users/8.jpeg" alt="imagem 8">
@@ -127,16 +127,16 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <br />
+        <hr>
 
+        <h1 class="text-white">Suas Artes da Comunidade</h1>
         <div class="artes">
             @if (count($arte) > 0)
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     @foreach ($arte as $artes)
                         <div class="col">
                             <div class="card h-100" style="background-color: var(--sapo);">
-                                <img src="img/artes/{{ $artes->img_path }}" class="card-img-top" alt="..."
-                                    height="170px">
+                                <img src="img/artes/{{ $artes->img_path }}" class="card-img-top">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $artes->titulo }}</h5>
                                     <a href="{{ route('conta.arte.delete', $artes->id) }}"

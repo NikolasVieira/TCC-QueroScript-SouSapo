@@ -9,6 +9,7 @@
 
     @if ($page)
         <div class="container" id="cont">
+            <div class="bg-razinha p-3">
             <div id="flipbook">
                 <div id="capa">
                     <img src="{{ asset('storage') }}/{{ $chapter->path }}" alt="capa" id="cover">
@@ -21,12 +22,13 @@
                 @endforeach
             </div>
         </div>
+        </div>
     @endif
 
     <script type="text/javascript">
         $('#flipbook').turn({
             width: 800,
-            height: 600,
+            height: 550,
             page: 1,
             autoCenter: false,
             duration: 1200

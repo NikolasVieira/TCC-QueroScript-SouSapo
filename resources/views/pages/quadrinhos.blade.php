@@ -3,7 +3,8 @@
 @section('title', 'SouSapo | Quadrinhos')
 
 @section('content')
-    <div class="container py-3" style="height: 30rem">
+@if (count($chapter) > 0)
+    <div class="container py-3">
         <br />
         <h2 class="text-white">Selecione o capitulo que deseja ler</h2>
         <hr />
@@ -26,4 +27,11 @@
         </div>
         <br />
     </div>
+    @else
+    <div class="container py-3" style="height: 30rem">
+        <br />
+        <h2 class="text-white">>não tem hqr</h2>
+        <hr />
+    </div>
+    @endif
 @endsection
